@@ -137,14 +137,14 @@ class App extends Component {
 
           <p>
             <small>
-              <span style={{ fontWeight: "bold", color: "#189bb0" }}>
+              <span style={{ fontWeight: "bold", color: "#414042" }}>
                 Please note:
               </span>{" "}
               Some data may slightly change over time due to variability in
               transaction and data reporting timing.
             </small>
             <br />
-            <small style={{ fontWeight: "bold", color: "#189bb0" }}>
+            <small style={{ fontWeight: "bold", color: "#414042" }}>
               This page will be updated on a weekly basis.
             </small>
           </p>

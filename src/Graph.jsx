@@ -320,7 +320,7 @@ class Graph extends Component {
               tickLabels: {
                 fontFamily: "SourceSansPro-Bold, arial, sans-serif",
                 fontSize: "16px",
-                color: "#414042",
+                color: "#999999",
                 textTransform: "uppercase"
               },
               grid: { strokeWidth: 1, stroke: "#ffffff" },
