@@ -77,7 +77,7 @@
   color: #414042;
   font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
   font-size: 30px;
-  margin-left: 100px;
+  margin-left: 35px;
   padding-top: 50px;
   border-top: 1px solid #aeadb3;
   margin-top: 0 !important;
@@ -87,7 +87,7 @@
 .graphSubTitle {
   font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
   font-size: 18px;
-  margin-left: 100px;
+  margin-left: 35px;
 }
 
 .graphToggleContainer {
@@ -95,7 +95,7 @@
   margin-left: 60px;
   font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
   font-size: 16px;
-  margin-left: 100px;
+  margin-left: 35px;
 }
 
 .graphToggle {
@@ -118,9 +118,8 @@
       display: block;
     }
     .graphToggleCheckbox {
-      color: #ffffff;
-      background: #51515e;
-      border-color: #51515e;
+      color: #51515e;
+      background: #ffffff;
     }
     .graphToggleKey1,
     .graphToggleKey2,
@@ -156,12 +155,13 @@
   font-size: 12px;
   width: 22px;
   height: 22px;
+  
 }
 
 .ytd-container {
-  max-width: 940px;
+  max-width: 730px;
   width: 100%;
-  margin-left: 110px;
+  margin: 0 auto 40px;
   margin-bottom: 40px;
 }
 
@@ -200,8 +200,8 @@
 }
 
 .covid-table {
-  max-width: 940px;
-  margin-left: 110px;
+  max-width: 730px;
+  margin: 0 auto;
   font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
@@ -209,7 +209,7 @@
 .covid-row {
   background: #f1f2f2;
   margin-bottom: 10px;
-  padding: 25px;
+  padding: 20px 25px;
 }
 
 .covid-headers {
@@ -223,7 +223,7 @@
 }
 
 .mainStatPercentChangeBar {
-  background: #5d5c68;
+  background: #ffffff;
   height: 4px;
   overflow: hidden;
   width: 150px;
