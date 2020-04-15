@@ -319,8 +319,9 @@ class Graph extends Component {
             style={{
               tickLabels: {
                 fontFamily: "SourceSansPro-Bold, arial, sans-serif",
-                fontSize: "15pt",
-                color: "#414042"
+                fontSize: "16px",
+                color: "#414042",
+                textTransform: "uppercase"
               },
               grid: { strokeWidth: 1, stroke: "#ffffff" },
               axis: { strokeWidth: 1, stroke: "#ffffff" }
