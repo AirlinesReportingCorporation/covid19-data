@@ -14,7 +14,6 @@ class GraphTooltip extends Component {
       <g style={{ pointerEvents: "none" }}>
         <foreignObject x={x2} y={y2} width="200" height="230">
           <div className="graph-tooltip">
-            <div className="graph-tooltip-date">{a}</div>
             <div className="graph-tooltip-data-label">{data[3][0]}</div>
             <div className="graph-tooltip-data">
               <i className="fas fa-circle graphToggleKey1"></i>{" "}
