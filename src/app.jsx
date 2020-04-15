@@ -253,7 +253,6 @@ class App extends Component {
                 countries is publicly available. This data is updated weekly.
               </p>
               <a
-                target="_blank"
                 href="https://www2.arccorp.com/articles-trends/the-latest/coronavirus-data/"
                 className="ctaBtn"
               >
@@ -273,7 +272,6 @@ class App extends Component {
               </p>
               <a
                 href="https://www2.arccorp.com/support-training/product-sales-request/"
-                target="_blank"
                 className="ctaBtn"
               >
                 Submit Request
