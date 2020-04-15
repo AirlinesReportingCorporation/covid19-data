@@ -117,7 +117,6 @@ class App extends Component {
 
     return (
       <div className="covidPage">
-
         <div className="covidJumbo">
           <h1>ARC Provides Updated Air Travel Data During COVID-19</h1>
           <p>
@@ -178,6 +177,109 @@ class App extends Component {
             dataDomain={dataDomain1}
             tableHeaders={tableHeaders2}
           />
+        </div>
+
+        <div
+          className="covidGraphContianer"
+          style={{ marginTop: "60px", marginBottom: "60px" }}
+        >
+          <div
+            style={{
+              margin: "0 auto 60px auto",
+              maxWidth: "1030px",
+              textAlign: "center"
+            }}
+          >
+            <div className="graphTitle">
+              Average Air Ticket Price for U.S. Domestic Round Trips
+            </div>
+          </div>
+          <div className="covid-table overflow-auto">
+            <div className="row covid-headers">
+              <div className="col-4">Month</div>
+              <div className="col-4">Change from prior month</div>
+              <div className="col-4">Average Ticket Price</div>
+            </div>
+            <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">January</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-0.02%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "0.02%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $478
+              </div>
+            </div>
+            <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">February</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-2.0%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "2.0%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $488
+              </div>
+            </div>
+            <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">
+                <strong>Year-to-Date (YTD)</strong>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-2.9%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "2.9%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <strong>$483</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bottomData container">
+          <div className="row">
+            <div className="col-md-6">
+              <h2>Country-Specific Data</h2>
+              <p>
+                ARC is also tracking the impact of COVID-19 on airline ticketing
+                in regions that have been most impacted, including China, Italy,
+                Japan, and South Korea. Data on air tickets sold for domestic,
+                global inbound, and global outbound flights for each of these
+                countries is publicly available. This data is updated weekly.
+              </p>
+              <a
+                target="_blank"
+                href="https://www2.arccorp.com/articles-trends/the-latest/coronavirus-data/"
+                className="ctaBtn"
+              >
+                View Data
+              </a>
+            </div>
+            <div className="col-md-6">
+              <h2>
+                Interested in a custom report for a specific region or country?
+              </h2>
+              <p>
+                ARC offers a wide range of data products and services to help
+                airlines, travel agencies and other organizations understand the
+                forces impacting the marketplace. ARC can apply the same filters
+                above to data around the globe to help analyze trends and gain
+                more visibility.
+              </p>
+              <a
+                href="https://www2.arccorp.com/support-training/product-sales-request/"
+                target="_blank"
+                className="ctaBtn"
+              >
+                Submit Request
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -275,12 +275,12 @@ class Graph extends Component {
             <VictoryVoronoiContainer
               voronoiDimension="x"
               activateLabels={true}
-              labels={({ datum }) => ''}
+              labels={({ datum }) => ""}
               labelComponent={
                 <VictoryTooltip
                   cornerRadius={0}
                   labels={this.labels}
-                  flyoutComponent= {<GraphTooltip data={[data, data2, data3]}/>}
+                  flyoutComponent={<GraphTooltip data={[data, data2, data3, dataTitle]} />}
                   flyoutStyle={{
                     fill: "white",
                     stroke: "transparent",
@@ -288,7 +288,6 @@ class Graph extends Component {
                   }}
                 />
               }
-              
               voronoiBlacklist={[
                 "bulletPoints",
                 "bulletPoints1",
@@ -306,9 +305,8 @@ class Graph extends Component {
           <VictoryAxis
             style={{
               grid: {
-                stroke: "#818e99",
-                strokeWidth: 0.5,
-                fill: "grey"
+                stroke: "#8e8e8e",
+                strokeWidth: 1.5
               }
             }}
             tickFormat={t => ``}
@@ -317,14 +315,14 @@ class Graph extends Component {
 
           <VictoryAxis
             style={{
-              axis: { strokeWidth: 0 },
-              grid: { strokeWidth: 0 },
               tickLabels: {
                 textTransform: "uppercase",
                 fontFamily: "SourceSansPro-Bold, arial, sans-serif",
                 fontSize: "15pt",
                 opacity: ".95"
-              }
+              },
+              grid: { strokeWidth: 1, stroke: "#ffffff" },
+              axis: { strokeWidth: 1, stroke: "#ffffff" }
             }}
             tickFormat={t => `${t}`}
             orientation="bottom"
@@ -336,7 +334,16 @@ class Graph extends Component {
 
           <VictoryAxis
             style={{
-              grid: { stroke: "#818e99", strokeWidth: 0.5 }
+              axis: { stroke: "#414042", strokeWidth: 1 },
+              grid: {
+                stroke: ({ tick }) =>
+                  tick == 0 || tick == 10 || tick <= -99
+                    ? tick == 0
+                      ? "#414042"
+                      : "#ffffff"
+                    : "#d7d7d7",
+                strokeWidth: ({ tick }) => (tick == 10 || tick == -100 ? 1 : 1)
+              }
             }}
             dependentAxis
             orientation="left"
