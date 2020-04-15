@@ -268,7 +268,7 @@ class Graph extends Component {
 
         <VictoryChart
           width={1170}
-          height={500}
+          height={530}
           fixLabelOverlap={true}
           padding={{ left: 100, top: 30, bottom: 50, right: 50 }}
           containerComponent={
@@ -280,7 +280,9 @@ class Graph extends Component {
                 <VictoryTooltip
                   cornerRadius={0}
                   labels={this.labels}
-                  flyoutComponent={<GraphTooltip data={[data, data2, data3, dataTitle]} />}
+                  flyoutComponent={
+                    <GraphTooltip data={[data, data2, data3, dataTitle]} />
+                  }
                   flyoutStyle={{
                     fill: "white",
                     stroke: "transparent",
@@ -316,10 +318,9 @@ class Graph extends Component {
           <VictoryAxis
             style={{
               tickLabels: {
-                textTransform: "uppercase",
                 fontFamily: "SourceSansPro-Bold, arial, sans-serif",
                 fontSize: "15pt",
-                opacity: ".95"
+                color: "#414042"
               },
               grid: { strokeWidth: 1, stroke: "#ffffff" },
               axis: { strokeWidth: 1, stroke: "#ffffff" }
@@ -333,8 +334,16 @@ class Graph extends Component {
           />
 
           <VictoryAxis
+            tickFormat={t => `${t}%`}
+            tickCount={11}
             style={{
               axis: { stroke: "#414042", strokeWidth: 1 },
+              tickLabels: {
+                textTransform: "uppercase",
+                fontFamily: "SourceSansPro-SemiBold, arial, sans-serif",
+                fontSize: "15px",
+                color: "#414042"
+              },
               grid: {
                 stroke: ({ tick }) =>
                   tick == 0 || tick == 10 || tick <= -99
@@ -347,10 +356,8 @@ class Graph extends Component {
             }}
             dependentAxis
             orientation="left"
-            tickFormat={t => `${t}%`}
-            tickValues={dataDomain}
             label="VARIANCE %"
-            fixLabelOverlap={true}
+            tickValues={dataDomain}
             axisLabelComponent={<VictoryLabel dy={-30} />}
           />
 
