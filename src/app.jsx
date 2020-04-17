@@ -90,12 +90,6 @@ class App extends Component {
     var ytdData2 = [-32.40, -29.41, -29.99];
 
     var dataDomain1 = [
-      10,
-      0,
-      -10,
-      -20,
-      -30,
-      -40,
       -50,
       -60,
       -70,
