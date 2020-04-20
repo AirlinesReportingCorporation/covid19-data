@@ -53,14 +53,14 @@ class App extends Component {
     var data1 = [
       { x: 1, a: new Date(2020, 2, 29), b: -88.5, c: -91.7 },
       { x: 2, a: new Date(2020, 3, 5), b: -92.3, c: -95.4 },
-      { x: 3, a: new Date(2020, 3, 12), b: -93.8, c: -96.1 },
+      { x: 3, a: new Date(2020, 3, 12), b: -93.8, c: -96.0 },
       { x: 4, a: new Date(2020, 3, 19), b: -91.9, c: -95.0}
     ];
 
     var data2 = [
       { x: 1, a: new Date(2020, 2, 29), b: -91.7 },
       { x: 2, a: new Date(2020, 3, 5), b: -95.4 },
-      { x: 3, a: new Date(2020, 3, 12), b: -96.1 },
+      { x: 3, a: new Date(2020, 3, 12), b: -96.0 },
       { x: 4, a: new Date(2020, 3, 19), b: -95.0}
     ];
 
@@ -83,7 +83,7 @@ class App extends Component {
     var leisure = [
       { x: 1, a: new Date(2020, 2, 29), b: -85.9 },
       { x: 2, a: new Date(2020, 2, 5), b: -90.1 },
-      { x: 3, a: new Date(2020, 3, 12), b: -93.1 },
+      { x: 3, a: new Date(2020, 3, 12), b: -93.0 },
       { x: 4, a: new Date(2020, 3, 19), b: -91.7 }
     ];
 
@@ -212,7 +212,7 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">February</div>
+              <div className="d-flex col-4">March</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-21.9%</div>
                 <div className="d-flex mainStatPercentChangeBar">
