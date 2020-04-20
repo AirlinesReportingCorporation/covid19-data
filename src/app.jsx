@@ -22,8 +22,7 @@ class App extends Component {
   }
 
   render() {
-    var graphTitle1 =
-      "U.S. Travel Agency Seven-Day Air Ticket Volume and Other Variances";
+    var graphTitle1 = "U.S. Travel Agency Seven-Day Air Ticket & Sales Volume";
     var graphSubTitle = "Tickets Issued for All Itineraries";
 
     var graphTitle2 =
@@ -52,52 +51,45 @@ class App extends Component {
     var ytdLabels2 = ["Corporate", "Online", "Leisure / Other"];
 
     var data1 = [
-      { x: 1, a: new Date(2020, 2, 22), b: -80.0, c: -83.4 },
-      { x: 2, a: new Date(2020, 2, 29), b: -88.5, c: -91.7 },
-      { x: 3, a: new Date(2020, 3, 5), b: -92.3, c: -95.4 },
-      { x: 4, a: new Date(2020, 3, 12), b: -93.8, c: -96.1 }
+      { x: 1, a: new Date(2020, 2, 29), b: -88.5, c: -91.7 },
+      { x: 2, a: new Date(2020, 3, 5), b: -92.3, c: -95.4 },
+      { x: 3, a: new Date(2020, 3, 12), b: -93.8, c: -96.1 },
+      { x: 4, a: new Date(2020, 3, 19), b: -91.9, c: -95.0}
     ];
 
     var data2 = [
-      { x: 1, a: new Date(2020, 2, 22), b: -83.4 },
-      { x: 2, a: new Date(2020, 2, 29), b: -91.7 },
-      { x: 3, a: new Date(2020, 3, 5), b: -95.4 },
-      { x: 4, a: new Date(2020, 3, 12), b: -96.1 }
+      { x: 1, a: new Date(2020, 2, 29), b: -91.7 },
+      { x: 2, a: new Date(2020, 3, 5), b: -95.4 },
+      { x: 3, a: new Date(2020, 3, 12), b: -96.1 },
+      { x: 4, a: new Date(2020, 3, 19), b: -95.0}
     ];
 
+    var ytdData1 = [-34.13, -38.76];
+
     var corporate = [
-      { x: 1, a: new Date(2020, 2, 22), b: -89.5 },
-      { x: 2, a: new Date(2020, 2, 29), b: -94.0 },
-      { x: 3, a: new Date(2020, 5, 5), b: -95.7 },
-      { x: 4, a: new Date(2020, 3, 12), b: -96.3 }
+      { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
+      { x: 2, a: new Date(2020, 5, 5), b: -95.7 },
+      { x: 3, a: new Date(2020, 3, 12), b: -96.3 },
+      { x: 4, a: new Date(2020, 3, 19), b: -95.8 }
     ];
 
     var online = [
-      { x: 1, a: new Date(2020, 2, 22), b: -77.7 },
-      { x: 2, a: new Date(2020, 2, 29), b: -86.6 },
-      { x: 3, a: new Date(2020, 2, 5), b: -91.4 },
-      { x: 4, a: new Date(2020, 3, 12), b: -92.6 }
+      { x: 1, a: new Date(2020, 2, 29), b: -86.6 },
+      { x: 2, a: new Date(2020, 2, 5), b: -91.4 },
+      { x: 3, a: new Date(2020, 3, 12), b: -92.6 },
+      { x: 4, a: new Date(2020, 3, 19), b: -89.3 }
     ];
 
     var leisure = [
-      { x: 1, a: new Date(2020, 2, 22), b: -73.9 },
-      { x: 2, a: new Date(2020, 2, 29), b: -85.9 },
-      { x: 3, a: new Date(2020, 2, 5), b: -90.1 },
-      { x: 4, a: new Date(2020, 3, 12), b: -93.1 }
+      { x: 1, a: new Date(2020, 2, 29), b: -85.9 },
+      { x: 2, a: new Date(2020, 2, 5), b: -90.1 },
+      { x: 3, a: new Date(2020, 3, 12), b: -93.1 },
+      { x: 4, a: new Date(2020, 3, 19), b: -91.7 }
     ];
 
-    var ytdData1 = [-30.45, -38.85];
-    var ytdData2 = [-32.40, -29.41, -29.99];
+    var ytdData2 = [-36.26, -32.95, -33.73];
 
-    var dataDomain1 = [
-      -40,
-      -50,
-      -60,
-      -70,
-      -80,
-      -90,
-      -100
-    ];
+    var dataDomain1 = [-40, -50, -60, -70, -80, -90, -100];
 
     /*
     graphTitle: String
@@ -220,17 +212,26 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">February</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-21.9%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "21.9%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $377
+              </div>
+            </div>
+            <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">
                 <strong>Year-to-Date (YTD)</strong>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-2.9%</div>
-                <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "2.9%" }}></div>
-                </div>
+                <strong>-6.2%</strong>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
-                <strong>$483</strong>
+                <strong>$448</strong>
               </div>
             </div>
           </div>
