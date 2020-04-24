@@ -68,21 +68,21 @@ class App extends Component {
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
-      { x: 2, a: new Date(2020, 5, 5), b: -95.7 },
+      { x: 2, a: new Date(2020, 3, 5), b: -95.7 },
       { x: 3, a: new Date(2020, 3, 12), b: -96.3 },
       { x: 4, a: new Date(2020, 3, 19), b: -95.8 }
     ];
 
     var online = [
       { x: 1, a: new Date(2020, 2, 29), b: -86.6 },
-      { x: 2, a: new Date(2020, 2, 5), b: -91.4 },
+      { x: 2, a: new Date(2020, 3, 5), b: -91.4 },
       { x: 3, a: new Date(2020, 3, 12), b: -92.6 },
       { x: 4, a: new Date(2020, 3, 19), b: -89.3 }
     ];
 
     var leisure = [
       { x: 1, a: new Date(2020, 2, 29), b: -85.9 },
-      { x: 2, a: new Date(2020, 2, 5), b: -90.1 },
+      { x: 2, a: new Date(2020, 3, 5), b: -90.1 },
       { x: 3, a: new Date(2020, 3, 12), b: -93.0 },
       { x: 4, a: new Date(2020, 3, 19), b: -91.7 }
     ];
