@@ -1083,12 +1083,10 @@ class App extends Component {
             </div>
           </div>
 
-          <div>{this.state.direction}</div>
-
           <div className="container">
             <div className="row">
               <div className="col">
-                <div className="d-flex">
+                <div className="buttongroupSelectors d-flex">
                   <div className="buttonGroup d-flex">
                     <div className="buttonGroupButtons">
                       <div

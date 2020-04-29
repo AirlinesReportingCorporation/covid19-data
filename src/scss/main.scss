@@ -323,13 +323,14 @@
   }
 
   .buttonGroupButton {
-    background: #ebebeb;
+    background: #efefef;
     color: #414042;
     border: #414042 1px solid;
     font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
-    padding: 15px 20px;
+    padding: 12px 20px;
     border-right: none;
     min-width: 120px;
+    font-size: 17px;
     text-align: center;
     cursor: pointer;
 
@@ -361,4 +362,9 @@
 
 .countryName {
   text-transform: capitalize;
+}
+
+.buttongroupSelectors {
+  margin-top:30px;
+  margin-left: 35px
 }

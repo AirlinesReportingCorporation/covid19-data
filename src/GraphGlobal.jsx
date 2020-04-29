@@ -374,10 +374,17 @@ class SingleGraph extends React.Component {
             axisLabelComponent={<VictoryLabel dy={-30} />}
           />
 
-          <VictoryBar data={data} y="b" barRatio={1} />
+          <VictoryBar style={{ data: {
+            fill: "#5d5c68"
+          } }} data={data} y="b" barRatio={1} />
         </VictoryChart>
 
-        <div style={{borderTop: "1px solid #aeadb3", borderBottom: "1px solid #aeadb3"}}>
+        <div
+          style={{
+            borderTop: "1px solid #aeadb3",
+            borderBottom: "1px solid #aeadb3"
+          }}
+        >
           <VictoryChart
             padding={{ top: 0, left: 0, right: 0, bottom: 0 }}
             width={600}
