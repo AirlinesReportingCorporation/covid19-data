@@ -376,7 +376,7 @@ class SingleGraph extends React.Component {
 
           <VictoryBar style={{ data: {
             fill: "#5d5c68"
-          } }} data={data} y="b" barRatio={1} />
+          } }} data={data} y="b" barRatio={.88} />
         </VictoryChart>
 
         <div
