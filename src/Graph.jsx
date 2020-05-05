@@ -366,7 +366,7 @@ class Graph extends Component {
             name="bar"
             style={{ data: { fill: "#dddddd", opacity: ".2" } }}
             data={alternatingDataset}
-            barRatio={1}
+            barRatio={.85}
             y="b"
           />
 

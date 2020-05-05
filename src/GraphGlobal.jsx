@@ -52,9 +52,12 @@ class GraphGlobal extends Component {
 
       for (var i = 0; i < arrLength; i++) {
         arr[i].x = i + 1;
+        arr[i].y = arr[i].b.toString();
       }
       return arr;
     }
+
+    var direction = this.props.direction;
 
     var showAdditionalRows = this.state.showAdditionalRows;
 
@@ -164,23 +167,6 @@ class GraphGlobal extends Component {
     //var dataDomain = [10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100];
     var dataDomain = this.props.dataDomain;
 
-    var maxDomain = dataDomain[0];
-    var minDomain = dataDomain[dataDomain.length - 1];
-
-    var realData = data;
-
-    var dateDomain = [0.5];
-
-    var valueDomain = [];
-
-    for (var i = 0; i < data.length; i++) {
-      valueDomain[i] = data[i].x;
-    }
-
-    for (var i = 1; i < data.length + 1; i++) {
-      dateDomain[i] = i + 0.5;
-    }
-
     var graphData = data;
 
     if (this.props.direction == 1) {
@@ -196,6 +182,7 @@ class GraphGlobal extends Component {
             data={graphData}
             dataDomain={dataDomain}
             dataTitle={dataTitle}
+            direction={direction}
           />
         </div>
 
@@ -229,6 +216,20 @@ class SingleGraph extends React.Component {
         ]
       }
     };
+    this.handleZoom = this.handleZoom.bind(this);
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.data !== prevProps.data) {
+      this.setState({
+        zoomDomain: {
+          x: [
+            this.props.data[this.props.data.length / 4].x,
+            this.props.data[this.props.data.length - 1].x
+          ]
+        }
+      });
+    }
   }
 
   handleZoom(domain) {
@@ -242,23 +243,7 @@ class SingleGraph extends React.Component {
 
     var dataDomain = this.props.dataDomain;
 
-    var maxDomain = dataDomain[0];
-    var minDomain = dataDomain[dataDomain.length - 1];
-
-    var alternatingDataset = [];
-
-    function alternatingData() {
-      var arr = [];
-
-      for (var i = 0; i < data.length; i = i + 2) {
-        var num = data[i].x;
-        arr.push({ x: num, b: minDomain, y0: maxDomain });
-      }
-
-      alternatingDataset = arr;
-    }
-
-    alternatingData();
+    var direction = this.props.direction;
 
     var dateDomain = [0.5];
     var valueDomain = [];
@@ -271,11 +256,14 @@ class SingleGraph extends React.Component {
       dateDomain[i] = i + 0.5;
     }
 
+    console.log(data);
+
     const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
 
     return (
       <div>
         <VictoryChart
+          data={data}
           width={1170}
           height={530}
           fixLabelOverlap={true}
@@ -374,9 +362,39 @@ class SingleGraph extends React.Component {
             axisLabelComponent={<VictoryLabel dy={-30} />}
           />
 
-          <VictoryBar style={{ data: {
-            fill: "#5d5c68"
-          } }} data={data} y="b" barRatio={.8} />
+          <VictoryBar
+            style={{
+              data: {
+                fill: "#5d5c68"
+              }
+            }}
+            data={data}
+            y="b"
+            barRatio={0.8}
+            events={[
+              {
+                target: "data",
+                eventHandlers: {
+                  onMouseOver: () => {
+                    return [
+                      {
+                        target: "data",
+                        mutation: () => ({ style: { fill: "#189bb0" } })
+                      }
+                    ];
+                  },
+                  onMouseOut: () => {
+                    return [
+                      {
+                        target: "data",
+                        mutation: () => {}
+                      }
+                    ];
+                  }
+                }
+              }
+            ]}
+          />
         </VictoryChart>
 
         <div
@@ -413,7 +431,7 @@ class SingleGraph extends React.Component {
               style={{
                 tickLabels: {
                   fontFamily: "SourceSansPro-Bold, arial, sans-serif",
-                  fontSize: "12x",
+                  fontSize: "12px",
                   color: "#999999",
                   textTransform: "uppercase"
                 },
@@ -425,6 +443,7 @@ class SingleGraph extends React.Component {
               tickValues={valueDomain}
             />
 
+            {/* whenClicked is a property not an event, per se. */}
             <VictoryAxis
               tickFormat={t => ``}
               style={{

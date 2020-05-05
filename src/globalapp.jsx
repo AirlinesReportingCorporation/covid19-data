@@ -60,98 +60,98 @@ class App extends Component {
           { a: new Date(2020, 3, 21), b: -68 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: -6 },
-          { a: new Date(2020, 0, 14), b: -4 },
-          { a: new Date(2020, 0, 21), b: -18 },
-          { a: new Date(2020, 0, 28), b: -24 },
-          { a: new Date(2020, 1, 4), b: -43 },
-          { a: new Date(2020, 1, 11), b: -74 },
-          { a: new Date(2020, 1, 18), b: -81 },
-          { a: new Date(2020, 1, 25), b: -72 },
-          { a: new Date(2020, 2, 3), b: -68 },
-          { a: new Date(2020, 2, 10), b: -68 },
-          { a: new Date(2020, 2, 17), b: -63 },
-          { a: new Date(2020, 2, 24), b: -64 },
-          { a: new Date(2020, 2, 31), b: -64 },
-          { a: new Date(2020, 3, 7), b: -67 },
-          { a: new Date(2020, 3, 14), b: -66 },
-          { a: new Date(2020, 3, 21), b: -65 }
+          { a: new Date(2020, 0, 7), b: 31 },
+          { a: new Date(2020, 0, 14), b: 27 },
+          { a: new Date(2020, 0, 21), b: 52 },
+          { a: new Date(2020, 0, 28), b: 319 },
+          { a: new Date(2020, 1, 4), b: 673 },
+          { a: new Date(2020, 1, 11), b: 627 },
+          { a: new Date(2020, 1, 18), b: 152 },
+          { a: new Date(2020, 1, 25), b: 81 },
+          { a: new Date(2020, 2, 3), b: 98 },
+          { a: new Date(2020, 2, 10), b: 75 },
+          { a: new Date(2020, 2, 17), b: 45 },
+          { a: new Date(2020, 2, 24), b: 50 },
+          { a: new Date(2020, 2, 31), b: 50 },
+          { a: new Date(2020, 3, 7), b: 5 },
+          { a: new Date(2020, 3, 14), b: -14 },
+          { a: new Date(2020, 3, 21), b: -7 }
         ]
       ],
       italyDataGlobal: [
         [
-          { a: new Date(2020, 0, 7), b: -6 },
-          { a: new Date(2020, 0, 14), b: -4 },
-          { a: new Date(2020, 0, 21), b: -18 },
-          { a: new Date(2020, 0, 28), b: -24 },
-          { a: new Date(2020, 1, 4), b: -43 },
-          { a: new Date(2020, 1, 11), b: -74 },
-          { a: new Date(2020, 1, 18), b: -81 },
-          { a: new Date(2020, 1, 25), b: -72 },
-          { a: new Date(2020, 2, 3), b: -68 },
-          { a: new Date(2020, 2, 10), b: -68 },
-          { a: new Date(2020, 2, 17), b: -63 },
-          { a: new Date(2020, 2, 24), b: -64 },
-          { a: new Date(2020, 2, 31), b: -64 },
-          { a: new Date(2020, 3, 7), b: -67 },
-          { a: new Date(2020, 3, 14), b: -66 },
-          { a: new Date(2020, 3, 21), b: -65 }
+          { a: new Date(2020, 0, 7), b: -0 },
+          { a: new Date(2020, 0, 14), b: -6 },
+          { a: new Date(2020, 0, 21), b: 11 },
+          { a: new Date(2020, 0, 28), b: 5 },
+          { a: new Date(2020, 1, 4), b: -2 },
+          { a: new Date(2020, 1, 11), b: -2 },
+          { a: new Date(2020, 1, 18), b: -2 },
+          { a: new Date(2020, 1, 25), b: -24 },
+          { a: new Date(2020, 2, 3), b: -64 },
+          { a: new Date(2020, 2, 10), b: -76 },
+          { a: new Date(2020, 2, 17), b: -85 },
+          { a: new Date(2020, 2, 24), b: -91 },
+          { a: new Date(2020, 2, 31), b: -95 },
+          { a: new Date(2020, 3, 7), b: -91 },
+          { a: new Date(2020, 3, 14), b: -98 },
+          { a: new Date(2020, 3, 21), b: -98 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: -6 },
-          { a: new Date(2020, 0, 14), b: -4 },
-          { a: new Date(2020, 0, 21), b: -18 },
-          { a: new Date(2020, 0, 28), b: -24 },
-          { a: new Date(2020, 1, 4), b: -43 },
-          { a: new Date(2020, 1, 11), b: -74 },
-          { a: new Date(2020, 1, 18), b: -81 },
-          { a: new Date(2020, 1, 25), b: -72 },
-          { a: new Date(2020, 2, 3), b: -68 },
-          { a: new Date(2020, 2, 10), b: -68 },
-          { a: new Date(2020, 2, 17), b: -63 },
-          { a: new Date(2020, 2, 24), b: -64 },
-          { a: new Date(2020, 2, 31), b: -64 },
-          { a: new Date(2020, 3, 7), b: -67 },
-          { a: new Date(2020, 3, 14), b: -66 },
-          { a: new Date(2020, 3, 21), b: -65 }
+          { a: new Date(2020, 0, 7), b: 13 },
+          { a: new Date(2020, 0, 14), b: -8 },
+          { a: new Date(2020, 0, 21), b: 2 },
+          { a: new Date(2020, 0, 28), b: -4 },
+          { a: new Date(2020, 1, 4), b: -10 },
+          { a: new Date(2020, 1, 11), b: 23 },
+          { a: new Date(2020, 1, 18), b: -1 },
+          { a: new Date(2020, 1, 25), b: 19 },
+          { a: new Date(2020, 2, 3), b: -71 },
+          { a: new Date(2020, 2, 10), b: -77 },
+          { a: new Date(2020, 2, 17), b: -13 },
+          { a: new Date(2020, 2, 24), b: -53 },
+          { a: new Date(2020, 2, 31), b: -62 },
+          { a: new Date(2020, 3, 7), b: -75 },
+          { a: new Date(2020, 3, 14), b: -74 },
+          { a: new Date(2020, 3, 21), b: -74 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: -6 },
-          { a: new Date(2020, 0, 14), b: -4 },
-          { a: new Date(2020, 0, 21), b: -18 },
-          { a: new Date(2020, 0, 28), b: -24 },
-          { a: new Date(2020, 1, 4), b: -43 },
-          { a: new Date(2020, 1, 11), b: -74 },
-          { a: new Date(2020, 1, 18), b: -81 },
-          { a: new Date(2020, 1, 25), b: -72 },
-          { a: new Date(2020, 2, 3), b: -68 },
-          { a: new Date(2020, 2, 10), b: -68 },
-          { a: new Date(2020, 2, 17), b: -63 },
-          { a: new Date(2020, 2, 24), b: -64 },
-          { a: new Date(2020, 2, 31), b: -64 },
-          { a: new Date(2020, 3, 7), b: -67 },
-          { a: new Date(2020, 3, 14), b: -66 },
-          { a: new Date(2020, 3, 21), b: -65 }
+          { a: new Date(2020, 0, 7), b: 82 },
+          { a: new Date(2020, 0, 14), b: 97 },
+          { a: new Date(2020, 0, 21), b: 114 },
+          { a: new Date(2020, 0, 28), b: 133 },
+          { a: new Date(2020, 1, 4), b: 182 },
+          { a: new Date(2020, 1, 11), b: 222 },
+          { a: new Date(2020, 1, 18), b: 233 },
+          { a: new Date(2020, 1, 25), b: 320 },
+          { a: new Date(2020, 2, 3), b: 518 },
+          { a: new Date(2020, 2, 10), b: 570 },
+          { a: new Date(2020, 2, 17), b: 528 },
+          { a: new Date(2020, 2, 24), b: 270 },
+          { a: new Date(2020, 2, 31), b: 136 },
+          { a: new Date(2020, 3, 7), b: 86 },
+          { a: new Date(2020, 3, 14), b: 95 },
+          { a: new Date(2020, 3, 21), b: 103 }
         ]
       ],
       japanDataGlobal: [
         [
-          { a: new Date(2020, 0, 7), b: -6 },
-          { a: new Date(2020, 0, 14), b: -4 },
-          { a: new Date(2020, 0, 21), b: -18 },
-          { a: new Date(2020, 0, 28), b: -24 },
-          { a: new Date(2020, 1, 4), b: -43 },
-          { a: new Date(2020, 1, 11), b: -74 },
-          { a: new Date(2020, 1, 18), b: -81 },
-          { a: new Date(2020, 1, 25), b: -72 },
-          { a: new Date(2020, 2, 3), b: -68 },
-          { a: new Date(2020, 2, 10), b: -68 },
-          { a: new Date(2020, 2, 17), b: -63 },
-          { a: new Date(2020, 2, 24), b: -64 },
-          { a: new Date(2020, 2, 31), b: -64 },
-          { a: new Date(2020, 3, 7), b: -67 },
-          { a: new Date(2020, 3, 14), b: -66 },
-          { a: new Date(2020, 3, 21), b: -65 }
+          { a: new Date(2020, 0, 7), b: -4 },
+          { a: new Date(2020, 0, 14), b: -6 },
+          { a: new Date(2020, 0, 21), b: -8 },
+          { a: new Date(2020, 0, 28), b: -15 },
+          { a: new Date(2020, 1, 4), b: -29 },
+          { a: new Date(2020, 1, 11), b: -19 },
+          { a: new Date(2020, 1, 18), b: -45 },
+          { a: new Date(2020, 1, 25), b: -58 },
+          { a: new Date(2020, 2, 3), b: -71 },
+          { a: new Date(2020, 2, 10), b: -76 },
+          { a: new Date(2020, 2, 17), b: -80 },
+          { a: new Date(2020, 2, 24), b: -82 },
+          { a: new Date(2020, 2, 31), b: -88 },
+          { a: new Date(2020, 3, 7), b: -95 },
+          { a: new Date(2020, 3, 14), b: -96 },
+          { a: new Date(2020, 3, 21), b: -96 }
         ],
         [
           { a: new Date(2020, 0, 7), b: -6 },
@@ -917,12 +917,13 @@ class App extends Component {
           { a: new Date(2020, 3, 14), b: -66 },
           { a: new Date(2020, 3, 21), b: -65 }
         ]
-      ],
+      ]
     };
 
     this.toggleActiveGraph = this.toggleActiveGraph.bind(this);
     this.setDirection = this.setDirection.bind(this);
     this.setType = this.setType.bind(this);
+    this.generateGraph = this.generateGraph.bind(this);
   }
 
   toggleActiveGraph(val) {
@@ -935,6 +936,28 @@ class App extends Component {
 
   setType(val) {
     this.setState({ type: val });
+  }
+
+  generateGraph(dataTitle1, dataDomain1, tableHeaders1) {
+    return (
+      <div>
+        <GraphGlobal
+          direction={this.state.direction}
+          dataTitle={dataTitle1}
+          data1={
+            this.state[this.state.activeGraph + "Data" + this.state.type][0]
+          }
+          data2={
+            this.state[this.state.activeGraph + "Data" + this.state.type][1]
+          }
+          data3={
+            this.state[this.state.activeGraph + "Data" + this.state.type][2]
+          }
+          dataDomain={dataDomain1}
+          tableHeaders={tableHeaders1}
+        />
+      </div>
+    );
   }
 
   render() {
@@ -962,41 +985,19 @@ class App extends Component {
       -100
     ];
 
+    var dataDomain2 = [-25, 0, 350, 700];
+
     var graphTitle = "";
     var graphVal = this.state.activeGraph;
     if (graphVal == "southkorea") {
       graphVal = "South Korea";
     }
 
-    if (this.state.type == "Global") {
-      graphTitle = (
-        <div>
-          Global – <span className="countryName">{graphVal}</span> Domestic,{" "}
-          <span className="countryName">{graphVal}</span> Inbound,{" "}
-          <span className="countryName">{graphVal}</span> Outbound Air Travel
-        </div>
-      );
-    } else if (this.state.type == "Domestic") {
-      graphTitle = (
-        <div>
-          <span className="countryName">{graphVal}</span> Domestic Air Travel
-        </div>
-      );
-    } else if (this.state.type == "Inbound") {
-      graphTitle = (
-        <div>
-          Global - <span className="countryName">{graphVal}</span> Inbound Air
-          Travel
-        </div>
-      );
-    } else if (this.state.type == "Outbound") {
-      graphTitle = (
-        <div>
-          Global - <span className="countryName">{graphVal}</span> Outbound Air
-          Travel
-        </div>
-      );
-    }
+    graphTitle = (
+      <div>
+        <span className="countryName">{graphVal}</span> Air Travel
+      </div>
+    );
 
     return (
       <div className="covidPage">
@@ -1078,11 +1079,13 @@ class App extends Component {
             <div className="row">
               <div className="col-12">
                 <div className="graphTitle">{graphTitle}</div>
-                <div className="graphSubTitle">{tableHeaders1[this.state.direction + 1]} - {this.state.subTitle}</div>
+                <div className="graphSubTitle">
+                  {tableHeaders1[this.state.direction + 1]} -{" "}
+                  {this.state.subTitle}
+                </div>
               </div>
             </div>
           </div>
-
           <div className="container">
             <div className="row">
               <div className="col">
@@ -1166,23 +1169,24 @@ class App extends Component {
               </div>
             </div>
           </div>
-
-          <GraphGlobal
-            direction={this.state.direction}
-            dataTitle={dataTitle1}
-            data1={
-              this.state[this.state.activeGraph + "Data" + this.state.type][0]
-            }
-            data2={
-              this.state[this.state.activeGraph + "Data" + this.state.type][1]
-            }
-            data3={
-              this.state[this.state.activeGraph + "Data" + this.state.type][2]
-            }
-            dataDomain={dataDomain1}
-            tableHeaders={tableHeaders1}
-          />
         </div>
+
+        <GraphGlobal
+          direction={this.state.direction}
+          dataTitle={dataTitle1}
+          data1={
+            this.state[this.state.activeGraph + "Data" + this.state.type][0]
+          }
+          data2={
+            this.state[this.state.activeGraph + "Data" + this.state.type][1]
+          }
+          data3={
+            this.state[this.state.activeGraph + "Data" + this.state.type][2]
+          }
+          dataDomain={(this.state.direction == 2) ? dataDomain2 : dataDomain1}
+          tableHeaders={tableHeaders1}
+          direction={this.state.direction}
+        />
 
         <div className="bottomData container">
           <div className="row">
@@ -1226,5 +1230,8 @@ class App extends Component {
     );
   }
 }
+
+
+
 
 export default App;
