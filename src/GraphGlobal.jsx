@@ -66,6 +66,8 @@ class GraphGlobal extends Component {
     var data = this.props.data1;
     data = indexArray(data);
 
+    console.log(data);
+
     var data2 = this.props.data2;
     data2 = indexArray(data2);
 
@@ -164,7 +166,7 @@ class GraphGlobal extends Component {
       );
     });
 
-    //var dataDomain = [10, 0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100];
+   
     var dataDomain = this.props.dataDomain;
 
     var graphData = data;
@@ -211,7 +213,7 @@ class SingleGraph extends React.Component {
     this.state = {
       zoomDomain: {
         x: [
-          props.data[props.data.length / 4].x,
+          props.data[parseInt(props.data.length / 4)].x,
           props.data[props.data.length - 1].x
         ]
       }
@@ -224,7 +226,7 @@ class SingleGraph extends React.Component {
       this.setState({
         zoomDomain: {
           x: [
-            this.props.data[this.props.data.length / 4].x,
+            this.props.data[parseInt(this.props.data.length / 4)].x,
             this.props.data[this.props.data.length - 1].x
           ]
         }
@@ -447,13 +449,7 @@ class SingleGraph extends React.Component {
             <VictoryAxis
               tickFormat={t => ``}
               style={{
-                axis: { stroke: "#414042", strokeWidth: 0 },
-                tickLabels: {
-                  textTransform: "uppercase",
-                  fontFamily: "SourceSansPro-SemiBold, arial, sans-serif",
-                  fontSize: "15px",
-                  color: "#414042"
-                }
+                axis: { stroke: "#414042", strokeWidth: 0 }
               }}
               dependentAxis
               orientation="left"
