@@ -166,7 +166,6 @@ class GraphGlobal extends Component {
       );
     });
 
-   
     var dataDomain = this.props.dataDomain;
 
     var graphData = data;
@@ -213,8 +212,8 @@ class SingleGraph extends React.Component {
     this.state = {
       zoomDomain: {
         x: [
-          props.data[parseInt(props.data.length / 4)].x,
-          props.data[props.data.length - 1].x
+          props.data[parseInt(props.data.length / 4)].x + .5,
+          props.data[props.data.length - 1].x + .5
         ]
       }
     };
