@@ -402,7 +402,7 @@ class SingleGraph extends React.Component {
               },
               grid: {
                 stroke: ({ tick }) =>
-                  ((tick == min || tick == max) ? ((tick == 0) ? "#414042" : "#ffffff"): "#d7d7d7"),
+                  ((tick == min || tick == max || tick == 0) ? ((tick == 0) ? "#414042" : "#ffffff"): "#d7d7d7"),
                 strokeWidth: 1
               }
             }}
