@@ -105,7 +105,7 @@
   font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
   font-size: 30px;
   margin-left: 35px;
-  padding-top: 50px;
+  padding-top: 40px;
   border-top: 1px solid #aeadb3;
   margin-top: 0 !important;
   max-width: 1030px;
@@ -225,9 +225,21 @@
   font-size: 16px;
 }
 
+.brushContainer {
+ 
+  margin-left: 90px;
+  margin-right: 50px;
+  margin-top: 10px;
+
+  svg {
+    border-top: 1px solid #aeadb3;
+    border-bottom: 1px solid #aeadb3;
+  }
+}
+
 .covid-table {
   max-width: 820px;
-  margin: 0 auto;
+  margin: 60px auto 40px;
   font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
@@ -330,11 +342,12 @@
     padding: 12px 20px;
     border-right: none;
     min-width: 120px;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
     cursor: pointer;
 
     &.active {
+      font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
       background: #ffffff;
     }
 
@@ -346,7 +359,7 @@
     &:last-child {
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
-      border-right: 1px solid #414042;
+      border-right: 1px solid #aeadb3;
     }
   }
 }
@@ -365,6 +378,7 @@
 }
 
 .buttongroupSelectors {
-  margin-top:30px;
-  margin-left: 35px
+  margin-top: 40px;
+  margin-left: 35px;
+  margin-bottom: 25px;
 }

@@ -230,7 +230,7 @@ class App extends Component {
           { a: new Date(2020, 1, 25), b: 26 },
           { a: new Date(2020, 2, 3), b: 19 },
           { a: new Date(2020, 2, 10), b: 5 },
-          { a: new Date(2020, 2, 17), b:-14  },
+          { a: new Date(2020, 2, 17), b: -14 },
           { a: new Date(2020, 2, 24), b: -20 },
           { a: new Date(2020, 2, 31), b: -41 },
           { a: new Date(2020, 3, 7), b: -52 },
@@ -332,7 +332,7 @@ class App extends Component {
           { a: new Date(2020, 2, 17), b: -89 },
           { a: new Date(2020, 2, 24), b: -90 },
           { a: new Date(2020, 2, 31), b: -94 },
-          { a: new Date(2020, 3, 7), b: -95},
+          { a: new Date(2020, 3, 7), b: -95 },
           { a: new Date(2020, 3, 14), b: -98 },
           { a: new Date(2020, 3, 21), b: -99 },
           { a: new Date(2020, 3, 28), b: -99 }
@@ -413,7 +413,7 @@ class App extends Component {
           { a: new Date(2020, 3, 7), b: 2 },
           { a: new Date(2020, 3, 14), b: -7 },
           { a: new Date(2020, 3, 21), b: -28 },
-          { a: new Date(2020, 3, 28), b: -3 }      
+          { a: new Date(2020, 3, 28), b: -3 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 48 },
@@ -479,7 +479,7 @@ class App extends Component {
           { a: new Date(2020, 0, 14), b: 6 },
           { a: new Date(2020, 0, 21), b: 2 },
           { a: new Date(2020, 0, 28), b: 141 },
-          { a: new Date(2020, 1, 4), b: 258},
+          { a: new Date(2020, 1, 4), b: 258 },
           { a: new Date(2020, 1, 11), b: 166 },
           { a: new Date(2020, 1, 18), b: 26 },
           { a: new Date(2020, 1, 25), b: 234 },
@@ -749,7 +749,6 @@ class App extends Component {
           { a: new Date(2020, 3, 14), b: -99 },
           { a: new Date(2020, 3, 21), b: -98 },
           { a: new Date(2020, 3, 28), b: -99 }
-          
         ],
         [
           { a: new Date(2020, 0, 7), b: 7 },
@@ -906,7 +905,6 @@ class App extends Component {
           { a: new Date(2020, 3, 14), b: 102 },
           { a: new Date(2020, 3, 21), b: 80 },
           { a: new Date(2020, 3, 28), b: 27 }
-          
         ]
       ],
       southkoreaDataOutbound: [
@@ -928,7 +926,6 @@ class App extends Component {
           { a: new Date(2020, 3, 14), b: -95 },
           { a: new Date(2020, 3, 21), b: -94 },
           { a: new Date(2020, 3, 28), b: -95 }
-          
         ],
         [
           { a: new Date(2020, 0, 7), b: 5 },
@@ -1035,7 +1032,7 @@ class App extends Component {
       0,
       10,
       20
-    ]
+    ];
 
     var dataDomain2 = [-25, 0, 350, 700];
 
@@ -1235,7 +1232,7 @@ class App extends Component {
           data3={
             this.state[this.state.activeGraph + "Data" + this.state.type][2]
           }
-          dataDomain={(this.state.direction == 2) ? dataDomain2 : dataDomain1}
+          dataDomain={this.state.direction == 2 ? dataDomain2 : dataDomain1}
           tableHeaders={tableHeaders1}
           direction={this.state.direction}
         />
@@ -1243,16 +1240,17 @@ class App extends Component {
         <div className="bottomData container">
           <div className="row">
             <div className="col-md-6">
-              <h2>Country-Specific Data</h2>
+              <h2>US Travel Agency Data</h2>
               <p>
-                ARC is also tracking the impact of COVID-19 on airline ticketing
-                in regions that have been most impacted, including China, Italy,
-                Japan, and South Korea. Data on air tickets sold for domestic,
-                global inbound, and global outbound flights for each of these
-                countries is publicly available. This data is updated weekly.
+                ARC is also tracking the effect COVID-19 has had on airline
+                ticketing by comparing this year’s numbers to 2019. ARC is
+                currently collecting data on YOY changes in tickets issued and
+                variance in tickets sold by segment by US travel agencies and
+                processed through the ARC settlement system, plus the average
+                air ticket price for US domestic round trips.
               </p>
               <a
-                href="https://www2.arccorp.com/articles-trends/the-latest/coronavirus-data/"
+                href="https://www2.arccorp.com/articles-trends/the-latest/coronavirus/"
                 className="ctaBtn"
               >
                 View Data
@@ -1282,8 +1280,5 @@ class App extends Component {
     );
   }
 }
-
-
-
 
 export default App;

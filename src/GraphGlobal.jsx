@@ -28,6 +28,59 @@ ytdData
 dataDomain
 */
 
+function generateDomain(graphData) {
+
+  var step = 10;
+
+  var max = Math.max.apply(
+    Math,
+    graphData.map(function(o) {
+      return o.b;
+    })
+  );
+
+  var min = Math.min.apply(
+    Math,
+    graphData.map(function(o) {
+      return o.b;
+    })
+  );
+
+  var arr = [];
+
+  min = Math.round(min / step) * step;
+  max = Math.round(max / step) * step;
+
+  if (max <= step) {
+    max = step;
+  }
+
+  if (100 + min < 50) {
+    min = -100;
+  }
+
+  var diff = Math.abs(Math.abs(min) - max) / step;
+
+  if (diff > 12) {
+    diff = 10;
+    step = 100;
+  }
+
+  console.log(min + ":" + max + ":" + diff);
+
+  arr.push(max);
+
+  for (var i = max - step; i > min; i = i - step) {
+    arr.push(i);
+  }
+
+  arr.push(min);
+
+  console.log(arr);
+
+  return arr;
+}
+
 class GraphGlobal extends Component {
   constructor() {
     super();
@@ -119,7 +172,7 @@ class GraphGlobal extends Component {
             }
           >
             <div className="d-flex mainStatPercentChange">
-              {numeral(datum.b).format("0.00")}%
+              {numeral(datum.b).format("0")}%
             </div>
             <div className="d-flex mainStatPercentChangeBar">
               <div
@@ -135,7 +188,7 @@ class GraphGlobal extends Component {
             }
           >
             <div className="d-flex mainStatPercentChange">
-              {numeral(data2_reverse[i].b).format("0.00")}%
+              {numeral(data2_reverse[i].b).format("0")}%
             </div>
             <div className="d-flex mainStatPercentChangeBar">
               <div
@@ -152,7 +205,7 @@ class GraphGlobal extends Component {
               }
             >
               <div className="d-flex mainStatPercentChange">
-                {numeral(data3_reverse[i].b).format("0.00")}%
+                {numeral(data3_reverse[i].b).format("0")}%
               </div>
               <div className="d-flex mainStatPercentChangeBar">
                 <div
@@ -165,8 +218,6 @@ class GraphGlobal extends Component {
         </div>
       );
     });
-
-    var dataDomain = this.props.dataDomain;
 
     var graphData = data;
 
@@ -181,7 +232,6 @@ class GraphGlobal extends Component {
         <div className="graphContainer">
           <SingleGraph
             data={graphData}
-            dataDomain={dataDomain}
             dataTitle={dataTitle}
             direction={direction}
           />
@@ -212,8 +262,8 @@ class SingleGraph extends React.Component {
     this.state = {
       zoomDomain: {
         x: [
-          props.data[parseInt(props.data.length / 4)].x + .5,
-          props.data[props.data.length - 1].x + .5
+          props.data[parseInt(props.data.length / 4)].x + 0.5,
+          props.data[props.data.length - 1].x + 0.5
         ]
       }
     };
@@ -242,8 +292,6 @@ class SingleGraph extends React.Component {
 
     var dataTitle = this.props.dataTitle;
 
-    var dataDomain = this.props.dataDomain;
-
     var direction = this.props.direction;
 
     var dateDomain = [0.5];
@@ -257,7 +305,12 @@ class SingleGraph extends React.Component {
       dateDomain[i] = i + 0.5;
     }
 
-    console.log(data);
+    var graphDomain = generateDomain(data);
+
+    var min = graphDomain[graphDomain.length - 1];
+    var max = graphDomain[0];
+
+    console.log(max + "::" + min);
 
     const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
 
@@ -266,9 +319,10 @@ class SingleGraph extends React.Component {
         <VictoryChart
           data={data}
           width={1170}
-          height={530}
+          height={630}
           fixLabelOverlap={true}
-          padding={{ left: 100, top: 30, bottom: 50, right: 50 }}
+          domain={{y: [min, max]}}
+          padding={{ left: 100, top: 30, bottom: 90, right: 50 }}
           containerComponent={
             <VictoryZoomVoronoiContainer
               allowZoom={false}
@@ -348,18 +402,14 @@ class SingleGraph extends React.Component {
               },
               grid: {
                 stroke: ({ tick }) =>
-                  tick == 0 || tick == 10 || tick <= -99
-                    ? tick == 0
-                      ? "#414042"
-                      : "#ffffff"
-                    : "#d7d7d7",
-                strokeWidth: ({ tick }) => (tick == 10 || tick == -100 ? 1 : 1)
+                  ((tick == min || tick == max) ? ((tick == 0) ? "#414042" : "#ffffff"): "#d7d7d7"),
+                strokeWidth: 1
               }
             }}
             dependentAxis
             orientation="left"
             label="VARIANCE %"
-            tickValues={dataDomain}
+            tickValues={graphDomain}
             axisLabelComponent={<VictoryLabel dy={-30} />}
           />
 
@@ -398,12 +448,7 @@ class SingleGraph extends React.Component {
           />
         </VictoryChart>
 
-        <div
-          style={{
-            borderTop: "1px solid #aeadb3",
-            borderBottom: "1px solid #aeadb3"
-          }}
-        >
+        <div className="brushContainer">
           <VictoryChart
             padding={{ top: 0, left: 0, right: 0, bottom: 0 }}
             width={600}
@@ -448,11 +493,22 @@ class SingleGraph extends React.Component {
             <VictoryAxis
               tickFormat={t => ``}
               style={{
-                axis: { stroke: "#414042", strokeWidth: 0 }
+                axis: { stroke: "#5d5c68", strokeWidth: 0 }
               }}
               dependentAxis
               orientation="left"
-              tickValues={dataDomain}
+              tickValues={graphDomain}
+            />
+
+            <VictoryBar
+              style={{
+                data: {
+                  fill: "#5d5c68"
+                }
+              }}
+              data={data}
+              y="b"
+              barRatio={0.8}
             />
           </VictoryChart>
         </div>
