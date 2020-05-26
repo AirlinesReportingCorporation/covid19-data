@@ -58,7 +58,9 @@ class App extends Component {
       { x: 5, a: new Date(2020, 3, 26), b: -91.5 },
       { x: 6, a: new Date(2020, 4, 3), b: -90.2 },
       { x: 7, a: new Date(2020, 4, 10), b: -88.6 },
-      { x: 8, a: new Date(2020, 4, 17), b: -87.4 }
+      { x: 8, a: new Date(2020, 4, 17), b: -87.3 },
+      { x: 9, a: new Date(2020, 4, 24), b: -85.2 }
+      
       
     ];
 
@@ -70,10 +72,11 @@ class App extends Component {
       { x: 5, a: new Date(2020, 3, 26), b: -94.8 },
       { x: 6, a: new Date(2020, 4, 3), b: -94.3 },
       { x: 7, a: new Date(2020, 4, 10), b: -93.5 },
-      { x: 8, a: new Date(2020, 4, 17), b: -92.6 }
+      { x: 8, a: new Date(2020, 4, 17), b: -92.6 },
+      { x: 9, a: new Date(2020, 4, 24), b: -91.1 }
     ];
 
-    var ytdData1 = [-45.19, -50.09];
+    var ytdData1 = [-46.95,	-51.97];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -83,7 +86,8 @@ class App extends Component {
       { x: 5, a: new Date(2020, 3, 26), b: -95.9 },
       { x: 6, a: new Date(2020, 4, 3), b: -95.4 },
       { x: 7, a: new Date(2020, 4, 10), b: -94.8 },
-      { x: 8, a: new Date(2020, 4, 17), b: -94.3 }
+      { x: 8, a: new Date(2020, 4, 17), b: -94.3 },
+      { x: 9, a: new Date(2020, 4, 24), b: -93.3 }
     ];
 
     var online = [
@@ -94,7 +98,8 @@ class App extends Component {
       { x: 5, a: new Date(2020, 3, 26), b: -88.5 },
       { x: 6, a: new Date(2020, 4, 3), b: -86.4 },
       { x: 7, a: new Date(2020, 4, 10), b: -84.0 },
-      { x: 8, a: new Date(2020, 4, 17), b: -82.4 }
+      { x: 8, a: new Date(2020, 4, 17), b: -82.4 },
+      { x: 9, a: new Date(2020, 4, 24), b: -79.0 }
     ];
 
     var leisure = [
@@ -105,10 +110,11 @@ class App extends Component {
       { x: 5, a: new Date(2020, 3, 26), b: -91.2 },
       { x: 6, a: new Date(2020, 4, 3), b: -90.8 },
       { x: 7, a: new Date(2020, 4, 10), b: -89.3 },
-      { x: 8, a: new Date(2020, 4, 17), b: -87.9 }
+      { x: 8, a: new Date(2020, 4, 17), b: -87.9 },
+      { x: 9, a: new Date(2020, 4, 24), b: -86.4 }
     ];
 
-    var ytdData2 = [-47.98, -43.34, -45.13];
+    var ytdData2 = [-49.93,	-44.90,	-46.99];
 
     var dataDomain1 = [-40, -50, -60, -70, -80, -90, -100];
 

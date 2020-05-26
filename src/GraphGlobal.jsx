@@ -453,6 +453,7 @@ class SingleGraph extends React.Component {
             padding={{ top: 0, left: 0, right: 0, bottom: 0 }}
             width={600}
             height={30}
+            domain={{y: [min, max]}}
             containerComponent={
               <VictoryBrushContainer
                 brushDimension="x"
