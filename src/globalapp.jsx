@@ -17,7 +17,6 @@ class App extends Component {
     super();
     this.state = {
       activeGraph: "china",
-      currentGraph: "",
       direction: 0,
       type: "Global",
       currentData: "",
@@ -1048,6 +1047,25 @@ class App extends Component {
       </div>
     );
 
+    var currentGraph = (
+      <GraphGlobal
+          direction={this.state.direction}
+          dataTitle={dataTitle1}
+          data1={
+            this.state[this.state.activeGraph + "Data" + this.state.type][0]
+          }
+          data2={
+            this.state[this.state.activeGraph + "Data" + this.state.type][1]
+          }
+          data3={
+            this.state[this.state.activeGraph + "Data" + this.state.type][2]
+          }
+          dataDomain={this.state.direction == 2 ? dataDomain2 : dataDomain1}
+          tableHeaders={tableHeaders1}
+          direction={this.state.direction}
+        />
+    )
+
     return (
       <div className="covidPage">
         <div className="covidJumbo">
@@ -1220,22 +1238,7 @@ class App extends Component {
           </div>
         </div>
 
-        <GraphGlobal
-          direction={this.state.direction}
-          dataTitle={dataTitle1}
-          data1={
-            this.state[this.state.activeGraph + "Data" + this.state.type][0]
-          }
-          data2={
-            this.state[this.state.activeGraph + "Data" + this.state.type][1]
-          }
-          data3={
-            this.state[this.state.activeGraph + "Data" + this.state.type][2]
-          }
-          dataDomain={this.state.direction == 2 ? dataDomain2 : dataDomain1}
-          tableHeaders={tableHeaders1}
-          direction={this.state.direction}
-        />
+        {currentGraph}
 
         <div className="bottomData container">
           <div className="row">
