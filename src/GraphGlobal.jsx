@@ -29,7 +29,6 @@ dataDomain
 */
 
 function generateDomain(graphData) {
-
   var step = 10;
 
   var max = Math.max.apply(
@@ -259,6 +258,36 @@ class GraphGlobal extends Component {
   }
 }
 
+class CustomHandle extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <foreignObject
+        x={this.props.x - 5}
+        y={this.props.y}
+        width="17px"
+        height={this.props.height}
+      >
+        <div
+          className="customHandle"
+          style={{
+            background: "transparent",
+            height: "100%",
+            padding: "4px 2px 4px "
+          }}
+        >
+          <div style={{ padding: "5px 0px", lineHeight: "1", background: "#f1f2f2", color: "#414042" }}>
+            <i className="fas fa-grip-lines-vertical"></i>
+          </div>
+        </div>
+      </foreignObject>
+    );
+  }
+}
+
 class SingleGraph extends React.Component {
   constructor(props) {
     super(props);
@@ -324,7 +353,7 @@ class SingleGraph extends React.Component {
           width={1170}
           height={630}
           fixLabelOverlap={true}
-          domain={{y: [min, max]}}
+          domain={{ y: [min, max] }}
           padding={{ left: 100, top: 30, bottom: 90, right: 50 }}
           containerComponent={
             <VictoryZoomVoronoiContainer
@@ -405,7 +434,11 @@ class SingleGraph extends React.Component {
               },
               grid: {
                 stroke: ({ tick }) =>
-                  ((tick == min || tick == max || tick == 0) ? ((tick == 0) ? "#414042" : "#ffffff"): "#d7d7d7"),
+                  tick == min || tick == max || tick == 0
+                    ? tick == 0
+                      ? "#414042"
+                      : "#ffffff"
+                    : "#d7d7d7",
                 strokeWidth: 1
               }
             }}
@@ -453,15 +486,17 @@ class SingleGraph extends React.Component {
 
         <div className="brushContainer">
           <VictoryChart
-            padding={{ top: 0, left: 0, right: 0, bottom: 0 }}
+            padding={{ top: 0, left: 15, right: 15, bottom: 0 }}
             width={600}
             height={30}
-            domain={{y: [min, max]}}
+            domain={{ y: [min, max] }}
             containerComponent={
               <VictoryBrushContainer
+                className="brushsvg"
                 brushDimension="x"
                 brushDomain={this.state.zoomDomain}
                 onBrushDomainChange={this.handleZoom.bind(this)}
+                handleComponent={<CustomHandle />}
               />
             }
           >

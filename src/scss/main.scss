@@ -226,12 +226,11 @@
 }
 
 .brushContainer {
- 
   margin-left: 90px;
   margin-right: 50px;
   margin-top: 10px;
 
-  svg {
+  svg[width="600"] {
     border-top: 1px solid #aeadb3;
     border-bottom: 1px solid #aeadb3;
   }
@@ -382,3 +381,20 @@
   margin-left: 35px;
   margin-bottom: 25px;
 }
+
+.fa-grip-lines-vertical:after {
+  content: "\f7a5";
+}
+
+.customHandle {
+  &:hover {
+    cursor: ew-resize;
+  }
+
+  div {
+    border: 1px solid darkgray;
+    text-align: center;
+    font-size: 10px;
+  }
+}
+
