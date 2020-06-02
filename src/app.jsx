@@ -254,19 +254,33 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">April</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-10.0%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "10.0%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $336
+              </div>
+            </div>
+            <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">
                 <strong>Year-to-Date (YTD)</strong>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
-                <strong>-6.2%</strong>
+                <div className="d-flex mainStatPercentChange">-14.97%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "14.97%" }}></div>
+                </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
-                <strong>$448</strong>
+                <strong>$420</strong>
               </div>
             </div>
           </div>
         </div>
-
         <div className="bottomData container">
           <div className="row">
             <div className="col-md-6">
