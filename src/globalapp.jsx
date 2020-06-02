@@ -21,6 +21,9 @@ class App extends Component {
       type: "Global",
       currentData: "",
       subTitle: "Transaction Count",
+      dataTitle: ["Transaction Count", "Sales Variance"],
+      currentGraph: "",
+      tableHeaders1: ["7-Day Period Ending", "Sales", "Exchanges", "Refunds"],
       chinaDataGlobal: [
         [
           { a: new Date(2020, 0, 7), b: -6 },
@@ -970,7 +973,6 @@ class App extends Component {
     this.toggleActiveGraph = this.toggleActiveGraph.bind(this);
     this.setDirection = this.setDirection.bind(this);
     this.setType = this.setType.bind(this);
-    this.generateGraph = this.generateGraph.bind(this);
   }
 
   toggleActiveGraph(val) {
@@ -985,12 +987,34 @@ class App extends Component {
     this.setState({ type: val });
   }
 
-  generateGraph(dataTitle1, dataDomain1, tableHeaders1) {
-    return (
-      <div>
+  componentDidMount() {
+    var tempGraph = (
+      <GraphGlobal
+        direction={this.state.direction}
+        dataTitle={this.state.dataTitle}
+        data1={this.state[this.state.activeGraph + "Data" + this.state.type][0]}
+        data2={this.state[this.state.activeGraph + "Data" + this.state.type][1]}
+        data3={this.state[this.state.activeGraph + "Data" + this.state.type][2]}
+        tableHeaders={this.state.tableHeaders1}
+        direction={this.state.direction}
+      />
+    );
+
+    this.setState({
+      currentGraph: tempGraph
+    });
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (
+      this.state.activeGraph != prevState.activeGraph ||
+      this.state.type != prevState.type ||
+      this.state.direction != prevState.direction
+    ) {
+      var tempGraph = (
         <GraphGlobal
           direction={this.state.direction}
-          dataTitle={dataTitle1}
+          dataTitle={this.state.dataTitle}
           data1={
             this.state[this.state.activeGraph + "Data" + this.state.type][0]
           }
@@ -1000,41 +1024,18 @@ class App extends Component {
           data3={
             this.state[this.state.activeGraph + "Data" + this.state.type][2]
           }
-          dataDomain={dataDomain1}
-          tableHeaders={tableHeaders1}
+          tableHeaders={this.state.tableHeaders1}
+          direction={this.state.direction}
         />
-      </div>
-    );
+      );
+
+      this.setState({
+        currentGraph: tempGraph
+      });
+    }
   }
 
   render() {
-    var dataTitle1 = ["Transaction Count", "Sales Variance"];
-
-    var tableHeaders1 = [
-      "7-Day Period Ending",
-      "Sales",
-      "Exchanges",
-      "Refunds"
-    ];
-
-    var dataDomain1 = [
-      -100,
-      -90,
-      -80,
-      -70,
-      -60,
-      -50,
-      -40,
-      -30,
-      -20,
-      -10,
-      0,
-      10,
-      20
-    ];
-
-    var dataDomain2 = [-25, 0, 350, 700];
-
     var graphTitle = "";
     var graphVal = this.state.activeGraph;
     if (graphVal == "southkorea") {
@@ -1046,25 +1047,6 @@ class App extends Component {
         <span className="countryName">{graphVal}</span> Air Travel
       </div>
     );
-
-    var currentGraph = (
-      <GraphGlobal
-          direction={this.state.direction}
-          dataTitle={dataTitle1}
-          data1={
-            this.state[this.state.activeGraph + "Data" + this.state.type][0]
-          }
-          data2={
-            this.state[this.state.activeGraph + "Data" + this.state.type][1]
-          }
-          data3={
-            this.state[this.state.activeGraph + "Data" + this.state.type][2]
-          }
-          dataDomain={this.state.direction == 2 ? dataDomain2 : dataDomain1}
-          tableHeaders={tableHeaders1}
-          direction={this.state.direction}
-        />
-    )
 
     return (
       <div className="covidPage">
@@ -1147,7 +1129,7 @@ class App extends Component {
               <div className="col-12">
                 <div className="graphTitle">{graphTitle}</div>
                 <div className="graphSubTitle">
-                  {tableHeaders1[this.state.direction + 1]} -{" "}
+                  {this.state.tableHeaders1[this.state.direction + 1]} -{" "}
                   {this.state.subTitle}
                 </div>
               </div>
@@ -1238,7 +1220,7 @@ class App extends Component {
           </div>
         </div>
 
-        {currentGraph}
+        {this.state.currentGraph}
 
         <div className="bottomData container">
           <div className="row">

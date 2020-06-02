@@ -10,6 +10,9 @@ class GraphTooltip extends Component {
     const x2 = parseFloat(x) - 100;
     const y2 = parseFloat(y) / 2.0;
 
+    console.log("data3");
+    console.log(data);
+
     return (
       <g style={{ pointerEvents: "none" }}>
         <foreignObject x={x2} y={y2} width="200" height="230">

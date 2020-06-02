@@ -227,6 +227,9 @@ class GraphGlobal extends Component {
       graphData = data3;
     }
 
+    console.log("data +");
+    console.log(data);
+
     return (
       <div className="container mt-5">
         <div className="graphContainer">
