@@ -239,6 +239,11 @@ class GraphGlobal extends Component {
           />
         </div>
 
+        <div style={{textAlign: "center", padding: "15px 0", fontSize: "14px"}}>
+          *To view more data, click any part of the graph and drag your cursor to
+          the left or right
+        </div>
+
         <div
           onClick={this.toggleAdditionalRows}
           className="covid-table overflow-auto"
@@ -266,7 +271,7 @@ class CustomHandle extends React.Component {
   render() {
     return (
       <foreignObject
-        x={this.props.x - 5}
+        x={this.props.x - 210}
         y={this.props.y}
         width="17px"
         height={this.props.height}
@@ -284,7 +289,8 @@ class CustomHandle extends React.Component {
               padding: "5px 0px",
               lineHeight: "1",
               background: "#f1f2f2",
-              color: "#414042"
+              color: "#414042",
+              display: this.props.x > 350 ? "block" : "none"
             }}
           >
             <i className="fas fa-grip-lines-vertical"></i>
