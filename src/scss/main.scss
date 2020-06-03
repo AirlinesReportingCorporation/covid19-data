@@ -388,7 +388,10 @@
 
 .customHandle {
   &:hover {
-    cursor: ew-resize;
+    cursor: grab;
+  }
+  &:active {
+    cursor: grabbing;
   }
 
   div {
@@ -398,3 +401,10 @@
   }
 }
 
+.brushsvg {
+  rect {
+    &:active {
+      cursor: grabbing !important;
+    }
+  }
+}

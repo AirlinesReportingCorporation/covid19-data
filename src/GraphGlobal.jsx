@@ -239,9 +239,11 @@ class GraphGlobal extends Component {
           />
         </div>
 
-        <div style={{textAlign: "center", padding: "15px 0", fontSize: "14px"}}>
-          *To view more data, click any part of the graph and drag your cursor to
-          the left or right
+        <div
+          style={{ textAlign: "center", padding: "15px 0", fontSize: "14px" }}
+        >
+          *To view more data, click any part of the graph and drag your cursor
+          to the left or right
         </div>
 
         <div
@@ -512,6 +514,12 @@ class SingleGraph extends React.Component {
                 onBrushDomainChange={this.handleZoom.bind(this)}
                 handleComponent={<CustomHandle />}
                 defaultBrushArea="move"
+                brushStyle={{
+                  cursor: "grab",
+                  stroke: "transparent",
+                  fill: "black",
+                  fillOpacity: "0.1"
+                }}
               />
             }
           >
