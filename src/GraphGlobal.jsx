@@ -242,7 +242,7 @@ class GraphGlobal extends Component {
         <div
           style={{ textAlign: "center", padding: "15px 0", fontSize: "14px" }}
         >
-          *To view more data, click any part of the graph and drag your cursor
+          *To view more data, click any part of the graph or slider and drag your cursor
           to the left or right
         </div>
 
