@@ -611,10 +611,10 @@ class App extends Component {
           { a: new Date(2020, 3, 14), b: -87 },
           { a: new Date(2020, 3, 21), b: -80 },
           { a: new Date(2020, 3, 28), b: -88 },
-          { a: new Date(2020, 4, 5), b: 90 },
-          { a: new Date(2020, 4, 12), b: 91 },
-          { a: new Date(2020, 4, 19), b: 90 },
-          { a: new Date(2020, 4, 26), b: 88 }
+          { a: new Date(2020, 4, 5), b: -90 },
+          { a: new Date(2020, 4, 12), b: -91 },
+          { a: new Date(2020, 4, 19), b: -90 },
+          { a: new Date(2020, 4, 26), b: -88 }
         ],
         [
           { a: new Date(2020, 0, 7), b: -7 },
