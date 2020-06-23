@@ -242,8 +242,8 @@ class GraphGlobal extends Component {
         <div
           style={{ textAlign: "center", padding: "15px 0", fontSize: "14px" }}
         >
-          *To view more data, click any part of the graph or slider and drag your cursor
-          to the left or right
+          *To view more data, click any part of the graph or slider and drag
+          your cursor to the left or right
         </div>
 
         <div
@@ -254,7 +254,10 @@ class GraphGlobal extends Component {
 
           {graphDisplay}
 
-          <div className="row showAll text-center">
+          <div
+            className="row showAll text-center"
+            onClick={this.toggleAdditionalRows}
+          >
             <div className="col">
               {this.state.showAdditionalRows ? "Show Less" : "Show More"}
             </div>

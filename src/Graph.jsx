@@ -33,12 +33,22 @@ class Graph extends Component {
     this.state = {
       ticketToggle: true,
       salesToggle: true,
-      thirdToggle: true
+      thirdToggle: true,
+      showAdditionalRows: false
     };
 
     this.toggleTicket = this.toggleTicket.bind(this);
     this.toggleSales = this.toggleSales.bind(this);
     this.toggleThird = this.toggleThird.bind(this);
+    this.toggleAdditionalRows = this.toggleAdditionalRows.bind(this);
+  }
+
+  toggleAdditionalRows() {
+    if (this.state.showAdditionalRows) {
+      this.setState({ showAdditionalRows: false });
+    } else {
+      this.setState({ showAdditionalRows: true });
+    }
   }
 
   toggleTicket() {
@@ -72,29 +82,22 @@ class Graph extends Component {
     //var ytdLabels = ["Ticket Variance vs. Same Week 2019", "Sales Variance vs. Same Week 2019", "3"]
     var ytdLabels = this.props.ytdLabels;
 
-    /*
-    var data = [
-      { x: 1, a: new Date(2020, 2, 15), b: -45.2, c: -63.2 },
-      { x: 2, a: new Date(2020, 2, 22), b: -80.0, c: -83.4 },
-      { x: 3, a: new Date(2020, 2, 29), b: -88.5, c: -91.7 },
-      { x: 4, a: new Date(2020, 3, 5), b: -92.3, c: -95.4 }
-    ];
-    */
+    var showAdditionalRows = this.state.showAdditionalRows;
 
     var data = this.props.data1;
-
-    /*
-    var data2 = [
-      { x: 1, a: new Date(2020, 2, 15), b: -63.2 },
-      { x: 2, a: new Date(2020, 2, 22), b: -83.4 },
-      { x: 3, a: new Date(2020, 2, 29), b: -91.7 },
-      { x: 4, a: new Date(2020, 3, 5), b: -95.4 }
-    ];
-    */
 
     var data2 = this.props.data2;
 
     var data3 = this.props.data3 ? this.props.data3 : "";
+
+    var data1_reverse = data.slice();
+    data1_reverse.reverse();
+
+    var data2_reverse = data2 ? data2.slice() : "";
+    data2 ? data2_reverse.reverse() : "";
+
+    var data3_reverse = data3 ? data3.slice() : "";
+    data3 ? data3_reverse.reverse() : "";
 
     //var ytdData = [-25.9, -30.5];
 
@@ -117,9 +120,15 @@ class Graph extends Component {
       );
     });
 
-    var graphDisplay = data.map(function(datum, i) {
+    var graphDisplay = data1_reverse.map(function(datum, i) {
       return (
-        <div key={i} className="covid-row row d-flex flex-row">
+        <div
+          key={i}
+          className={
+            "covid-row row d-flex flex-row" +
+            (i > 4 && !showAdditionalRows ? "  covid-row-additional" : "")
+          }
+        >
           <div className={"d-flex" + (data3 ? " col-3" : " col-4")}>
             {moment(datum.a).format("MMMM D")}
           </div>
@@ -130,7 +139,7 @@ class Graph extends Component {
             }
           >
             <div className="d-flex mainStatPercentChange">
-              {numeral(datum.b).format("0.00")}%
+              {numeral(datum.b).format("0.0")}%
             </div>
             <div className="d-flex mainStatPercentChangeBar">
               <div
@@ -146,12 +155,12 @@ class Graph extends Component {
             }
           >
             <div className="d-flex mainStatPercentChange">
-              {numeral(data2[i].b).format("0.00")}%
+              {numeral(data2_reverse[i].b).format("0.0")}%
             </div>
             <div className="d-flex mainStatPercentChangeBar">
               <div
                 className="barChange"
-                style={{ width: Math.abs(data2[i].b) + "%" }}
+                style={{ width: Math.abs(data2_reverse[i].b) + "%" }}
               ></div>
             </div>
           </div>
@@ -163,12 +172,12 @@ class Graph extends Component {
               }
             >
               <div className="d-flex mainStatPercentChange">
-                {numeral(data3[i].b).format("0.00")}%
+                {numeral(data3_reverse[i].b).format("0")}%
               </div>
               <div className="d-flex mainStatPercentChangeBar">
                 <div
                   className="barChange"
-                  style={{ width: Math.abs(data3[i].b) + "%" }}
+                  style={{ width: Math.abs(data3_reverse[i].b) + "%" }}
                 ></div>
               </div>
             </div>
@@ -352,7 +361,8 @@ class Graph extends Component {
                       ? "#414042"
                       : "#ffffff"
                     : "#d7d7d7",
-                strokeWidth: ({ tick }) => (tick == 10 || tick == -40 || tick == -100 ? 1 : 1)
+                strokeWidth: ({ tick }) =>
+                  tick == 10 || tick == -40 || tick == -100 ? 1 : 1
               }
             }}
             dependentAxis
@@ -366,7 +376,7 @@ class Graph extends Component {
             name="bar"
             style={{ data: { fill: "#dddddd", opacity: ".2" } }}
             data={alternatingDataset}
-            barRatio={.75}
+            barRatio={0.75}
             y="b"
           />
 
@@ -487,7 +497,9 @@ class Graph extends Component {
             >
               <div className="ytd-symbol">YTD</div>
               <div className="ytd-data-container">
-                <div className="ytd-data">{numeral(ytdData[0]).format("0.00")}%</div>
+                <div className="ytd-data">
+                  {numeral(ytdData[0]).format("0.00")}%
+                </div>
                 <div className="ytd-label">{ytdLabels[0]}</div>
               </div>
             </div>
@@ -499,7 +511,9 @@ class Graph extends Component {
             >
               <div className="ytd-symbol">YTD</div>
               <div className="ytd-data-container">
-                <div className="ytd-data">{numeral(ytdData[1]).format("0.00")}%</div>
+                <div className="ytd-data">
+                  {numeral(ytdData[1]).format("0.00")}%
+                </div>
                 <div className="ytd-label">{ytdLabels[1]}</div>
               </div>
             </div>
@@ -507,7 +521,9 @@ class Graph extends Component {
               <div className="col-lg-4 d-flex flex-row align-items-center">
                 <div className="ytd-symbol">YTD</div>
                 <div className="ytd-data-container">
-                  <div className="ytd-data">{numeral(ytdData[2]).format("0.00")}%</div>
+                  <div className="ytd-data">
+                    {numeral(ytdData[2]).format("0.00")}%
+                  </div>
                   <div className="ytd-label">{ytdLabels[2]}</div>
                 </div>
               </div>
@@ -518,6 +534,15 @@ class Graph extends Component {
         <div className="covid-table overflow-auto">
           <div className="row covid-headers">{tableHeaderDisplay}</div>
           {graphDisplay}
+
+          <div
+            className="row showAll text-center"
+            onClick={this.toggleAdditionalRows}
+          >
+            <div className="col">
+              {this.state.showAdditionalRows ? "Show Less" : "Show More"}
+            </div>
+          </div>
         </div>
       </div>
     );

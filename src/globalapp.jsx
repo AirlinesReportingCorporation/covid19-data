@@ -46,7 +46,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -50 },
           { a: new Date(2020, 4, 12), b: -47 },
           { a: new Date(2020, 4, 19), b: -47 },
-          { a: new Date(2020, 4, 26), b: -50 }
+          { a: new Date(2020, 4, 26), b: -48 },
+          { a: new Date(2020, 5, 2), b: -43 },
+          { a: new Date(2020, 5, 9), b: -30 }
         ],
         [
           { a: new Date(2020, 0, 7), b: -4 },
@@ -69,7 +71,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -61 },
           { a: new Date(2020, 4, 12), b: -59 },
           { a: new Date(2020, 4, 19), b: -57 },
-          { a: new Date(2020, 4, 26), b: -60 }
+          { a: new Date(2020, 4, 26), b: -59 },
+          { a: new Date(2020, 5, 2), b: -57 },
+          { a: new Date(2020, 5, 9), b: -44 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 31 },
@@ -91,22 +95,24 @@ class App extends Component {
           { a: new Date(2020, 3, 28), b: -13 },
           { a: new Date(2020, 4, 5), b: -3 },
           { a: new Date(2020, 4, 12), b: 0 },
-          { a: new Date(2020, 4, 19), b: -6 },
-          { a: new Date(2020, 4, 26), b: -20 }
+          { a: new Date(2020, 4, 19), b: -5 },
+          { a: new Date(2020, 4, 26), b: -17 },
+          { a: new Date(2020, 5, 2), b: -17 },
+          { a: new Date(2020, 5, 9), b: -11 }
         ]
       ],
       italyDataGlobal: [
         [
-          { a: new Date(2020, 0, 7), b: 0 },
-          { a: new Date(2020, 0, 14), b: 6 },
-          { a: new Date(2020, 0, 21), b: 12 },
-          { a: new Date(2020, 0, 28), b: 5 },
+          { a: new Date(2020, 0, 7), b: -1 },
+          { a: new Date(2020, 0, 14), b: 5 },
+          { a: new Date(2020, 0, 21), b: 11 },
+          { a: new Date(2020, 0, 28), b: 4 },
           { a: new Date(2020, 1, 4), b: -2 },
           { a: new Date(2020, 1, 11), b: -2 },
           { a: new Date(2020, 1, 18), b: -2 },
           { a: new Date(2020, 1, 25), b: -24 },
           { a: new Date(2020, 2, 3), b: -63 },
-          { a: new Date(2020, 2, 10), b: -76 },
+          { a: new Date(2020, 2, 10), b: -75 },
           { a: new Date(2020, 2, 17), b: -85 },
           { a: new Date(2020, 2, 24), b: -91 },
           { a: new Date(2020, 2, 31), b: -95 },
@@ -114,56 +120,62 @@ class App extends Component {
           { a: new Date(2020, 3, 14), b: -97 },
           { a: new Date(2020, 3, 21), b: -96 },
           { a: new Date(2020, 3, 28), b: -96 },
-          { a: new Date(2020, 4, 5), b: -96 },
+          { a: new Date(2020, 4, 5), b: -95 },
           { a: new Date(2020, 4, 12), b: -94 },
           { a: new Date(2020, 4, 19), b: -91 },
-          { a: new Date(2020, 4, 26), b: -90 }
+          { a: new Date(2020, 4, 26), b: -89 },
+          { a: new Date(2020, 5, 2), b: -86 },
+          { a: new Date(2020, 5, 9), b: -78 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: 13 },
+          { a: new Date(2020, 0, 7), b: 12 },
           { a: new Date(2020, 0, 14), b: -8 },
-          { a: new Date(2020, 0, 21), b: 3 },
+          { a: new Date(2020, 0, 21), b: 2 },
           { a: new Date(2020, 0, 28), b: -5 },
           { a: new Date(2020, 1, 4), b: -10 },
-          { a: new Date(2020, 1, 11), b: 23 },
+          { a: new Date(2020, 1, 11), b: 22 },
           { a: new Date(2020, 1, 18), b: -1 },
           { a: new Date(2020, 1, 25), b: 19 },
           { a: new Date(2020, 2, 3), b: 74 },
           { a: new Date(2020, 2, 10), b: 87 },
-          { a: new Date(2020, 2, 17), b: 14 },
+          { a: new Date(2020, 2, 17), b: 13 },
           { a: new Date(2020, 2, 24), b: -53 },
           { a: new Date(2020, 2, 31), b: -62 },
           { a: new Date(2020, 3, 7), b: -74 },
           { a: new Date(2020, 3, 14), b: -68 },
-          { a: new Date(2020, 3, 21), b: -52 },
-          { a: new Date(2020, 3, 28), b: -78 },
+          { a: new Date(2020, 3, 21), b: -48 },
+          { a: new Date(2020, 3, 28), b: -77 },
           { a: new Date(2020, 4, 5), b: -81 },
           { a: new Date(2020, 4, 12), b: -79 },
-          { a: new Date(2020, 4, 19), b: -78 },
-          { a: new Date(2020, 4, 26), b: -75 }
+          { a: new Date(2020, 4, 19), b: -75 },
+          { a: new Date(2020, 4, 26), b: -73 },
+          { a: new Date(2020, 5, 2), b: -73 },
+          { a: new Date(2020, 5, 9), b: -72 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: 128 },
-          { a: new Date(2020, 0, 14), b: 149 },
-          { a: new Date(2020, 0, 21), b: 169 },
-          { a: new Date(2020, 0, 28), b: 186 },
-          { a: new Date(2020, 1, 4), b: 230 },
-          { a: new Date(2020, 1, 11), b: 281 },
-          { a: new Date(2020, 1, 18), b: 288 },
-          { a: new Date(2020, 1, 25), b: 366 },
-          { a: new Date(2020, 2, 3), b: 543 },
-          { a: new Date(2020, 2, 10), b: 592 },
-          { a: new Date(2020, 2, 17), b: 539 },
-          { a: new Date(2020, 2, 24), b: 282 },
-          { a: new Date(2020, 2, 31), b: 144 },
-          { a: new Date(2020, 3, 7), b: 93 },
-          { a: new Date(2020, 3, 14), b: 104 },
+          { a: new Date(2020, 0, 7), b: 144 },
+          { a: new Date(2020, 0, 14), b: 166 },
+          { a: new Date(2020, 0, 21), b: 188 },
+          { a: new Date(2020, 0, 28), b: 205 },
+          { a: new Date(2020, 1, 4), b: 248 },
+          { a: new Date(2020, 1, 11), b: 301 },
+          { a: new Date(2020, 1, 18), b: 308 },
+          { a: new Date(2020, 1, 25), b: 382 },
+          { a: new Date(2020, 2, 3), b: 553 },
+          { a: new Date(2020, 2, 10), b: 600 },
+          { a: new Date(2020, 2, 17), b: 542 },
+          { a: new Date(2020, 2, 24), b: 284 },
+          { a: new Date(2020, 2, 31), b: 145 },
+          { a: new Date(2020, 3, 7), b: 94 },
+          { a: new Date(2020, 3, 14), b: 105 },
           { a: new Date(2020, 3, 21), b: 138 },
           { a: new Date(2020, 3, 28), b: 138 },
-          { a: new Date(2020, 4, 5), b: 119 },
-          { a: new Date(2020, 4, 12), b: 112 },
-          { a: new Date(2020, 4, 19), b: 67 },
-          { a: new Date(2020, 4, 26), b: 63 }
+          { a: new Date(2020, 4, 5), b: 121 },
+          { a: new Date(2020, 4, 12), b: 114 },
+          { a: new Date(2020, 4, 19), b: 88 },
+          { a: new Date(2020, 4, 26), b: 77 },
+          { a: new Date(2020, 5, 2), b: 91 },
+          { a: new Date(2020, 5, 9), b: 57 }
         ]
       ],
       japanDataGlobal: [
@@ -188,7 +200,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -95 },
           { a: new Date(2020, 4, 12), b: -96 },
           { a: new Date(2020, 4, 19), b: -96 },
-          { a: new Date(2020, 4, 26), b: -95 }
+          { a: new Date(2020, 4, 26), b: -95 },
+          { a: new Date(2020, 5, 2), b: -95 },
+          { a: new Date(2020, 5, 9), b: -94 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 10 },
@@ -211,30 +225,34 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -62 },
           { a: new Date(2020, 4, 12), b: -70 },
           { a: new Date(2020, 4, 19), b: -58 },
-          { a: new Date(2020, 4, 26), b: -62 }
+          { a: new Date(2020, 4, 26), b: -59 },
+          { a: new Date(2020, 5, 2), b: -63 },
+          { a: new Date(2020, 5, 9), b: -68 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: 52 },
-          { a: new Date(2020, 0, 14), b: 68 },
-          { a: new Date(2020, 0, 21), b: 77 },
-          { a: new Date(2020, 0, 28), b: 166 },
-          { a: new Date(2020, 1, 4), b: 495 },
-          { a: new Date(2020, 1, 11), b: 585 },
-          { a: new Date(2020, 1, 18), b: 397 },
-          { a: new Date(2020, 1, 25), b: 379 },
-          { a: new Date(2020, 2, 3), b: 464 },
-          { a: new Date(2020, 2, 10), b: 513 },
-          { a: new Date(2020, 2, 17), b: 463 },
-          { a: new Date(2020, 2, 24), b: 513 },
-          { a: new Date(2020, 2, 31), b: 355 },
-          { a: new Date(2020, 3, 7), b: 186 },
-          { a: new Date(2020, 3, 14), b: 145 },
-          { a: new Date(2020, 3, 21), b: 139 },
-          { a: new Date(2020, 3, 28), b: 83 },
-          { a: new Date(2020, 4, 5), b: 69 },
-          { a: new Date(2020, 4, 12), b: 33 },
-          { a: new Date(2020, 4, 19), b: 39 },
-          { a: new Date(2020, 4, 26), b: 9 }
+          { a: new Date(2020, 0, 7), b: 56 },
+          { a: new Date(2020, 0, 14), b: 73 },
+          { a: new Date(2020, 0, 21), b: 82 },
+          { a: new Date(2020, 0, 28), b: 170 },
+          { a: new Date(2020, 1, 4), b: 499 },
+          { a: new Date(2020, 1, 11), b: 589 },
+          { a: new Date(2020, 1, 18), b: 400 },
+          { a: new Date(2020, 1, 25), b: 382 },
+          { a: new Date(2020, 2, 3), b: 467 },
+          { a: new Date(2020, 2, 10), b: 515 },
+          { a: new Date(2020, 2, 17), b: 464 },
+          { a: new Date(2020, 2, 24), b: 515 },
+          { a: new Date(2020, 2, 31), b: 356 },
+          { a: new Date(2020, 3, 7), b: 187 },
+          { a: new Date(2020, 3, 14), b: 146 },
+          { a: new Date(2020, 3, 21), b: 140 },
+          { a: new Date(2020, 3, 28), b: 84 },
+          { a: new Date(2020, 4, 5), b: 77 },
+          { a: new Date(2020, 4, 12), b: 44 },
+          { a: new Date(2020, 4, 19), b: 51 },
+          { a: new Date(2020, 4, 26), b: 20 },
+          { a: new Date(2020, 5, 2), b: 22 },
+          { a: new Date(2020, 5, 9), b: 52 }
         ]
       ],
       southkoreaDataGlobal: [
@@ -258,8 +276,10 @@ class App extends Component {
           { a: new Date(2020, 3, 28), b: -72 },
           { a: new Date(2020, 4, 5), b: -74 },
           { a: new Date(2020, 4, 12), b: -71 },
-          { a: new Date(2020, 4, 19), b: -77 },
-          { a: new Date(2020, 4, 26), b: -76 }
+          { a: new Date(2020, 4, 19), b: -75 },
+          { a: new Date(2020, 4, 26), b: -73 },
+          { a: new Date(2020, 5, 2), b: -80 },
+          { a: new Date(2020, 5, 9), b: -77 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 11 },
@@ -282,7 +302,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -57 },
           { a: new Date(2020, 4, 12), b: -60 },
           { a: new Date(2020, 4, 19), b: -62 },
-          { a: new Date(2020, 4, 26), b: -62 }
+          { a: new Date(2020, 4, 26), b: -61 },
+          { a: new Date(2020, 5, 2), b: -69 },
+          { a: new Date(2020, 5, 9), b: -57 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 8 },
@@ -297,15 +319,17 @@ class App extends Component {
           { a: new Date(2020, 2, 10), b: 161 },
           { a: new Date(2020, 2, 17), b: 135 },
           { a: new Date(2020, 2, 24), b: 111 },
-          { a: new Date(2020, 2, 31), b: 92 },
+          { a: new Date(2020, 2, 31), b: 93 },
           { a: new Date(2020, 3, 7), b: 31 },
           { a: new Date(2020, 3, 14), b: 8 },
           { a: new Date(2020, 3, 21), b: 12 },
           { a: new Date(2020, 3, 28), b: 15 },
           { a: new Date(2020, 4, 5), b: -21 },
-          { a: new Date(2020, 4, 12), b: 9 },
-          { a: new Date(2020, 4, 19), b: -4 },
-          { a: new Date(2020, 4, 26), b: -23 }
+          { a: new Date(2020, 4, 12), b: 10 },
+          { a: new Date(2020, 4, 19), b: -3 },
+          { a: new Date(2020, 4, 26), b: -14 },
+          { a: new Date(2020, 5, 2), b: -24 },
+          { a: new Date(2020, 5, 9), b: -26 }
         ]
       ],
       chinaDataDomestic: [
@@ -330,7 +354,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -41 },
           { a: new Date(2020, 4, 12), b: -37 },
           { a: new Date(2020, 4, 19), b: -37 },
-          { a: new Date(2020, 4, 26), b: -42 }
+          { a: new Date(2020, 4, 26), b: -39 },
+          { a: new Date(2020, 5, 2), b: -33 },
+          { a: new Date(2020, 5, 9), b: -16 }
         ],
         [
           { a: new Date(2020, 0, 7), b: -5 },
@@ -353,7 +379,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -52 },
           { a: new Date(2020, 4, 12), b: -48 },
           { a: new Date(2020, 4, 19), b: -47 },
-          { a: new Date(2020, 4, 26), b: -53 }
+          { a: new Date(2020, 4, 26), b: -52 },
+          { a: new Date(2020, 5, 2), b: -47 },
+          { a: new Date(2020, 5, 9), b: 29 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 31 },
@@ -373,10 +401,12 @@ class App extends Component {
           { a: new Date(2020, 3, 14), b: -20 },
           { a: new Date(2020, 3, 21), b: -13 },
           { a: new Date(2020, 3, 28), b: -18 },
-          { a: new Date(2020, 4, 5), b: -2 },
-          { a: new Date(2020, 4, 12), b: -1 },
-          { a: new Date(2020, 4, 19), b: -9 },
-          { a: new Date(2020, 4, 26), b: -24 }
+          { a: new Date(2020, 4, 5), b: -1 },
+          { a: new Date(2020, 4, 12), b: 2 },
+          { a: new Date(2020, 4, 19), b: -5 },
+          { a: new Date(2020, 4, 26), b: -22 },
+          { a: new Date(2020, 5, 2), b: -17 },
+          { a: new Date(2020, 5, 9), b: -10 }
         ]
       ],
       italyDataDomestic: [
@@ -399,9 +429,11 @@ class App extends Component {
           { a: new Date(2020, 3, 21), b: -92 },
           { a: new Date(2020, 3, 28), b: -91 },
           { a: new Date(2020, 4, 5), b: -91 },
-          { a: new Date(2020, 4, 12), b: -88 },
+          { a: new Date(2020, 4, 12), b: -87 },
           { a: new Date(2020, 4, 19), b: -83 },
-          { a: new Date(2020, 4, 26), b: -83 }
+          { a: new Date(2020, 4, 26), b: -80 },
+          { a: new Date(2020, 5, 2), b: -70 },
+          { a: new Date(2020, 5, 9), b: -56 }
         ],
         [
           { a: new Date(2020, 0, 7), b: -53 },
@@ -422,32 +454,36 @@ class App extends Component {
           { a: new Date(2020, 3, 21), b: -66 },
           { a: new Date(2020, 3, 28), b: -78 },
           { a: new Date(2020, 4, 5), b: -75 },
-          { a: new Date(2020, 4, 12), b: -46 },
-          { a: new Date(2020, 4, 19), b: -68 },
-          { a: new Date(2020, 4, 26), b: -56 }
+          { a: new Date(2020, 4, 12), b: -44 },
+          { a: new Date(2020, 4, 19), b: -67 },
+          { a: new Date(2020, 4, 26), b: -54 },
+          { a: new Date(2020, 5, 2), b: -44 },
+          { a: new Date(2020, 5, 9), b: -87 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: 152 },
-          { a: new Date(2020, 0, 14), b: 170 },
-          { a: new Date(2020, 0, 21), b: 184 },
-          { a: new Date(2020, 0, 28), b: 177 },
-          { a: new Date(2020, 1, 4), b: 173 },
-          { a: new Date(2020, 1, 11), b: 310 },
-          { a: new Date(2020, 1, 18), b: 411 },
-          { a: new Date(2020, 1, 25), b: 507 },
-          { a: new Date(2020, 2, 3), b: 593 },
-          { a: new Date(2020, 2, 10), b: 408 },
-          { a: new Date(2020, 2, 17), b: 133 },
-          { a: new Date(2020, 2, 24), b: 106 },
-          { a: new Date(2020, 2, 31), b: 57 },
-          { a: new Date(2020, 3, 7), b: -14 },
-          { a: new Date(2020, 3, 14), b: -29 },
-          { a: new Date(2020, 3, 21), b: -40 },
-          { a: new Date(2020, 3, 28), b: -36 },
-          { a: new Date(2020, 4, 5), b: -49 },
-          { a: new Date(2020, 4, 12), b: -52 },
-          { a: new Date(2020, 4, 19), b: -57 },
-          { a: new Date(2020, 4, 26), b: -68 }
+          { a: new Date(2020, 0, 7), b: 181 },
+          { a: new Date(2020, 0, 14), b: 203 },
+          { a: new Date(2020, 0, 21), b: 223 },
+          { a: new Date(2020, 0, 28), b: 211 },
+          { a: new Date(2020, 1, 4), b: 204 },
+          { a: new Date(2020, 1, 11), b: 361 },
+          { a: new Date(2020, 1, 18), b: 463 },
+          { a: new Date(2020, 1, 25), b: 544 },
+          { a: new Date(2020, 2, 3), b: 625 },
+          { a: new Date(2020, 2, 10), b: 426 },
+          { a: new Date(2020, 2, 17), b: 138 },
+          { a: new Date(2020, 2, 24), b: 110 },
+          { a: new Date(2020, 2, 31), b: 60 },
+          { a: new Date(2020, 3, 7), b: -12 },
+          { a: new Date(2020, 3, 14), b: -21 },
+          { a: new Date(2020, 3, 21), b: -36 },
+          { a: new Date(2020, 3, 28), b: -30 },
+          { a: new Date(2020, 4, 5), b: -37 },
+          { a: new Date(2020, 4, 12), b: -43 },
+          { a: new Date(2020, 4, 19), b: -48 },
+          { a: new Date(2020, 4, 26), b: -55 },
+          { a: new Date(2020, 5, 2), b: -6 },
+          { a: new Date(2020, 5, 9), b: -67 }
         ]
       ],
       japanDataDomestic: [
@@ -472,7 +508,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -92 },
           { a: new Date(2020, 4, 12), b: -91 },
           { a: new Date(2020, 4, 19), b: -90 },
-          { a: new Date(2020, 4, 26), b: -84 }
+          { a: new Date(2020, 4, 26), b: -84 },
+          { a: new Date(2020, 5, 2), b: -80 },
+          { a: new Date(2020, 5, 9), b: -80 }
         ],
         [
           { a: new Date(2020, 0, 7), b: -8 },
@@ -495,30 +533,34 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -29 },
           { a: new Date(2020, 4, 12), b: -39 },
           { a: new Date(2020, 4, 19), b: -24 },
-          { a: new Date(2020, 4, 26), b: 36 }
+          { a: new Date(2020, 4, 26), b: 37 },
+          { a: new Date(2020, 5, 2), b: -15 },
+          { a: new Date(2020, 5, 9), b: 0 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: 54 },
-          { a: new Date(2020, 0, 14), b: 79 },
-          { a: new Date(2020, 0, 21), b: 83 },
-          { a: new Date(2020, 0, 28), b: 92 },
-          { a: new Date(2020, 1, 4), b: 173 },
-          { a: new Date(2020, 1, 11), b: 200 },
+          { a: new Date(2020, 0, 7), b: 55 },
+          { a: new Date(2020, 0, 14), b: 80 },
+          { a: new Date(2020, 0, 21), b: 86 },
+          { a: new Date(2020, 0, 28), b: 93 },
+          { a: new Date(2020, 1, 4), b: 175 },
+          { a: new Date(2020, 1, 11), b: 201 },
           { a: new Date(2020, 1, 18), b: 258 },
           { a: new Date(2020, 1, 25), b: 343 },
-          { a: new Date(2020, 2, 3), b: 270 },
-          { a: new Date(2020, 2, 10), b: 316 },
-          { a: new Date(2020, 2, 17), b: 291 },
-          { a: new Date(2020, 2, 24), b: 296 },
-          { a: new Date(2020, 2, 31), b: 346 },
-          { a: new Date(2020, 3, 7), b: 124 },
+          { a: new Date(2020, 2, 3), b: 271 },
+          { a: new Date(2020, 2, 10), b: 317 },
+          { a: new Date(2020, 2, 17), b: 292 },
+          { a: new Date(2020, 2, 24), b: 298 },
+          { a: new Date(2020, 2, 31), b: 348 },
+          { a: new Date(2020, 3, 7), b: 126 },
           { a: new Date(2020, 3, 14), b: 141 },
-          { a: new Date(2020, 3, 21), b: 111 },
-          { a: new Date(2020, 3, 28), b: 113 },
-          { a: new Date(2020, 4, 5), b: 81 },
-          { a: new Date(2020, 4, 12), b: 56 },
-          { a: new Date(2020, 4, 19), b: 19 },
-          { a: new Date(2020, 4, 26), b: -4 }
+          { a: new Date(2020, 3, 21), b: 112 },
+          { a: new Date(2020, 3, 28), b: 119 },
+          { a: new Date(2020, 4, 5), b: 83 },
+          { a: new Date(2020, 4, 12), b: 58 },
+          { a: new Date(2020, 4, 19), b: 21 },
+          { a: new Date(2020, 4, 26), b: 0 },
+          { a: new Date(2020, 5, 2), b: -10 },
+          { a: new Date(2020, 5, 9), b: -6 }
         ]
       ],
       southkoreaDataDomestic: [
@@ -542,8 +584,10 @@ class App extends Component {
           { a: new Date(2020, 3, 28), b: -23 },
           { a: new Date(2020, 4, 5), b: -31 },
           { a: new Date(2020, 4, 12), b: -18 },
-          { a: new Date(2020, 4, 19), b: -38 },
-          { a: new Date(2020, 4, 26), b: -35 }
+          { a: new Date(2020, 4, 19), b: -30 },
+          { a: new Date(2020, 4, 26), b: -25 },
+          { a: new Date(2020, 5, 2), b: -45 },
+          { a: new Date(2020, 5, 9), b: -38 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 27 },
@@ -566,7 +610,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -19 },
           { a: new Date(2020, 4, 12), b: -28 },
           { a: new Date(2020, 4, 19), b: -33 },
-          { a: new Date(2020, 4, 26), b: -34 }
+          { a: new Date(2020, 4, 26), b: -33 },
+          { a: new Date(2020, 5, 2), b: -52 },
+          { a: new Date(2020, 5, 9), b: -24 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 1 },
@@ -589,7 +635,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -30 },
           { a: new Date(2020, 4, 12), b: 3 },
           { a: new Date(2020, 4, 19), b: -13 },
-          { a: new Date(2020, 4, 26), b: -40 }
+          { a: new Date(2020, 4, 26), b: -27 },
+          { a: new Date(2020, 5, 2), b: -21 },
+          { a: new Date(2020, 5, 9), b: -29 }
         ]
       ],
       chinaDataInbound: [
@@ -614,7 +662,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -90 },
           { a: new Date(2020, 4, 12), b: -91 },
           { a: new Date(2020, 4, 19), b: -90 },
-          { a: new Date(2020, 4, 26), b: -88 }
+          { a: new Date(2020, 4, 26), b: -87 },
+          { a: new Date(2020, 5, 2), b: -92 },
+          { a: new Date(2020, 5, 9), b: -92 }
         ],
         [
           { a: new Date(2020, 0, 7), b: -7 },
@@ -637,7 +687,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -73 },
           { a: new Date(2020, 4, 12), b: -76 },
           { a: new Date(2020, 4, 19), b: -74 },
-          { a: new Date(2020, 4, 26), b: -69 }
+          { a: new Date(2020, 4, 26), b: -68 },
+          { a: new Date(2020, 5, 2), b: -79 },
+          { a: new Date(2020, 5, 9), b: -78 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 35 },
@@ -651,22 +703,24 @@ class App extends Component {
           { a: new Date(2020, 2, 3), b: 266 },
           { a: new Date(2020, 2, 10), b: 206 },
           { a: new Date(2020, 2, 17), b: 209 },
-          { a: new Date(2020, 2, 24), b: 365 },
-          { a: new Date(2020, 2, 31), b: 446 },
-          { a: new Date(2020, 3, 7), b: 182 },
-          { a: new Date(2020, 3, 14), b: 100 },
-          { a: new Date(2020, 3, 21), b: 225 },
-          { a: new Date(2020, 3, 28), b: 113 },
-          { a: new Date(2020, 4, 5), b: 26 },
-          { a: new Date(2020, 4, 12), b: 29 },
-          { a: new Date(2020, 4, 19), b: 42 },
-          { a: new Date(2020, 4, 26), b: 87 }
+          { a: new Date(2020, 2, 24), b: 366 },
+          { a: new Date(2020, 2, 31), b: 447 },
+          { a: new Date(2020, 3, 7), b: 186 },
+          { a: new Date(2020, 3, 14), b: 102 },
+          { a: new Date(2020, 3, 21), b: 226 },
+          { a: new Date(2020, 3, 28), b: 115 },
+          { a: new Date(2020, 4, 5), b: 29 },
+          { a: new Date(2020, 4, 12), b: 33 },
+          { a: new Date(2020, 4, 19), b: 45 },
+          { a: new Date(2020, 4, 26), b: 96 },
+          { a: new Date(2020, 5, 2), b: 42 },
+          { a: new Date(2020, 5, 9), b: 21 }
         ]
       ],
       italyDataInbound: [
         [
-          { a: new Date(2020, 0, 7), b: 4 },
-          { a: new Date(2020, 0, 14), b: 7 },
+          { a: new Date(2020, 0, 7), b: 3 },
+          { a: new Date(2020, 0, 14), b: 6 },
           { a: new Date(2020, 0, 21), b: 17 },
           { a: new Date(2020, 0, 28), b: 6 },
           { a: new Date(2020, 1, 4), b: 0 },
@@ -685,11 +739,13 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -96 },
           { a: new Date(2020, 4, 12), b: -95 },
           { a: new Date(2020, 4, 19), b: -92 },
-          { a: new Date(2020, 4, 26), b: -91 }
+          { a: new Date(2020, 4, 26), b: -91 },
+          { a: new Date(2020, 5, 2), b: -88 },
+          { a: new Date(2020, 5, 9), b: -81 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 10 },
-          { a: new Date(2020, 0, 14), b: -3 },
+          { a: new Date(2020, 0, 14), b: -4 },
           { a: new Date(2020, 0, 21), b: 9 },
           { a: new Date(2020, 0, 28), b: 5 },
           { a: new Date(2020, 1, 4), b: -7 },
@@ -699,44 +755,48 @@ class App extends Component {
           { a: new Date(2020, 2, 3), b: 53 },
           { a: new Date(2020, 2, 10), b: 81 },
           { a: new Date(2020, 2, 17), b: 20 },
-          { a: new Date(2020, 2, 24), b: -48 },
+          { a: new Date(2020, 2, 24), b: -49 },
           { a: new Date(2020, 2, 31), b: -60 },
           { a: new Date(2020, 3, 7), b: -72 },
-          { a: new Date(2020, 3, 14), b: -73 },
-          { a: new Date(2020, 3, 21), b: -48 },
-          { a: new Date(2020, 3, 28), b: -79 },
+          { a: new Date(2020, 3, 14), b: -72 },
+          { a: new Date(2020, 3, 21), b: -38 },
+          { a: new Date(2020, 3, 28), b: -74 },
           { a: new Date(2020, 4, 5), b: -79 },
           { a: new Date(2020, 4, 12), b: -78 },
-          { a: new Date(2020, 4, 19), b: -75 },
-          { a: new Date(2020, 4, 26), b: -72 }
+          { a: new Date(2020, 4, 19), b: -70 },
+          { a: new Date(2020, 4, 26), b: -69 },
+          { a: new Date(2020, 5, 2), b: -71 },
+          { a: new Date(2020, 5, 9), b: -64 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: 144 },
-          { a: new Date(2020, 0, 14), b: 154 },
-          { a: new Date(2020, 0, 21), b: 178 },
-          { a: new Date(2020, 0, 28), b: 187 },
-          { a: new Date(2020, 1, 4), b: 225 },
-          { a: new Date(2020, 1, 11), b: 267 },
-          { a: new Date(2020, 1, 18), b: 271 },
-          { a: new Date(2020, 1, 25), b: 345 },
-          { a: new Date(2020, 2, 3), b: 552 },
-          { a: new Date(2020, 2, 10), b: 649 },
-          { a: new Date(2020, 2, 17), b: 655 },
-          { a: new Date(2020, 2, 24), b: 354 },
+          { a: new Date(2020, 0, 7), b: 153 },
+          { a: new Date(2020, 0, 14), b: 162 },
+          { a: new Date(2020, 0, 21), b: 187 },
+          { a: new Date(2020, 0, 28), b: 197 },
+          { a: new Date(2020, 1, 4), b: 235 },
+          { a: new Date(2020, 1, 11), b: 277 },
+          { a: new Date(2020, 1, 18), b: 279 },
+          { a: new Date(2020, 1, 25), b: 352 },
+          { a: new Date(2020, 2, 3), b: 555 },
+          { a: new Date(2020, 2, 10), b: 652 },
+          { a: new Date(2020, 2, 17), b: 667 },
+          { a: new Date(2020, 2, 24), b: 355 },
           { a: new Date(2020, 2, 31), b: 211 },
           { a: new Date(2020, 3, 7), b: 140 },
           { a: new Date(2020, 3, 14), b: 184 },
           { a: new Date(2020, 3, 21), b: 214 },
           { a: new Date(2020, 3, 28), b: 204 },
-          { a: new Date(2020, 4, 5), b: 185 },
-          { a: new Date(2020, 4, 12), b: 187 },
-          { a: new Date(2020, 4, 19), b: 145 },
-          { a: new Date(2020, 4, 26), b: 118 }
+          { a: new Date(2020, 4, 5), b: 186 },
+          { a: new Date(2020, 4, 12), b: 188 },
+          { a: new Date(2020, 4, 19), b: 149 },
+          { a: new Date(2020, 4, 26), b: 135 },
+          { a: new Date(2020, 5, 2), b: 133 },
+          { a: new Date(2020, 5, 9), b: 92 }
         ]
       ],
       japanDataInbound: [
         [
-          { a: new Date(2020, 0, 7), b: -7 },
+          { a: new Date(2020, 0, 7), b: -8 },
           { a: new Date(2020, 0, 14), b: 4 },
           { a: new Date(2020, 0, 21), b: 12 },
           { a: new Date(2020, 0, 28), b: -23 },
@@ -756,7 +816,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -97 },
           { a: new Date(2020, 4, 12), b: -97 },
           { a: new Date(2020, 4, 19), b: -96 },
-          { a: new Date(2020, 4, 26), b: -96 }
+          { a: new Date(2020, 4, 26), b: -96 },
+          { a: new Date(2020, 5, 2), b: -95 },
+          { a: new Date(2020, 5, 9), b: -95}
         ],
         [
           { a: new Date(2020, 0, 7), b: 11 },
@@ -775,34 +837,38 @@ class App extends Component {
           { a: new Date(2020, 3, 7), b: -51 },
           { a: new Date(2020, 3, 14), b: -66 },
           { a: new Date(2020, 3, 21), b: -49 },
-          { a: new Date(2020, 3, 28), b: -65 },
+          { a: new Date(2020, 3, 28), b: -64 },
           { a: new Date(2020, 4, 5), b: -70 },
-          { a: new Date(2020, 4, 12), b: -77 },
+          { a: new Date(2020, 4, 12), b: -76 },
           { a: new Date(2020, 4, 19), b: -71 },
-          { a: new Date(2020, 4, 26), b: -68 }
+          { a: new Date(2020, 4, 26), b: -66 },
+          { a: new Date(2020, 5, 2), b: -70 },
+          { a: new Date(2020, 5, 9), b: 74}
         ],
         [
-          { a: new Date(2020, 0, 7), b: 42 },
-          { a: new Date(2020, 0, 14), b: 55 },
-          { a: new Date(2020, 0, 21), b: 80 },
-          { a: new Date(2020, 0, 28), b: 170 },
-          { a: new Date(2020, 1, 4), b: 689 },
-          { a: new Date(2020, 1, 11), b: 786 },
+          { a: new Date(2020, 0, 7), b: 43 },
+          { a: new Date(2020, 0, 14), b: 56 },
+          { a: new Date(2020, 0, 21), b: 82 },
+          { a: new Date(2020, 0, 28), b: 171 },
+          { a: new Date(2020, 1, 4), b: 690 },
+          { a: new Date(2020, 1, 11), b: 787 },
           { a: new Date(2020, 1, 18), b: 432 },
           { a: new Date(2020, 1, 25), b: 407 },
           { a: new Date(2020, 2, 3), b: 457 },
           { a: new Date(2020, 2, 10), b: 495 },
           { a: new Date(2020, 2, 17), b: 407 },
-          { a: new Date(2020, 2, 24), b: 474 },
+          { a: new Date(2020, 2, 24), b: 475 },
           { a: new Date(2020, 2, 31), b: 300 },
-          { a: new Date(2020, 3, 7), b: 208 },
-          { a: new Date(2020, 3, 14), b: 180 },
-          { a: new Date(2020, 3, 21), b: 200 },
+          { a: new Date(2020, 3, 7), b: 209 },
+          { a: new Date(2020, 3, 14), b: 181 },
+          { a: new Date(2020, 3, 21), b: 201 },
           { a: new Date(2020, 3, 28), b: 137 },
-          { a: new Date(2020, 4, 5), b: 86 },
-          { a: new Date(2020, 4, 12), b: 66 },
-          { a: new Date(2020, 4, 19), b: 53 },
-          { a: new Date(2020, 4, 26), b: 28 }
+          { a: new Date(2020, 4, 5), b: 98 },
+          { a: new Date(2020, 4, 12), b: 88 },
+          { a: new Date(2020, 4, 19), b:  73 },
+          { a: new Date(2020, 4, 26), b: 44 },
+          { a: new Date(2020, 5, 2), b: 64 },
+          { a: new Date(2020, 5, 9), b: 92 }
         ]
       ],
       southkoreaDataInbound: [
@@ -827,7 +893,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -90 },
           { a: new Date(2020, 4, 12), b: -90 },
           { a: new Date(2020, 4, 19), b: -90 },
-          { a: new Date(2020, 4, 26), b: -90 }
+          { a: new Date(2020, 4, 26), b: -90 },
+          { a: new Date(2020, 5, 2), b: -92 },
+          { a: new Date(2020, 5, 9), b: -90 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 7 },
@@ -850,7 +918,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -65 },
           { a: new Date(2020, 4, 12), b: -65 },
           { a: new Date(2020, 4, 19), b: -67 },
-          { a: new Date(2020, 4, 26), b: -66 }
+          { a: new Date(2020, 4, 26), b: -64 },
+          { a: new Date(2020, 5, 2), b: -72 },
+          { a: new Date(2020, 5, 9), b: -65 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 31 },
@@ -864,16 +934,18 @@ class App extends Component {
           { a: new Date(2020, 2, 3), b: 557 },
           { a: new Date(2020, 2, 10), b: 341 },
           { a: new Date(2020, 2, 17), b: 483 },
-          { a: new Date(2020, 2, 24), b: 366 },
-          { a: new Date(2020, 2, 31), b: 292 },
+          { a: new Date(2020, 2, 24), b: 367 },
+          { a: new Date(2020, 2, 31), b: 293 },
           { a: new Date(2020, 3, 7), b: 183 },
           { a: new Date(2020, 3, 14), b: 143 },
           { a: new Date(2020, 3, 21), b: 146 },
           { a: new Date(2020, 3, 28), b: 91 },
           { a: new Date(2020, 4, 5), b: 53 },
-          { a: new Date(2020, 4, 12), b: 34 },
-          { a: new Date(2020, 4, 19), b: 48 },
-          { a: new Date(2020, 4, 26), b: 43 }
+          { a: new Date(2020, 4, 12), b: 35 },
+          { a: new Date(2020, 4, 19), b: 49 },
+          { a: new Date(2020, 4, 26), b: 46 },
+          { a: new Date(2020, 5, 2), b: 16 },
+          { a: new Date(2020, 5, 9), b: 11 }
         ]
       ],
       chinaDataOutbound: [
@@ -898,7 +970,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -98 },
           { a: new Date(2020, 4, 12), b: -99 },
           { a: new Date(2020, 4, 19), b: -98 },
-          { a: new Date(2020, 4, 26), b: -99 }
+          { a: new Date(2020, 4, 26), b: -98 },
+          { a: new Date(2020, 5, 2), b: -98 },
+          { a: new Date(2020, 5, 9), b: -98 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 7 },
@@ -921,7 +995,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -90 },
           { a: new Date(2020, 4, 12), b: -91 },
           { a: new Date(2020, 4, 19), b: -91 },
-          { a: new Date(2020, 4, 26), b: -86 }
+          { a: new Date(2020, 4, 26), b: -86 },
+          { a: new Date(2020, 5, 2), b: -87 },
+          { a: new Date(2020, 5, 9), b: -87 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 25 },
@@ -944,20 +1020,22 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -57 },
           { a: new Date(2020, 4, 12), b: -51 },
           { a: new Date(2020, 4, 19), b: -54 },
-          { a: new Date(2020, 4, 26), b: -52 }
+          { a: new Date(2020, 4, 26), b: -49 },
+          { a: new Date(2020, 5, 2), b: -61 },
+          { a: new Date(2020, 5, 9), b: -55 }
         ]
       ],
       italyDataOutbound: [
         [
-          { a: new Date(2020, 0, 7), b: -4 },
-          { a: new Date(2020, 0, 14), b: 3 },
-          { a: new Date(2020, 0, 21), b: 5 },
-          { a: new Date(2020, 0, 28), b: 2 },
+          { a: new Date(2020, 0, 7), b: -5 },
+          { a: new Date(2020, 0, 14), b: 2 },
+          { a: new Date(2020, 0, 21), b: 4 },
+          { a: new Date(2020, 0, 28), b: 1 },
           { a: new Date(2020, 1, 4), b: -3 },
-          { a: new Date(2020, 1, 11), b: -6 },
+          { a: new Date(2020, 1, 11), b: -7 },
           { a: new Date(2020, 1, 18), b: -4 },
           { a: new Date(2020, 1, 25), b: -21 },
-          { a: new Date(2020, 2, 3), b: -57 },
+          { a: new Date(2020, 2, 3), b: -58 },
           { a: new Date(2020, 2, 10), b: -69 },
           { a: new Date(2020, 2, 17), b: -85 },
           { a: new Date(2020, 2, 24), b: -95 },
@@ -969,53 +1047,59 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -97 },
           { a: new Date(2020, 4, 12), b: -97 },
           { a: new Date(2020, 4, 19), b: -95 },
-          { a: new Date(2020, 4, 26), b: -94 }
+          { a: new Date(2020, 4, 26), b: -93 },
+          { a: new Date(2020, 5, 2), b: -92 },
+          { a: new Date(2020, 5, 9), b: -88 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 27 },
           { a: new Date(2020, 0, 14), b: -6 },
           { a: new Date(2020, 0, 21), b: 4 },
-          { a: new Date(2020, 0, 28), b: -11 },
+          { a: new Date(2020, 0, 28), b: -12 },
           { a: new Date(2020, 1, 4), b: -8 },
-          { a: new Date(2020, 1, 11), b: 40 },
+          { a: new Date(2020, 1, 11), b: 30 },
           { a: new Date(2020, 1, 18), b: -1 },
           { a: new Date(2020, 1, 25), b: 30 },
-          { a: new Date(2020, 2, 3), b: -92 },
+          { a: new Date(2020, 2, 3), b: -91 },
           { a: new Date(2020, 2, 10), b: 111 },
-          { a: new Date(2020, 2, 17), b: 7 },
+          { a: new Date(2020, 2, 17), b: 6 },
           { a: new Date(2020, 2, 24), b: -67 },
           { a: new Date(2020, 2, 31), b: -74 },
-          { a: new Date(2020, 3, 7), b: -78 },
+          { a: new Date(2020, 3, 7), b: -79 },
           { a: new Date(2020, 3, 14), b: -74 },
-          { a: new Date(2020, 3, 21), b: -70 },
+          { a: new Date(2020, 3, 21), b: -68 },
           { a: new Date(2020, 3, 28), b: -84 },
           { a: new Date(2020, 4, 5), b: -86 },
           { a: new Date(2020, 4, 12), b: -86 },
-          { a: new Date(2020, 4, 19), b: -87 },
-          { a: new Date(2020, 4, 26), b: -83 }
+          { a: new Date(2020, 4, 19), b: -85 },
+          { a: new Date(2020, 4, 26), b: -82 },
+          { a: new Date(2020, 5, 2), b: -83 },
+          { a: new Date(2020, 5, 9), b: -78 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: 94 },
-          { a: new Date(2020, 0, 14), b: 133 },
-          { a: new Date(2020, 0, 21), b: 150 },
-          { a: new Date(2020, 0, 28), b: 189 },
-          { a: new Date(2020, 1, 4), b: 259 },
-          { a: new Date(2020, 1, 11), b: 293 },
-          { a: new Date(2020, 1, 18), b: 273 },
-          { a: new Date(2020, 1, 25), b: 350 },
-          { a: new Date(2020, 2, 3), b: 511 },
-          { a: new Date(2020, 2, 10), b: 557 },
+          { a: new Date(2020, 0, 7), b: 97 },
+          { a: new Date(2020, 0, 14), b: 138 },
+          { a: new Date(2020, 0, 21), b: 156 },
+          { a: new Date(2020, 0, 28), b: 194 },
+          { a: new Date(2020, 1, 4), b: 265 },
+          { a: new Date(2020, 1, 11), b: 300 },
+          { a: new Date(2020, 1, 18), b: 280 },
+          { a: new Date(2020, 1, 25), b: 355 },
+          { a: new Date(2020, 2, 3), b: 514 },
+          { a: new Date(2020, 2, 10), b: 559 },
           { a: new Date(2020, 2, 17), b: 477 },
           { a: new Date(2020, 2, 24), b: 220 },
           { a: new Date(2020, 2, 31), b: 63 },
           { a: new Date(2020, 3, 7), b: 49 },
-          { a: new Date(2020, 3, 14), b: 15 },
+          { a: new Date(2020, 3, 14), b: 16 },
           { a: new Date(2020, 3, 21), b: 71 },
           { a: new Date(2020, 3, 28), b: 72 },
           { a: new Date(2020, 4, 5), b: 60 },
-          { a: new Date(2020, 4, 12), b: 40 },
-          { a: new Date(2020, 4, 19), b: 30 },
-          { a: new Date(2020, 4, 26), b: 16 }
+          { a: new Date(2020, 4, 12), b: 41 },
+          { a: new Date(2020, 4, 19), b: 35 },
+          { a: new Date(2020, 4, 26), b: 28 },
+          { a: new Date(2020, 5, 2), b: 52 },
+          { a: new Date(2020, 5, 9), b: 48 }
         ]
       ],
       japanDataOutbound: [
@@ -1040,7 +1124,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -92 },
           { a: new Date(2020, 4, 12), b: -96 },
           { a: new Date(2020, 4, 19), b: -95 },
-          { a: new Date(2020, 4, 26), b: -96 }
+          { a: new Date(2020, 4, 26), b: -96 },
+          { a: new Date(2020, 5, 2), b: -96 },
+          { a: new Date(2020, 5, 9), b: -94 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 8 },
@@ -1061,32 +1147,36 @@ class App extends Component {
           { a: new Date(2020, 3, 21), b: -36 },
           { a: new Date(2020, 3, 28), b: -48 },
           { a: new Date(2020, 4, 5), b: -51 },
-          { a: new Date(2020, 4, 12), b: -63 },
-          { a: new Date(2020, 4, 19), b: -43 },
-          { a: new Date(2020, 4, 26), b: -56 }
+          { a: new Date(2020, 4, 12), b: -62 },
+          { a: new Date(2020, 4, 19), b: -42 },
+          { a: new Date(2020, 4, 26), b: -54 },
+          { a: new Date(2020, 5, 2), b: -56 },
+          { a: new Date(2020, 5, 9), b: -61 }
         ],
         [
-          { a: new Date(2020, 0, 7), b: 53 },
-          { a: new Date(2020, 0, 14), b: 79 },
-          { a: new Date(2020, 0, 21), b: 74 },
-          { a: new Date(2020, 0, 28), b: 170 },
-          { a: new Date(2020, 1, 4), b: 347 },
-          { a: new Date(2020, 1, 11), b: 449 },
-          { a: new Date(2020, 1, 18), b: 383 },
-          { a: new Date(2020, 1, 25), b: 355 },
-          { a: new Date(2020, 2, 3), b: 498 },
-          { a: new Date(2020, 2, 10), b: 557 },
-          { a: new Date(2020, 2, 17), b: 546 },
-          { a: new Date(2020, 2, 24), b: 591 },
+          { a: new Date(2020, 0, 7), b: 66 },
+          { a: new Date(2020, 0, 14), b: 82 },
+          { a: new Date(2020, 0, 21), b: 76 },
+          { a: new Date(2020, 0, 28), b: 173 },
+          { a: new Date(2020, 1, 4), b: 349 },
+          { a: new Date(2020, 1, 11), b: 451 },
+          { a: new Date(2020, 1, 18), b: 384 },
+          { a: new Date(2020, 1, 25), b: 357 },
+          { a: new Date(2020, 2, 3), b: 499 },
+          { a: new Date(2020, 2, 10), b: 558 },
+          { a: new Date(2020, 2, 17), b: 548 },
+          { a: new Date(2020, 2, 24), b: 592 },
           { a: new Date(2020, 2, 31), b: 419 },
           { a: new Date(2020, 3, 7), b: 172 },
-          { a: new Date(2020, 3, 14), b: 110 },
+          { a: new Date(2020, 3, 14), b: 111 },
           { a: new Date(2020, 3, 21), b: 87 },
-          { a: new Date(2020, 3, 28), b: 35 },
-          { a: new Date(2020, 4, 5), b: 44 },
-          { a: new Date(2020, 4, 12), b: 3 },
-          { a: new Date(2020, 4, 19), b: 27 },
-          { a: new Date(2020, 4, 26), b: -8 }
+          { a: new Date(2020, 3, 28), b: 36 },
+          { a: new Date(2020, 4, 5), b: 46 },
+          { a: new Date(2020, 4, 12), b: 6 },
+          { a: new Date(2020, 4, 19), b: 32 },
+          { a: new Date(2020, 4, 26), b: -3 },
+          { a: new Date(2020, 5, 2), b: -13 },
+          { a: new Date(2020, 5, 9), b: 22 }
         ]
       ],
       southkoreaDataOutbound: [
@@ -1111,7 +1201,9 @@ class App extends Component {
           { a: new Date(2020, 4, 5), b: -96 },
           { a: new Date(2020, 4, 12), b: -96 },
           { a: new Date(2020, 4, 19), b: -96 },
-          { a: new Date(2020, 4, 26), b: -96 }
+          { a: new Date(2020, 4, 26), b: -96 },
+          { a: new Date(2020, 5, 2), b: -96 },
+          { a: new Date(2020, 5, 9), b: -95 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 5 },
@@ -1133,8 +1225,10 @@ class App extends Component {
           { a: new Date(2020, 3, 28), b: -77 },
           { a: new Date(2020, 4, 5), b: -79 },
           { a: new Date(2020, 4, 12), b: -78 },
-          { a: new Date(2020, 4, 19), b: -80 },
-          { a: new Date(2020, 4, 26), b: -80 }
+          { a: new Date(2020, 4, 19), b: -79 },
+          { a: new Date(2020, 4, 26), b: -80 },
+          { a: new Date(2020, 5, 2), b: -80 },
+          { a: new Date(2020, 5, 9), b: -73 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 10 },
@@ -1155,9 +1249,11 @@ class App extends Component {
           { a: new Date(2020, 3, 21), b: 7 },
           { a: new Date(2020, 3, 28), b: 32 },
           { a: new Date(2020, 4, 5), b: -33 },
-          { a: new Date(2020, 4, 12), b: 10 },
-          { a: new Date(2020, 4, 19), b: -6 },
-          { a: new Date(2020, 4, 26), b: -18 }
+          { a: new Date(2020, 4, 12), b: 11 },
+          { a: new Date(2020, 4, 19), b: -5 },
+          { a: new Date(2020, 4, 26), b: -17 },
+          { a: new Date(2020, 5, 2), b: -44 },
+          { a: new Date(2020, 5, 9), b: -36 }
         ]
       ]
     };
