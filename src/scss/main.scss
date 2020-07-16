@@ -128,7 +128,7 @@
 .graphToggle {
   cursor: pointer;
 
-  i {
+  i, .fa-check {
     display: none;
 
     &.graphToggleKey1,
@@ -141,7 +141,7 @@
   }
 
   &.active {
-    i {
+    i, .fa-check {
       display: block;
     }
     .graphToggleCheckbox {
@@ -290,6 +290,8 @@
     0 6px 6px rgba(000, 000, 000, 0.3);
   display: inline-block;
   min-width: 120px;
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 .graph-tooltip-date {

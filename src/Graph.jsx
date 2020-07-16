@@ -4,10 +4,12 @@ import {
   VictoryLine,
   VictoryBar,
   VictoryAxis,
+  VictoryBrushContainer,
   VictoryScatter,
   VictoryVoronoiContainer,
   VictoryTooltip,
-  VictoryLabel
+  VictoryLabel,
+  createContainer
 } from "victory";
 
 import * as moment from "moment";
@@ -27,20 +29,87 @@ ytdData
 dataDomain
 */
 
+function generateDomain(graphData) {
+  var step = 10;
+
+  var max = Math.max.apply(
+    Math,
+    graphData.map(function(o) {
+      return o.b;
+    })
+  );
+
+  var min = Math.min.apply(
+    Math,
+    graphData.map(function(o) {
+      return o.b;
+    })
+  );
+
+  var arr = [];
+
+  min = Math.round(min / step) * step;
+  max = Math.round(max / step) * step;
+
+  if (max <= step) {
+    max = step;
+  }
+
+  if (100 + min < 50) {
+    min = -100;
+  }
+
+  var diff = Math.abs(Math.abs(min) - max) / step;
+
+  if (diff > 12) {
+    diff = 10;
+    step = 100;
+  }
+
+  arr.push(max);
+
+  for (var i = max - step; i > min; i = i - step) {
+    arr.push(i);
+  }
+
+  arr.push(min);
+
+  return arr;
+}
 class Graph extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       ticketToggle: true,
       salesToggle: true,
       thirdToggle: true,
-      showAdditionalRows: false
+      showAdditionalRows: false,
+      zoomDomain: {
+        x: [
+          props.data1[parseInt(props.data1.length / 4)].x + 0.5,
+          props.data1[props.data1.length - 1].x + 0.5
+        ]
+      }
     };
 
     this.toggleTicket = this.toggleTicket.bind(this);
     this.toggleSales = this.toggleSales.bind(this);
     this.toggleThird = this.toggleThird.bind(this);
     this.toggleAdditionalRows = this.toggleAdditionalRows.bind(this);
+    this.handleZoom = this.handleZoom.bind(this);
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (this.props.data1 !== prevProps.data1) {
+      this.setState({
+        zoomDomain: {
+          x: [
+            this.props.data1[parseInt(this.props.data1.length / 4)].x,
+            this.props.data1[this.props.data1.length - 1].x
+          ]
+        }
+      });
+    }
   }
 
   toggleAdditionalRows() {
@@ -73,6 +142,10 @@ class Graph extends Component {
     } else {
       this.setState({ thirdToggle: false });
     }
+  }
+
+  handleZoom(domain) {
+    this.setState({ zoomDomain: domain });
   }
 
   render() {
@@ -139,7 +212,7 @@ class Graph extends Component {
             }
           >
             <div className="d-flex mainStatPercentChange">
-              {numeral(datum.b).format("0.0")}%
+              {numeral(datum.b).format("0.00")}%
             </div>
             <div className="d-flex mainStatPercentChangeBar">
               <div
@@ -155,7 +228,7 @@ class Graph extends Component {
             }
           >
             <div className="d-flex mainStatPercentChange">
-              {numeral(data2_reverse[i].b).format("0.0")}%
+              {numeral(data2_reverse[i].b).format("0.00")}%
             </div>
             <div className="d-flex mainStatPercentChangeBar">
               <div
@@ -221,6 +294,13 @@ class Graph extends Component {
       dateDomain[i] = i + 0.5;
     }
 
+    var graphDomain = dataDomain;
+
+    var min = graphDomain[graphDomain.length - 1];
+    var max = graphDomain[0];
+
+    const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
+
     return (
       <div className="container mt-5">
         <div className="graphTitle" style={{ marginTop: "60px" }}>
@@ -281,8 +361,12 @@ class Graph extends Component {
           fixLabelOverlap={true}
           padding={{ left: 100, top: 30, bottom: 50, right: 50 }}
           containerComponent={
-            <VictoryVoronoiContainer
+            <VictoryZoomVoronoiContainer
+              allowZoom={false}
               voronoiDimension="x"
+              zoomDimension="x"
+              zoomDomain={this.state.zoomDomain}
+              onZoomDomainChange={this.handleZoom.bind(this)}
               activateLabels={true}
               labels={({ datum }) => ""}
               labelComponent={
@@ -339,7 +423,7 @@ class Graph extends Component {
             orientation="bottom"
             offsetY={50}
             tickValues={valueDomain}
-            tickFormat={t => `${moment(data[t - 1].a).format("MMMM D")}`}
+            tickFormat={t => `${moment(data[t - 1].a).format("MMM D")}`}
             tickLabelComponent={<VictoryLabel />}
           />
 
@@ -376,7 +460,7 @@ class Graph extends Component {
             name="bar"
             style={{ data: { fill: "#dddddd", opacity: ".2" } }}
             data={alternatingDataset}
-            barRatio={0.75}
+            barRatio={.9}
             y="b"
           />
 
@@ -487,6 +571,101 @@ class Graph extends Component {
           )}
         </VictoryChart>
 
+        <div className="brushContainer">
+          <VictoryChart
+            padding={{ top: 0, left: 15, right: 15, bottom: 0 }}
+            width={600}
+            height={30}
+            domain={{ y: [min, max] }}
+            containerComponent={
+              <VictoryBrushContainer
+                className="brushsvg"
+                allowResize={false}
+                brushDimension="x"
+                brushDomain={this.state.zoomDomain}
+                onBrushDomainChange={this.handleZoom.bind(this)}
+                handleComponent={<CustomHandle />}
+                defaultBrushArea="move"
+                brushStyle={{
+                  cursor: "grab",
+                  stroke: "transparent",
+                  fill: "black",
+                  fillOpacity: "0.1"
+                }}
+              />
+            }
+          >
+            <VictoryAxis
+              style={{
+                grid: {
+                  stroke: "transparent",
+                  strokeWidth: 1.5
+                },
+                axis: { strokeWidth: 0, stroke: "#ffffff" }
+              }}
+              tickFormat={t => ``}
+              tickValues={dateDomain}
+            />
+
+            <VictoryAxis
+              style={{
+                tickLabels: {
+                  fontFamily: "SourceSansPro-Bold, arial, sans-serif",
+                  fontSize: "12px",
+                  color: "#999999",
+                  textTransform: "uppercase"
+                },
+                grid: { strokeWidth: 0, stroke: "#ffffff" },
+                axis: { strokeWidth: 0, stroke: "#ffffff" }
+              }}
+              tickFormat={t => ``}
+              orientation="bottom"
+              tickValues={valueDomain}
+            />
+
+            {/* whenClicked is a property not an event, per se. */}
+            <VictoryAxis
+              tickFormat={t => ``}
+              style={{
+                axis: { stroke: "#5d5c68", strokeWidth: 0 }
+              }}
+              dependentAxis
+              orientation="left"
+              tickValues={graphDomain}
+            />
+
+            {this.state.ticketToggle && (
+              <VictoryLine
+                style={{
+                  data: { stroke: "#189bb0", strokeWidth: "1.5" }
+                }}
+                data={data}
+                y="b"
+              />
+            )}
+
+            {this.state.salesToggle && (
+              <VictoryLine
+                style={{
+                  data: { stroke: "#bbaf8b", strokeWidth: "1.5" }
+                }}
+                data={data2}
+                y="b"
+              />
+            )}
+
+            {this.props.data3 && this.state.thirdToggle && (
+              <VictoryLine
+                style={{
+                  data: { stroke: "#316677", strokeWidth: "1.5" }
+                }}
+                data={data3}
+                y="b"
+              />
+            )}
+          </VictoryChart>
+        </div>
+
         <div className="ytd-container">
           <div className="row no-gutters">
             <div
@@ -545,6 +724,44 @@ class Graph extends Component {
           </div>
         </div>
       </div>
+    );
+  }
+}
+
+class CustomHandle extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <foreignObject
+        x={this.props.x - 210}
+        y={this.props.y}
+        width="17px"
+        height={this.props.height}
+      >
+        <div
+          className="customHandle"
+          style={{
+            background: "transparent",
+            height: "100%",
+            padding: "4px 2px 4px "
+          }}
+        >
+          <div
+            style={{
+              padding: "5px 0px",
+              lineHeight: "1",
+              background: "#f1f2f2",
+              color: "#414042",
+              display: this.props.x > 350 ? "block" : "none"
+            }}
+          >
+            <i className="fas fa-grip-lines-vertical"></i>
+          </div>
+        </div>
+      </foreignObject>
     );
   }
 }

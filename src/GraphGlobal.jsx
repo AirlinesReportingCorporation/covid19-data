@@ -65,8 +65,6 @@ function generateDomain(graphData) {
     step = 100;
   }
 
-  console.log(min + ":" + max + ":" + diff);
-
   arr.push(max);
 
   for (var i = max - step; i > min; i = i - step) {
@@ -74,8 +72,6 @@ function generateDomain(graphData) {
   }
 
   arr.push(min);
-
-  console.log(arr);
 
   return arr;
 }
@@ -312,8 +308,8 @@ class SingleGraph extends React.Component {
     this.state = {
       zoomDomain: {
         x: [
-          props.data[parseInt(props.data.length / 4)].x + 0.5,
-          props.data[props.data.length - 1].x + 0.5
+          10.5,
+          4.5
         ]
       }
     };
