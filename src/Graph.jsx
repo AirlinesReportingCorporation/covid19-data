@@ -301,6 +301,8 @@ class Graph extends Component {
     var min = graphDomain[graphDomain.length - 1];
     var max = graphDomain[0];
 
+    const layout = this.props.layout;
+
     const VictoryZoomVoronoiContainer = createContainer("zoom", "voronoi");
 
     return (
@@ -376,7 +378,7 @@ class Graph extends Component {
                   cornerRadius={0}
                   labels={this.labels}
                   flyoutComponent={
-                    <GraphTooltip data={[data, data2, data3, dataTitle]} />
+                    <GraphTooltip layout={layout} data={[data, data2, data3, dataTitle]} />
                   }
                   flyoutStyle={{
                     fill: "white",
