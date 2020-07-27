@@ -86,7 +86,8 @@ class Graph extends Component {
       showAdditionalRows: false,
       zoomDomain: {
         x: [
-          props.data1[parseInt(props.data1.length / 4)].x + 0.5,
+          //set columns for zooming for 12
+          props.data1[parseInt(props.data1.length - 13)].x + 0.5,
           props.data1[props.data1.length - 1].x + 0.5
         ]
       }
@@ -104,7 +105,8 @@ class Graph extends Component {
       this.setState({
         zoomDomain: {
           x: [
-            this.props.data1[parseInt(this.props.data1.length / 4)].x,
+            //set columns for zooming for 12
+            props.data1[parseInt(props.data1.length - 13)].x + 0.5,
             this.props.data1[this.props.data1.length - 1].x
           ]
         }
@@ -460,7 +462,7 @@ class Graph extends Component {
             name="bar"
             style={{ data: { fill: "#dddddd", opacity: ".2" } }}
             data={alternatingDataset}
-            barRatio={.9}
+            barRatio={0.9}
             y="b"
           />
 
