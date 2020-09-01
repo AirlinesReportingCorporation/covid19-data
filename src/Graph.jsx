@@ -740,7 +740,7 @@ class CustomHandle extends React.Component {
   render() {
     return (
       <foreignObject
-        x={this.props.x - 180 }
+        x={this.props.x - 160 }
         y={this.props.y}
         width="17px"
         height={this.props.height}
