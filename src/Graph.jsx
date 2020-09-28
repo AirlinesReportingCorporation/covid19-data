@@ -247,7 +247,7 @@ class Graph extends Component {
               }
             >
               <div className="d-flex mainStatPercentChange">
-                {numeral(data3_reverse[i].b).format("0")}%
+                {numeral(data3_reverse[i].b).format("0.00")}%
               </div>
               <div className="d-flex mainStatPercentChangeBar">
                 <div
