@@ -80,7 +80,8 @@ class App extends Component {
       { x: 26, a: new Date(2020, 8, 20 ), b: -68.9 },
       { x: 27, a: new Date(2020, 8, 27 ), b: -68.1 },
       { x: 28, a: new Date(2020, 9, 4 ), b: -68.0 },
-      { x: 29, a: new Date(2020, 9, 11 ), b: -67.0 }
+      { x: 29, a: new Date(2020, 9, 11 ), b: -67.0 },
+      { x: 30, a: new Date(2020, 9, 18 ), b: -66.2 }
     ];
 
     //sales variance
@@ -113,10 +114,11 @@ class App extends Component {
       { x: 26, a: new Date(2020, 8, 20 ), b: -81.9 },
       { x: 27, a: new Date(2020, 8, 27 ), b: -81.1 },
       { x: 28, a: new Date(2020, 9, 4 ), b: -81.0 },
-      { x: 29, a: new Date(2020, 9, 11 ), b: -79.9 }
+      { x: 29, a: new Date(2020, 9, 11 ), b: -79.9 },
+      { x: 30, a: new Date(2020, 9, 18 ), b: -79.4 }
     ];
 
-    var ytdData1 = [-60.12, -67.33];
+    var ytdData1 = [-60.25, -67.60];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -147,7 +149,8 @@ class App extends Component {
       { x: 26, a: new Date(2020, 8, 20 ), b: -86.7 },
       { x: 27, a: new Date(2020, 8, 27 ), b: -86.3 },
       { x: 28, a: new Date(2020, 9, 4 ), b: -86.1 },
-      { x: 29, a: new Date(2020, 9, 11 ), b: -85.7 }
+      { x: 29, a: new Date(2020, 9, 11 ), b: -85.7 },
+      { x: 30, a: new Date(2020, 9, 18 ), b: -85.4 }
     ];
 
     var online = [
@@ -179,7 +182,8 @@ class App extends Component {
       { x: 26, a: new Date(2020, 8, 20 ), b: -51.7 },
       { x: 27, a: new Date(2020, 8, 27 ), b: -51.1 },
       { x: 28, a: new Date(2020, 9, 4 ), b: -51.0 },
-      { x: 29, a: new Date(2020, 9, 11 ), b: -49.8 }
+      { x: 29, a: new Date(2020, 9, 11 ), b: -49.8 },
+      { x: 30, a: new Date(2020, 9, 18 ), b: -48.1 }
     ];
 
     var leisure = [
@@ -211,10 +215,11 @@ class App extends Component {
       { x: 26, a: new Date(2020, 8, 20 ), b: -72.5 },
       { x: 27, a: new Date(2020, 8, 27 ), b: -71.2 },
       { x: 28, a: new Date(2020, 9, 4 ), b: -71.5 },
-      { x: 29, a: new Date(2020, 9, 11 ), b: -69.7 }
+      { x: 29, a: new Date(2020, 9, 11 ), b: -69.7 },
+      { x: 30, a: new Date(2020, 9, 18 ), b: -69.2 }
     ];
 
-    var ytdData2 = [-68.30, -53.76, -61.05];
+    var ytdData2 = [-68.72, -53.65, -61.21];
 
     var dataDomain1 = [-40, -50, -60, -70, -80, -90, -100];
 
@@ -389,19 +394,55 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">
-                <strong>Year-to-Date (YTD)</strong>
-              </div>
+              <div className="d-flex col-4">May</div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-14.97%</div>
+                <div className="d-flex mainStatPercentChange">-31.0%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "14.97%" }}></div>
+                  <div className="barChange" style={{ width: "31.0%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
-                <strong>$420</strong>
+                $353
               </div>
             </div>
+            <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">June</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-27.0%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "27.0%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $374
+              </div>
+            </div>
+            <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">July</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-29.0%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "29.0%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $355
+              </div>
+            </div>
+            <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">August</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-36.0%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "36.0%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $321
+              </div>
+            </div>
+          
+            
           </div>
         </div>
         <div className="bottomData container">
