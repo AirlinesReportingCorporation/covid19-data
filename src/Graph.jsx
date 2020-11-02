@@ -588,7 +588,7 @@ class Graph extends Component {
                 brushDimension="x"
                 brushDomain={this.state.zoomDomain}
                 onBrushDomainChange={this.handleZoom.bind(this)}
-                handleComponent={<CustomHandle />}
+                
                 defaultBrushArea="move"
                 brushStyle={{
                   cursor: "grab",
