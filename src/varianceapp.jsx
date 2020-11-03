@@ -1,17 +1,6 @@
 import React, { Component } from "react";
-import {
-  VictoryChart,
-  VictoryLine,
-  VictoryBar,
-  VictoryAxis,
-  VictoryScatter,
-  VictoryVoronoiContainer,
-  VictoryTooltip,
-  VictoryLabel
-} from "victory";
 
 import Graph from "./Graph.jsx";
-import GraphVariance from "./GraphVariance.jsx";
 import Loading from "./Loading.jsx";
 
 import * as moment from "moment";
@@ -233,56 +222,7 @@ class App extends Component {
 
     var ytdData2 = [-69.46, -53.57, -61.50];
 
-    var dataDomain1 = [-40, -50, -60, -70, -80, -90, -100];
-
-    // ============= Variance =============== //
-
-    var varianceData = [
-      {a: new Date(2020, 0, 12), b: 3.05, c: 0 },
-      {a: new Date(2020, 0, 19), b: 6.52, c: 3.47 },
-      {a: new Date(2020, 0, 26), b: 5.66, c: -0.86 },
-      {a: new Date(2020, 1, 2), b: -0.95, c: -6.61 },
-      {a: new Date(2020, 1, 9), b: -2.01, c: -1.06 },
-      {a: new Date(2020, 1, 16), b: -1.71, c: -0.30 },
-      {a: new Date(2020, 1, 23), b: -6.06, c: -4.35 },
-      {a: new Date(2020, 2, 1), b: -15.64, c: -9.58 },
-      {a: new Date(2020, 2, 8), b: -25.55, c: -9.91 },
-      {a: new Date(2020, 2, 15), b: -45.23, c: -19.68 },
-      {a: new Date(2020, 2, 22), b: -80.03, c: -34.80 },
-      {a: new Date(2020, 2, 29), b: -88.47, c: -8.43 },
-      {a: new Date(2020, 3, 5), b: -92.27, c: -3.80 },
-      {a: new Date(2020, 3, 12), b: -93.79, c: -1.52 },
-      {a: new Date(2020, 3, 19), b: -91.93, c: 1.87 },
-      {a: new Date(2020, 3, 26), b: -91.49, c: 0.43 },
-      {a: new Date(2020, 4, 3), b: -90.24, c: 1.24 },
-      {a: new Date(2020, 4, 10), b: -88.64, c: 1.60 },
-      {a: new Date(2020, 4, 17), b: -87.37, c: 1.27 },
-      {a: new Date(2020, 4, 24), b: -85.22, c: 2.15 },
-      {a: new Date(2020, 4, 31), b: -83.71, c: 1.51 },
-      {a: new Date(2020, 5, 7), b: -81.11, c: 2.60 },
-      {a: new Date(2020, 5, 14), b: -75.21, c: 5.91 },
-      {a: new Date(2020, 5, 21), b: -76.54, c: -1.33 },
-      {a: new Date(2020, 5, 28), b: -76.98, c: -0.44 },
-      {a: new Date(2020, 6, 5), b: -79.35, c: -2.37 },
-      {a: new Date(2020, 6, 12), b: -80.70, c: -1.35 },
-      {a: new Date(2020, 6, 19), b: -80.56, c: 0.14 },
-      {a: new Date(2020, 6, 26), b: -78.75, c: 1.81 },
-      {a: new Date(2020, 7, 2), b: -79.09, c: -0.34 },
-      {a: new Date(2020, 7, 9), b: -77.00, c: 2.09 },
-      {a: new Date(2020, 7, 16), b: -75.77, c: -1.23 },
-      {a: new Date(2020, 7, 23), b: -75.14, c: 0.63 },
-      {a: new Date(2020, 7, 30), b: -72.71, c: 2.42 },
-      {a: new Date(2020, 8, 6), b: -70.41, c: 2.31 },
-      {a: new Date(2020, 8, 13), b: -72.03, c: -1.62 },
-      {a: new Date(2020, 8, 20), b: -68.98, c: 3.05 },
-      {a: new Date(2020, 8, 27), b: -68.12, c: 0.85 },
-      {a: new Date(2020, 9, 4), b: -68.08, c: 0.04 },
-      {a: new Date(2020, 9, 11), b: -66.97, c: 1.12 },
-      {a: new Date(2020, 9, 18), b: -66.17, c: 0.80 },
-      {a: new Date(2020, 9, 25), b: -66.15, c: 0.02 },
-    ]
-
-    var varianceDomain = [20, 0, -20, -40, -60, -80, -100];
+    var dataDomain1 = [20, 0, -20, -40, -60, -80, -100];
 
     /*
     graphTitle: String
@@ -328,21 +268,6 @@ class App extends Component {
               This page will be updated on a weekly basis.
             </small>
           </p>
-        </div>
-
-
-        <div className="covidGraphContainer">
-          <GraphVariance
-            graphTitle={"Lorem Ipsum Dolor"}
-            graphSubTitle={"Lorem Ipsum Dolor Sit Amet"}
-            dataTitle={["Transaction Variance", "Change in Variance"]}
-            ytdLabels={ytdLabels1}
-            data1={varianceData}
-            ytdData={ytdData1}
-            dataDomain={varianceDomain}
-            tableHeaders={["7-Day Period Ending", "Transaction Variance", "Change in Variance"]}
-            layout="0"
-          />
         </div>
 
         <div className="covidGraphContainer">

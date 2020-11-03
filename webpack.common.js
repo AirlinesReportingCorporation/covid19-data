@@ -11,7 +11,8 @@ const extractSass = new MiniCssExtractPlugin({
 module.exports = {
   entry: {
     "covid19": "./src/index.jsx",
-    "covid19-global": "./src/global.jsx"
+    "covid19-global": "./src/global.jsx",
+    "covid19-variance": "./src/variance.jsx"
   },
   output: {
     filename: "[name].min.js",
