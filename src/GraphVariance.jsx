@@ -277,7 +277,7 @@ class GraphVariance extends Component {
             offsetY={50}
             tickValues={valueDomain}
             tickFormat={t => (parseInt(moment(data[t - 1].a).format("D")) < 8) ? `${moment(data[t - 1].a).format("MMM")}` : (t == 1) ? `${moment(data[t - 1].a).format("MMM")}` : `` }
-            tickLabelComponent={<VictoryLabel dx={30} />}
+            tickLabelComponent={<VictoryLabel />}
           />
 
           <VictoryAxis
