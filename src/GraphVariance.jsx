@@ -303,7 +303,7 @@ class GraphVariance extends Component {
               },
               grid: {
                 stroke: ({ tick }) =>
-                  tick == 0 || tick == 10 || tick <= -99
+                  tick == 0 || tick == 10 || tick == 40 || tick == 20 || tick <= -99
                     ? tick == 0
                       ? "#414042"
                       : "#ffffff"

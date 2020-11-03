@@ -450,7 +450,7 @@ class Graph extends Component {
                       : "#ffffff"
                     : "#d7d7d7",
                 strokeWidth: ({ tick }) =>
-                  tick == 10 || tick == -40 || tick == -100 ? 1 : 1
+                  tick == 10 || tick == -100 ? 1 : (tick == 40) ? 0 : 1
               }
             }}
             dependentAxis
