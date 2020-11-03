@@ -410,6 +410,7 @@ class GraphVariance extends Component {
                 brushDomain={this.state.zoomDomain}
                 onBrushDomainChange={this.handleZoom.bind(this)}
                 defaultBrushArea="move"
+                handleComponent={<CustomHandle/>}
                 brushStyle={{
                   cursor: "grab",
                   stroke: "transparent",
@@ -529,9 +530,9 @@ class CustomHandle extends React.Component {
   render() {
     return (
       <foreignObject
-        x={this.props.x - 140}
+        x={this.props.x - 2}
         y={this.props.y}
-        width="17px"
+        width="12px"
         height={this.props.height}
       >
         <div
@@ -539,7 +540,7 @@ class CustomHandle extends React.Component {
           style={{
             background: "transparent",
             height: "100%",
-            padding: "4px 2px 4px "
+            padding: "3px 1px 3px "
           }}
         >
           <div
@@ -548,7 +549,7 @@ class CustomHandle extends React.Component {
               lineHeight: "1",
               background: "#f1f2f2",
               color: "#414042",
-              display: this.props.x > 350 ? "block" : "none"
+              //display: this.props.x > 350 ? "block" : "none"
             }}
           >
             <i className="fas fa-grip-lines-vertical"></i>
