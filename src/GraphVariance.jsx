@@ -36,8 +36,8 @@ class GraphVariance extends Component {
       zoomDomain: {
         x: [
           //set columns for zooming for 12
-          this.props.data1.length - 14,
-          this.props.data1.length - 1
+          this.props.data1.length - 13,
+          this.props.data1.length + 1
         ]
       }
     };
@@ -52,8 +52,8 @@ class GraphVariance extends Component {
         zoomDomain: {
           x: [
             //set columns for zooming for 12
-            this.props.data1.length - 14,
-            this.props.data1.length - 1
+            this.props.data1.length - 13,
+          this.props.data1.length + 1
           ]
         }
       });
