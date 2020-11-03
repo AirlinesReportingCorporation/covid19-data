@@ -30,7 +30,7 @@ class GraphTooltip extends Component {
 
               <div className="graph-tooltip-data-label">{data[1][1]}</div>
               <div className="graph-tooltip-data">
-                <i className="fas fa-circle"></i>{" "}
+                <i className={"fas fa-circle " +  (data[0][datum.x - 1].c > 0 ? "graphToggleKeyGreen" : "graphToggleKeyRed")} ></i>{" "}
                 {data[0][datum.x - 1].c}%
               </div>
             </div>

@@ -384,7 +384,7 @@ class GraphVariance extends Component {
             containerComponent={
               <VictoryBrushContainer
                 className="brushsvg"
-                allowResize={false}
+                allowResize={true}
                 brushDimension="x"
                 brushDomain={this.state.zoomDomain}
                 onBrushDomainChange={this.handleZoom.bind(this)}
