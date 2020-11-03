@@ -408,7 +408,7 @@ class GraphVariance extends Component {
                 allowResize={false}
                 brushDimension="x"
                 brushDomain={this.state.zoomDomain}
-                onBrushDomainChange={(domain, props) => this.handleZoom.bind(this, domain)}
+                onBrushDomainChange={this.handleZoom.bind(this)}
                 defaultBrushArea="move"
                 handleComponent={<CustomHandle/>}
                 brushStyle={{
