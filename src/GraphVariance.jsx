@@ -36,8 +36,8 @@ class GraphVariance extends Component {
       zoomDomain: {
         x: [
           //set columns for zooming for 12
-          1,
-          this.props.data1.length + 1
+          this.props.data1.length - 14,
+          this.props.data1.length - 1
         ]
       }
     };
@@ -254,11 +254,20 @@ class GraphVariance extends Component {
             style={{
               grid: {
                 stroke: "#8e8e8e",
-                strokeWidth: 0
+                strokeWidth: 1.5
               }
             }}
             tickFormat={t => ``}
             tickValues={dateDomain}
+          />
+
+          <VictoryBar
+            name="bar"
+            style={{ data: { fill: "#dddddd", opacity: ".2" } }}
+            data={alternatingDataset}
+            //barRatio={1.5}
+            barWidth={"100%"}
+            y="b"
           />
 
           <VictoryAxis
@@ -276,7 +285,13 @@ class GraphVariance extends Component {
             orientation="bottom"
             offsetY={50}
             tickValues={valueDomain}
-            tickFormat={t => (parseInt(moment(data[t - 1].a).format("D")) < 8) ? `${moment(data[t - 1].a).format("MMM")}` : (t == 1) ? `${moment(data[t - 1].a).format("MMM")}` : `` }
+            tickFormat={t =>
+              parseInt(moment(data[t - 1].a).format("D")) < 8
+                ? `${moment(data[t - 1].a).format("MMM")}`
+                : t == 1
+                ? `${moment(data[t - 1].a).format("MMM")}`
+                : ``
+            }
             tickLabelComponent={<VictoryLabel />}
           />
 
@@ -316,7 +331,7 @@ class GraphVariance extends Component {
             }}
             data={data}
             y="c"
-            barRatio={0.8}
+            barRatio={1}
             events={[
               {
                 target: "data",
@@ -355,7 +370,7 @@ class GraphVariance extends Component {
             style={{
               data: { fill: "#ffffff", stroke: "#cccccc", strokeWidth: "2" }
             }}
-            size={6}
+            size={9}
             data={data}
             y="b"
           />
@@ -369,7 +384,7 @@ class GraphVariance extends Component {
                 strokeWidth: "2.5"
               }
             }}
-            size={2}
+            size={3}
             data={data}
             y="b"
           />
@@ -443,6 +458,18 @@ class GraphVariance extends Component {
               }}
               data={data}
               y="b"
+            />
+
+            <VictoryBar
+              style={{
+                data: {
+                  fill: ({ datum }) => (datum.c > 0 ? "#779731" : "#cd0101")
+                }
+              }}
+              data={data}
+              y="c"
+              barRatio={1}
+              
             />
           </VictoryChart>
         </div>
