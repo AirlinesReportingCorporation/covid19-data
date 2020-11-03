@@ -370,7 +370,7 @@ class Graph extends Component {
               voronoiDimension="x"
               zoomDimension="x"
               zoomDomain={this.state.zoomDomain}
-              onZoomDomainChange={this.handleZoom.bind(this)}
+              onZoomDomainChange={(domain, props) => this.handleZoom.bind(this, domain)}
               activateLabels={true}
               labels={({ datum }) => ""}
               labelComponent={
