@@ -36,8 +36,8 @@ class GraphVariance extends Component {
       zoomDomain: {
         x: [
           //set columns for zooming for 12
-          this.props.data1.length - 13,
-          this.props.data1.length + 1
+          this.props.data1.length - 11,
+          this.props.data1.length + 0.5
         ]
       }
     };
@@ -52,8 +52,8 @@ class GraphVariance extends Component {
         zoomDomain: {
           x: [
             //set columns for zooming for 12
-            this.props.data1.length - 13,
-          this.props.data1.length + 1
+            this.props.data1.length - 11,
+            this.props.data1.length + .5
           ]
         }
       });
@@ -265,8 +265,7 @@ class GraphVariance extends Component {
             name="bar"
             style={{ data: { fill: "#dddddd", opacity: ".2" } }}
             data={alternatingDataset}
-            //barRatio={1.5}
-            barWidth={"100%"}
+            barRatio={2}
             y="b"
           />
 
@@ -278,15 +277,14 @@ class GraphVariance extends Component {
                 color: "#999999",
                 textTransform: "uppercase"
               },
-              grid: { strokeWidth: 1, stroke: "#ffffff" },
-              axis: { strokeWidth: 1, stroke: "#ffffff" }
+              grid: { strokeWidth: 0, stroke: "#ffffff" },
+              axis: { strokeWidth: 0, stroke: "#ffffff" }
             }}
             tickFormat={t => `${t}`}
             orientation="bottom"
             offsetY={50}
             tickValues={valueDomain}
-            tickFormat={t => `${moment(data[t - 1].a).format("MMM D")}`
-            }
+            tickFormat={t => `${moment(data[t - 1].a).format("MMM D")}`}
             tickLabelComponent={<VictoryLabel />}
           />
 
@@ -303,7 +301,11 @@ class GraphVariance extends Component {
               },
               grid: {
                 stroke: ({ tick }) =>
-                  tick == 0 || tick == 10 || tick == 40 || tick == 20 || tick <= -99
+                  tick == 0 ||
+                  tick == 10 ||
+                  tick == 40 ||
+                  tick == 20 ||
+                  tick <= -99
                     ? tick == 0
                       ? "#414042"
                       : "#ffffff"
@@ -321,7 +323,8 @@ class GraphVariance extends Component {
           <VictoryBar
             style={{
               data: {
-                fill: ({ datum }) => (datum.c > 0 ? "rgba(0,0,0, 0.2)" : "rgba(0,0,0, 0.8)")
+                fill: ({ datum }) =>
+                  datum.c > 0 ? "rgba(0,0,0, 0.2)" : "rgba(0,0,0, 0.8)"
               }
             }}
             data={data}
@@ -394,7 +397,7 @@ class GraphVariance extends Component {
             containerComponent={
               <VictoryBrushContainer
                 className="brushsvg"
-                allowResize={true}
+                allowResize={false}
                 brushDimension="x"
                 brushDomain={this.state.zoomDomain}
                 onBrushDomainChange={this.handleZoom.bind(this)}
@@ -447,24 +450,16 @@ class GraphVariance extends Component {
               tickValues={graphDomain}
             />
 
-            <VictoryLine
-              style={{
-                data: { stroke: "#189bb0", strokeWidth: "1.5" }
-              }}
-              data={data}
-              y="b"
-            />
-
             <VictoryBar
               style={{
                 data: {
-                  fill: ({ datum }) => (datum.c > 0 ? "rgba(0,0,0, 0.2)" : "rgba(0,0,0, 0.8)")
+                  fill: ({ datum }) =>
+                    datum.c > 0 ? "rgba(0,0,0, 0.2)" : "rgba(0,0,0, 0.8)"
                 }
               }}
               data={data}
               y="c"
               barRatio={1}
-              
             />
           </VictoryChart>
         </div>
