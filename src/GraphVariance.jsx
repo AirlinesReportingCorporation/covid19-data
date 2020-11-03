@@ -53,7 +53,7 @@ class GraphVariance extends Component {
           x: [
             //set columns for zooming for 12
             this.props.data1.length - 11,
-            this.props.data1.length + .5
+            this.props.data1.length + 0.5
           ]
         }
       });
@@ -320,6 +320,14 @@ class GraphVariance extends Component {
             axisLabelComponent={<VictoryLabel dy={-30} />}
           />
 
+          <VictoryLine
+            style={{
+              data: { stroke: "#189bb0", strokeWidth: "2.5" }
+            }}
+            data={data}
+            y="b"
+          />
+
           <VictoryBar
             style={{
               data: {
@@ -460,6 +468,14 @@ class GraphVariance extends Component {
               data={data}
               y="c"
               barRatio={1}
+            />
+
+            <VictoryLine
+              style={{
+                data: { stroke: "#189bb0", strokeWidth: "1.5" }
+              }}
+              data={data}
+              y="b"
             />
           </VictoryChart>
         </div>
