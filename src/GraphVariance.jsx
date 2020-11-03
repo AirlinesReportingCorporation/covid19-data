@@ -285,12 +285,7 @@ class GraphVariance extends Component {
             orientation="bottom"
             offsetY={50}
             tickValues={valueDomain}
-            tickFormat={t =>
-              parseInt(moment(data[t - 1].a).format("D")) < 8
-                ? `${moment(data[t - 1].a).format("MMM")}`
-                : t == 1
-                ? `${moment(data[t - 1].a).format("MMM")}`
-                : ``
+            tickFormat={t => `${moment(data[t - 1].a).format("MMM D")}`
             }
             tickLabelComponent={<VictoryLabel />}
           />
@@ -326,7 +321,7 @@ class GraphVariance extends Component {
           <VictoryBar
             style={{
               data: {
-                fill: ({ datum }) => (datum.c > 0 ? "#779731" : "#cd0101")
+                fill: ({ datum }) => (datum.c > 0 ? "rgba(0,0,0, 0.4)" : "rgba(0,0,0, 0.8)")
               }
             }}
             data={data}
@@ -463,7 +458,7 @@ class GraphVariance extends Component {
             <VictoryBar
               style={{
                 data: {
-                  fill: ({ datum }) => (datum.c > 0 ? "#779731" : "#cd0101")
+                  fill: ({ datum }) => (datum.c > 0 ? "rgba(0,0,0, 0.4)" : "rgba(0,0,0, 0.8)")
                 }
               }}
               data={data}
