@@ -100,19 +100,7 @@ class Graph extends Component {
     this.handleZoom = this.handleZoom.bind(this);
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this.props.data1 !== prevProps.data1) {
-      this.setState({
-        zoomDomain: {
-          x: [
-            //set columns for zooming for 12
-            props.data1[parseInt(props.data1.length - 13)].x + 0.5,
-            this.props.data1[this.props.data1.length - 1].x
-          ]
-        }
-      });
-    }
-  }
+  componentDidUpdate(prevProps, prevState, snapshot) {}
 
   toggleAdditionalRows() {
     if (this.state.showAdditionalRows) {
@@ -147,6 +135,20 @@ class Graph extends Component {
   }
 
   handleZoom(domain) {
+    var props = this.props;
+
+    if (domain.x[1] - domain.x[0] > 13 || domain.x[1] == domain.x[0]) {
+      domain.x = [
+        props.data1[parseInt(props.data1.length - 13)].x + 0.5,
+        props.data1[props.data1.length - 1].x + 0.5
+      ];
+    } else if (isNaN(domain.x[1]) || isNaN(domain.y[0])) {
+      domain.x = [
+        props.data1[parseInt(props.data1.length - 13)].x + 0.5,
+        props.data1[props.data1.length - 1].x + 0.5
+      ];
+    }
+
     this.setState({ zoomDomain: domain });
   }
 
@@ -420,7 +422,7 @@ class Graph extends Component {
                 color: "#999999",
                 textTransform: "uppercase"
               },
-              grid: { strokeWidth: 1, stroke: "#ffffff" },
+              grid: { strokeWidth: 0, stroke: "#ffffff" },
               axis: { strokeWidth: 1, stroke: "#ffffff" }
             }}
             tickFormat={t => `${t}`}
@@ -450,7 +452,7 @@ class Graph extends Component {
                       : "#ffffff"
                     : "#d7d7d7",
                 strokeWidth: ({ tick }) =>
-                  tick == 10 || tick == -100 ? 1 : (tick == 40) ? 0 : 1
+                  tick == 10 || tick == -100 ? 1 : tick == 40 ? 0 : 1
               }
             }}
             dependentAxis
@@ -587,8 +589,8 @@ class Graph extends Component {
                 allowResize={false}
                 brushDimension="x"
                 brushDomain={this.state.zoomDomain}
-                onBrushDomainChange={this.handleZoom.bind(this)}
-                handleComponent={<CustomHandle/>}
+                onBrushDomainChangeEnd={this.handleZoom.bind(this)}
+                handleComponent={<CustomHandle />}
                 defaultBrushArea="move"
                 brushStyle={{
                   cursor: "grab",
@@ -599,6 +601,36 @@ class Graph extends Component {
               />
             }
           >
+            {this.state.ticketToggle && (
+              <VictoryLine
+                style={{
+                  data: { stroke: "#189bb0", strokeWidth: "1.5" }
+                }}
+                data={data}
+                y="b"
+              />
+            )}
+
+            {this.state.salesToggle && (
+              <VictoryLine
+                style={{
+                  data: { stroke: "#bbaf8b", strokeWidth: "1.5" }
+                }}
+                data={data2}
+                y="b"
+              />
+            )}
+
+            {this.props.data3 && this.state.thirdToggle && (
+              <VictoryLine
+                style={{
+                  data: { stroke: "#316677", strokeWidth: "1.5" }
+                }}
+                data={data3}
+                y="b"
+              />
+            )}
+
             <VictoryAxis
               style={{
                 grid: {
@@ -637,36 +669,6 @@ class Graph extends Component {
               orientation="left"
               tickValues={graphDomain}
             />
-
-            {this.state.ticketToggle && (
-              <VictoryLine
-                style={{
-                  data: { stroke: "#189bb0", strokeWidth: "1.5" }
-                }}
-                data={data}
-                y="b"
-              />
-            )}
-
-            {this.state.salesToggle && (
-              <VictoryLine
-                style={{
-                  data: { stroke: "#bbaf8b", strokeWidth: "1.5" }
-                }}
-                data={data2}
-                y="b"
-              />
-            )}
-
-            {this.props.data3 && this.state.thirdToggle && (
-              <VictoryLine
-                style={{
-                  data: { stroke: "#316677", strokeWidth: "1.5" }
-                }}
-                data={data3}
-                y="b"
-              />
-            )}
           </VictoryChart>
         </div>
 
@@ -758,7 +760,7 @@ class CustomHandle extends React.Component {
               padding: "5px 0px",
               lineHeight: "1",
               background: "#f1f2f2",
-              color: "#414042",
+              color: "#414042"
               //display: this.props.x > 350 ? "block" : "none"
             }}
           >
