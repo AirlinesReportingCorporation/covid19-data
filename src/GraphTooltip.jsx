@@ -14,8 +14,17 @@ class GraphTooltip extends Component {
 
     return (
       <g style={{ pointerEvents: "none" }}>
-        <foreignObject x={x2} y={y2} width="200" height="230">
+        <foreignObject x={x2} y={y2} width="250" height="230">
           <div className="graph-tooltip">
+            <div className="graph-tooltip-data-label">
+              <div
+                style={{
+                  fontFamily: "SourceSansPro-Bold, arial, sans-serif"
+                }}
+              >
+                {moment(data[0][datum.x - 1].a).format("MMM D, YYYY")}
+              </div>
+            </div>
             {layout == "1" && (
               <div>
                 <div className="graph-tooltip-data-label">{data[3][0]}</div>

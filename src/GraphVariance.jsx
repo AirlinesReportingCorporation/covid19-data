@@ -69,6 +69,20 @@ class GraphVariance extends Component {
   }
 
   handleZoom(domain) {
+    var props = this.props;
+
+    if (domain.x[1] - domain.x[0] > 13 || domain.x[1] == domain.x[0]) {
+      domain.x = [
+        props.data1[parseInt(props.data1.length - 13)].x + 0.5,
+        props.data1[props.data1.length - 1].x + 0.5
+      ];
+    } else if (isNaN(domain.x[1]) || isNaN(domain.y[0])) {
+      domain.x = [
+        props.data1[parseInt(props.data1.length - 13)].x + 0.5,
+        props.data1[props.data1.length - 1].x + 0.5
+      ];
+    }
+
     this.setState({ zoomDomain: domain });
   }
 
@@ -218,7 +232,7 @@ class GraphVariance extends Component {
               zoomDomain={this.state.zoomDomain}
               onZoomDomainChange={this.handleZoom.bind(this)}
               activateLabels={true}
-              labels={({ datum }) => ""}
+              labels={({ datum }) => ` `}
               labelComponent={
                 <VictoryTooltip
                   cornerRadius={0}
@@ -410,7 +424,7 @@ class GraphVariance extends Component {
                 brushDomain={this.state.zoomDomain}
                 onBrushDomainChange={this.handleZoom.bind(this)}
                 defaultBrushArea="move"
-                handleComponent={<CustomHandle/>}
+                handleComponent={<CustomHandle />}
                 brushStyle={{
                   cursor: "grab",
                   stroke: "transparent",
@@ -548,7 +562,7 @@ class CustomHandle extends React.Component {
               padding: "5px 0px",
               lineHeight: "1",
               background: "#f1f2f2",
-              color: "#414042",
+              color: "#414042"
               //display: this.props.x > 350 ? "block" : "none"
             }}
           >

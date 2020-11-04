@@ -17,8 +17,15 @@ class GraphTooltip extends Component {
         <foreignObject x={x2} y={y2} width="250" height="230">
           <div className="graph-tooltip">
             <div>
-            <div className="graph-tooltip-data-label"><div style={{fontFamily: "SourceSansPro-Bold, arial, sans-serif"}}>{moment(data[0][datum.x - 1].a).format("MMM D, YYYY")}</div></div>
-            
+              <div className="graph-tooltip-data-label">
+                <div
+                  style={{
+                    fontFamily: "SourceSansPro-Bold, arial, sans-serif"
+                  }}
+                >
+                  {moment(data[0][datum.x - 1].a).format("MMM D, YYYY")}
+                </div>
+              </div>
 
               <div className="graph-tooltip-data-label">{data[1][0]}</div>
               <div className="graph-tooltip-data">
@@ -28,7 +35,14 @@ class GraphTooltip extends Component {
 
               <div className="graph-tooltip-data-label">{data[1][1]}</div>
               <div className="graph-tooltip-data">
-                <i className={"fas fa-square " +  (data[0][datum.x - 1].c > 0 ? "graphToggleKeyGreen" : "graphToggleKeyRed")} ></i>{" "}
+                <i
+                  className={
+                    "fas fa-square " +
+                    (data[0][datum.x - 1].c > 0
+                      ? "graphToggleKeyGreen"
+                      : "graphToggleKeyRed")
+                  }
+                ></i>{" "}
                 {data[0][datum.x - 1].c}%
               </div>
             </div>

@@ -374,13 +374,16 @@ class Graph extends Component {
               zoomDomain={this.state.zoomDomain}
               onZoomDomainChange={this.handleZoom.bind(this)}
               activateLabels={true}
-              labels={({ datum }) => ""}
+              labels={({ datum }) => ` `}
               labelComponent={
                 <VictoryTooltip
                   cornerRadius={0}
                   labels={this.labels}
                   flyoutComponent={
-                    <GraphTooltip layout={layout} data={[data, data2, data3, dataTitle]} />
+                    <GraphTooltip
+                      layout={layout}
+                      data={[data, data2, data3, dataTitle]}
+                    />
                   }
                   flyoutStyle={{
                     fill: "white",

@@ -47,9 +47,6 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    extractSass,
-    new CopyPlugin([
-      //{ from: path.resolve(__dirname, "node_modules/flight-dev-kit/dist/scss/partials/design-tokens/color.scss"), to: path.resolve(__dirname, "dist")}
-    ])
+    extractSass
   ]
 };
