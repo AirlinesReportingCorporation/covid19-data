@@ -217,7 +217,7 @@ class GraphVariance extends Component {
         <div className="graphTitle" style={{ marginTop: "60px" }}>
           {this.props.graphTitle}
         </div>
-        <div className="graphSubTitle">{this.props.graphSubTitle}</div>
+        <div className="graphSubTitle" style={{marginBottom: "35px;"}}>{this.props.graphSubTitle}</div>
 
         <VictoryChart
           width={1170}

@@ -30,7 +30,7 @@ class GraphTooltip extends Component {
                 <div className="graph-tooltip-data-label">{data[3][0]}</div>
                 <div className="graph-tooltip-data">
                   <i className="fas fa-circle graphToggleKey1"></i>{" "}
-                  {data[0][datum.x - 1].b}%
+                  {numeral(data[0][datum.x - 1].b).format("0.00")}%
                 </div>
 
                 {data[1][datum.x - 1] && (
@@ -38,7 +38,7 @@ class GraphTooltip extends Component {
                     <div className="graph-tooltip-data-label">{data[3][1]}</div>
                     <div className="graph-tooltip-data">
                       <i className="fas fa-circle graphToggleKey2"></i>{" "}
-                      {data[1][datum.x - 1].b}%
+                      {numeral(data[1][datum.x - 1].b).format("0.00")}%
                     </div>
                   </div>
                 )}
@@ -47,7 +47,7 @@ class GraphTooltip extends Component {
                     <div className="graph-tooltip-data-label">{data[3][2]}</div>
                     <div className="graph-tooltip-data">
                       <i className="fas fa-circle graphToggleKey3"></i>{" "}
-                      {data[2][datum.x - 1].b}%
+                      {numeral(data[2][datum.x - 1].b).format("0.00")}%
                     </div>
                   </div>
                 )}
@@ -60,7 +60,7 @@ class GraphTooltip extends Component {
                     <div className="graph-tooltip-data-label">{data[3][1]}</div>
                     <div className="graph-tooltip-data">
                       <i className="fas fa-circle graphToggleKey2"></i>{" "}
-                      {data[1][datum.x - 1].b}%
+                      {numeral(data[1][datum.x - 1].b).format("0.00")}%
                     </div>
                   </div>
                 )}
@@ -70,7 +70,7 @@ class GraphTooltip extends Component {
                     <div className="graph-tooltip-data-label">{data[3][2]}</div>
                     <div className="graph-tooltip-data">
                       <i className="fas fa-circle graphToggleKey3"></i>{" "}
-                      {data[2][datum.x - 1].b}%
+                      {numeral(data[2][datum.x - 1].b).format("0.00")}%
                     </div>
                   </div>
                 )}
@@ -78,7 +78,7 @@ class GraphTooltip extends Component {
                 <div className="graph-tooltip-data-label">{data[3][0]}</div>
                 <div className="graph-tooltip-data">
                   <i className="fas fa-circle graphToggleKey1"></i>{" "}
-                  {data[0][datum.x - 1].b}%
+                  {numeral(data[0][datum.x - 1].b).format("0.00")}%
                 </div>
               </div>
             )}
