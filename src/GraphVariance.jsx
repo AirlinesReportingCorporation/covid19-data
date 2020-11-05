@@ -327,7 +327,8 @@ class GraphVariance extends Component {
           <VictoryBar
             style={{
               data: {
-                fill: "#189bb0"
+                fill: ({ datum }) =>
+                  datum.c > 0 ? "#189bb0" : "rgba(0,0,0, 0.8)"
               }
             }}
             data={data}
@@ -426,7 +427,8 @@ class GraphVariance extends Component {
             <VictoryBar
               style={{
                 data: {
-                  fill: "#189bb0"
+                  fill: ({ datum }) =>
+                    datum.c > 0 ? "#189bb0" : "rgba(0,0,0, 0.8)"
                 }
               }}
               data={data}
