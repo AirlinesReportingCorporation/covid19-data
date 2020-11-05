@@ -27,12 +27,6 @@ class GraphTooltip extends Component {
                 </div>
               </div>
 
-              <div className="graph-tooltip-data-label">{data[1][0]}</div>
-              <div className="graph-tooltip-data">
-                <i className="fas fa-circle graphToggleKey1"></i>{" "}
-                {numeral(data[0][datum.x - 1].b).format("0.00")}%
-              </div>
-
               <div className="graph-tooltip-data-label">{data[1][1]}</div>
               <div className="graph-tooltip-data">
                 <i

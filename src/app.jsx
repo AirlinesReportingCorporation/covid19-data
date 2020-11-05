@@ -281,7 +281,7 @@ class App extends Component {
       { a: new Date(2020, 9, 25), b: -66.15, c: 0.02 }
     ];
 
-    var varianceDomain = [20, 0, -20, -40, -60, -80, -100];
+    var varianceDomain = [20, 10, 0, -10, -20, -30, -40];
 
     /*
     graphTitle: String
@@ -369,7 +369,6 @@ class App extends Component {
             dataDomain={varianceDomain}
             tableHeaders={[
               "7-Day Period Ending",
-              "Transaction Variance",
               "Change in Variance"
             ]}
             layout="0"

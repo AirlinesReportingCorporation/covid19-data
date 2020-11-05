@@ -39,7 +39,8 @@ class GraphVariance extends Component {
           this.props.data1.length - 11.5,
           this.props.data1.length + 0.5
         ]
-      }
+      },
+      variantDomain: this.props.dataDomain
     };
 
     this.toggleAdditionalRows = this.toggleAdditionalRows.bind(this);
@@ -117,7 +118,7 @@ class GraphVariance extends Component {
 
     var tableHeaderDisplay = tableHeaders.map(function(datum, i) {
       var arrLength = tableHeaders.length;
-      var colSize = "col-4";
+      var colSize = "col-6";
 
       if (arrLength == 4) {
         colSize = "col-3";
@@ -139,21 +140,10 @@ class GraphVariance extends Component {
             (i > 4 && !showAdditionalRows ? "  covid-row-additional" : "")
           }
         >
-          <div className={"d-flex col-4"}>
+          <div className={"d-flex col-6"}>
             {moment(datum.a).format("MMMM D")}
           </div>
-          <div className={"d-flex align-items-center flex-row col-4"}>
-            <div className="d-flex mainStatPercentChange">
-              {numeral(datum.b).format("0.00")}%
-            </div>
-            <div className="d-flex mainStatPercentChangeBar">
-              <div
-                className="barChange"
-                style={{ width: Math.abs(datum.b) + "%" }}
-              ></div>
-            </div>
-          </div>
-          <div className={"d-flex align-items-center flex-row col-4"}>
+          <div className={"d-flex align-items-center flex-row col-6"}>
             <div className="d-flex mainStatPercentChange">
               {numeral(datum.c).format("0.00")}%
             </div>
@@ -316,7 +306,7 @@ class GraphVariance extends Component {
               grid: {
                 stroke: ({ tick }) =>
                   tick == 0 ||
-                  tick == 10 ||
+                  //tick == 10 ||
                   tick == 40 ||
                   tick == 20 ||
                   tick <= -99
@@ -332,14 +322,6 @@ class GraphVariance extends Component {
             label="VARIANCE %"
             tickValues={dataDomain}
             axisLabelComponent={<VictoryLabel dy={-30} />}
-          />
-
-          <VictoryLine
-            style={{
-              data: { stroke: "#189bb0", strokeWidth: "2.5" }
-            }}
-            data={data}
-            y="b"
           />
 
           <VictoryBar
@@ -377,37 +359,6 @@ class GraphVariance extends Component {
             ]}
           />
 
-          <VictoryLine
-            style={{
-              data: { stroke: "#189bb0", strokeWidth: "2.5" }
-            }}
-            data={data}
-            y="b"
-          />
-
-          <VictoryScatter
-            name="bulletPoints"
-            style={{
-              data: { fill: "#ffffff", stroke: "#cccccc", strokeWidth: "2" }
-            }}
-            size={9}
-            data={data}
-            y="b"
-          />
-
-          <VictoryScatter
-            name="bulletPoints2"
-            style={{
-              data: {
-                fill: "#ffffff",
-                stroke: "#189bb0",
-                strokeWidth: "2.5"
-              }
-            }}
-            size={3}
-            data={data}
-            y="b"
-          />
         </VictoryChart>
 
         <div className="brushContainer">
@@ -485,13 +436,7 @@ class GraphVariance extends Component {
               barRatio={1}
             />
 
-            <VictoryLine
-              style={{
-                data: { stroke: "#189bb0", strokeWidth: "1.5" }
-              }}
-              data={data}
-              y="b"
-            />
+            
           </VictoryChart>
         </div>
 
