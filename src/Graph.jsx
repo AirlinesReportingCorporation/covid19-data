@@ -592,7 +592,7 @@ class Graph extends Component {
                 allowResize={false}
                 brushDimension="x"
                 brushDomain={this.state.zoomDomain}
-                onBrushDomainChangeEnd={this.handleZoom.bind(this)}
+                onBrushDomainChange={this.handleZoom.bind(this)}
                 handleComponent={<CustomHandle />}
                 defaultBrushArea="move"
                 brushStyle={{
