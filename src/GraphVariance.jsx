@@ -137,7 +137,7 @@ class GraphVariance extends Component {
           key={i}
           className={
             "covid-row row d-flex flex-row" +
-            (i > 4 && !showAdditionalRows ? "  covid-row-additional" : "")
+            (i > 2 && !showAdditionalRows ? "  covid-row-additional" : "")
           }
         >
           <div className={"d-flex col-6"}>
@@ -207,7 +207,9 @@ class GraphVariance extends Component {
         <div className="graphTitle" style={{ marginTop: "60px" }}>
           {this.props.graphTitle}
         </div>
-        <div className="graphSubTitle" style={{marginBottom: "35px;"}}>{this.props.graphSubTitle}</div>
+        <div className="graphSubTitle" style={{ marginBottom: "35px;" }}>
+          {this.props.graphSubTitle}
+        </div>
 
         <VictoryChart
           width={1170}
@@ -358,7 +360,6 @@ class GraphVariance extends Component {
               }
             ]}
           />
-
         </VictoryChart>
 
         <div className="brushContainer">
@@ -435,8 +436,6 @@ class GraphVariance extends Component {
               y="c"
               barRatio={1}
             />
-
-            
           </VictoryChart>
         </div>
 
@@ -464,6 +463,14 @@ class GraphVariance extends Component {
         </div>
 
         <div className="covid-table overflow-auto">
+          <div className="row">
+            <div
+              className="graphSubTitle"
+              style={{ marginBottom: "15px", marginLeft: "40px" }}
+            >
+              List View
+            </div>
+          </div>
           <div className="row covid-headers">{tableHeaderDisplay}</div>
           {graphDisplay}
 

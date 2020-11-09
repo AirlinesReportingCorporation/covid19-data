@@ -203,7 +203,7 @@ class Graph extends Component {
           key={i}
           className={
             "covid-row row d-flex flex-row" +
-            (i > 4 && !showAdditionalRows ? "  covid-row-additional" : "")
+            (i > 2 && !showAdditionalRows ? "  covid-row-additional" : "")
           }
         >
           <div className={"d-flex" + (data3 ? " col-3" : " col-4")}>
@@ -720,6 +720,9 @@ class Graph extends Component {
         </div>
 
         <div className="covid-table overflow-auto">
+          <div className="row">
+            <div class="graphSubTitle" style={{marginBottom: "15px", marginLeft: "40px"}}>List View</div>
+          </div>
           <div className="row covid-headers">{tableHeaderDisplay}</div>
           {graphDisplay}
 
