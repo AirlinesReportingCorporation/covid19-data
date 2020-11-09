@@ -432,7 +432,7 @@ class App extends Component {
               <div className="col-4">Average Ticket Price</div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">January</div>
+              <div className="d-flex col-4">January 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-0.02%</div>
                 <div className="d-flex mainStatPercentChangeBar">
@@ -444,7 +444,7 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">February</div>
+              <div className="d-flex col-4">February 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-2.0%</div>
                 <div className="d-flex mainStatPercentChangeBar">
@@ -456,7 +456,7 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">March</div>
+              <div className="d-flex col-4">March 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-21.9%</div>
                 <div className="d-flex mainStatPercentChangeBar">
@@ -468,7 +468,7 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">April</div>
+              <div className="d-flex col-4">April 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-10.0%</div>
                 <div className="d-flex mainStatPercentChangeBar">
@@ -480,7 +480,7 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">May</div>
+              <div className="d-flex col-4">May 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-31.0%</div>
                 <div className="d-flex mainStatPercentChangeBar">
@@ -492,7 +492,7 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">June</div>
+              <div className="d-flex col-4">June 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-27.0%</div>
                 <div className="d-flex mainStatPercentChangeBar">
@@ -504,7 +504,7 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">July</div>
+              <div className="d-flex col-4">July 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-29.0%</div>
                 <div className="d-flex mainStatPercentChangeBar">
@@ -516,7 +516,7 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">August</div>
+              <div className="d-flex col-4">August 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-36.0%</div>
                 <div className="d-flex mainStatPercentChangeBar">
@@ -528,7 +528,7 @@ class App extends Component {
               </div>
             </div>
             <div className="covid-row row d-flex flex-row">
-              <div className="d-flex col-4">September</div>
+              <div className="d-flex col-4">September 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-38.5%</div>
                 <div className="d-flex mainStatPercentChangeBar">
