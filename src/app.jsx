@@ -527,6 +527,18 @@ class App extends Component {
                 $321
               </div>
             </div>
+            <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">September</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-38.5%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "38.5%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $343
+              </div>
+            </div>
           </div>
         </div>
         <div className="bottomData container">
