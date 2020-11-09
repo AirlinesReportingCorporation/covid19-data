@@ -282,7 +282,7 @@ class CustomHandle extends React.Component {
           style={{
             background: "transparent",
             height: "100%",
-            padding: "4px 2px 4px "
+            padding: "4px px 4px "
           }}
         >
           <div

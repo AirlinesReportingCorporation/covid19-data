@@ -766,7 +766,7 @@ class CustomHandle extends React.Component {
               padding: "5px 0px",
               lineHeight: "1",
               background: "#f1f2f2",
-              color: "#414042"
+              color: "#414042",
               //display: this.props.x > 350 ? "block" : "none"
             }}
           >
