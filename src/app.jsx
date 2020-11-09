@@ -285,7 +285,7 @@ class App extends Component {
       { a: new Date(2020, 9, 18), b: -66.17, c: 0.8 },
       { a: new Date(2020, 9, 25), b: -66.15, c: 0.02 },
       { a: new Date(2020, 10, 1), b: -68.55, c: -2.40},
-      { a: new Date(2020, 11, 8), b: -68.42, c: 0.13}
+      { a: new Date(2020, 10, 8), b: -68.42, c: 0.13}
     ];
 
     var varianceDomain = [20, 10, 0, -10, -20, -30, -40];
