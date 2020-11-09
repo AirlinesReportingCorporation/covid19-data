@@ -434,7 +434,7 @@ class GraphVariance extends Component {
               }}
               data={data}
               y="c"
-              barRatio={1}
+              barRatio={.7}
             />
           </VictoryChart>
         </div>
