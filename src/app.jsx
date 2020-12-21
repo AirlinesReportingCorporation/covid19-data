@@ -89,7 +89,8 @@ class App extends Component {
       { x: 34, a: new Date(2020, 10, 15), b: -67.4 },
       { x: 35, a: new Date(2020, 10, 22), b: -71.2 },
       { x: 36, a: new Date(2020, 10, 29), b: -70.5 },
-      { x: 37, a: new Date(2020, 11, 6), b: -70.8 }
+      { x: 37, a: new Date(2020, 11, 6), b: -70.8 },
+      { x: 38, a: new Date(2020, 11, 13), b: -68.3 }
     ];
 
     //sales variance
@@ -130,10 +131,11 @@ class App extends Component {
       { x: 34, a: new Date(2020, 10, 15), b: -78.9 },
       { x: 35, a: new Date(2020, 10, 22), b: -81.6 },
       { x: 36, a: new Date(2020, 10, 29), b: -81.0 },
-      { x: 37, a: new Date(2020, 11, 6), b: -81.4 }
+      { x: 37, a: new Date(2020, 11, 6), b: -81.4 },
+      { x: 38, a: new Date(2020, 11, 13), b: -80.4 }
     ];
 
-    var ytdData1 = [-61.35, -69.21];
+    var ytdData1 = [-61.46, -69.39];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -172,7 +174,8 @@ class App extends Component {
       { x: 34, a: new Date(2020, 10, 15), b: -84.8 },
       { x: 35, a: new Date(2020, 10, 22), b: -86.0 },
       { x: 36, a: new Date(2020, 10, 29), b: -85.2 },
-      { x: 37, a: new Date(2020, 11, 6), b: -86.0 }
+      { x: 37, a: new Date(2020, 11, 6), b: -86.0 },
+      { x: 38, a: new Date(2020, 11, 13), b: -84.7 }
     ];
 
     var online = [
@@ -212,7 +215,8 @@ class App extends Component {
       { x: 34, a: new Date(2020, 10, 15), b: -54.1 },
       { x: 35, a: new Date(2020, 10, 22), b: -60.4 },
       { x: 36, a: new Date(2020, 10, 29), b: -60.9 },
-      { x: 37, a: new Date(2020, 11, 6), b: -60.2 }
+      { x: 37, a: new Date(2020, 11, 6), b: -60.1 },
+      { x: 38, a: new Date(2020, 11, 13), b: -56.4 }
     ];
 
     var leisure = [
@@ -252,10 +256,11 @@ class App extends Component {
       { x: 34, a: new Date(2020, 10, 15), b: -68.1 },
       { x: 35, a: new Date(2020, 10, 22), b: -72.1 },
       { x: 36, a: new Date(2020, 10, 29), b: -72.0 },
-      { x: 37, a: new Date(2020, 11, 6), b: -71.4 }
+      { x: 37, a: new Date(2020, 11, 6), b: -71.4 },
+      { x: 38, a: new Date(2020, 11, 13), b: -68.3 }
     ];
 
-    var ytdData2 = [-70.88, -53.95, -62.32];
+    var ytdData2 = [-71.09, -53.99, -62.45];
 
     var dataDomain1 = [-40, -50, -60, -70, -80, -90, -100];
 
@@ -309,7 +314,8 @@ class App extends Component {
       { a: new Date(2020, 10, 15), b: -67.44, c: 0.98},
       { a: new Date(2020, 10, 22), b: -71.22, c: -3.78},
       { a: new Date(2020, 10, 29), b: -70.54, c: 0.68},
-      { a: new Date(2020, 11, 6), b: -70.79, c: -0.25}
+      { a: new Date(2020, 11, 6), b: -70.79, c: -0.25},
+      { a: new Date(2020, 11, 13), b: -68.28, c: 2.51 }
       
     ];
 
@@ -359,6 +365,8 @@ class App extends Component {
               This page will be updated on a weekly basis.
             </small>
           </p>
+
+          <a href="https://www2.arccorp.com/products-participation/products/arc-travel-demand?utm_source=covid-19-data"><img className="img-fluid" src="https://www2.arccorp.com/globalassets/covid19/arc-travel-demand.png" alt="ARC Travel Demand"/></a>
         </div>
 
         <div className="covidGraphContainer">

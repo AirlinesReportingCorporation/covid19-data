@@ -721,7 +721,7 @@ class Graph extends Component {
 
         <div className="covid-table overflow-auto">
           <div className="row">
-            <div class="graphSubTitle" style={{marginBottom: "15px", marginLeft: "40px"}}>List View</div>
+            <div className="graphSubTitle" style={{marginBottom: "15px", marginLeft: "40px"}}>List View</div>
           </div>
           <div className="row covid-headers">{tableHeaderDisplay}</div>
           {graphDisplay}
