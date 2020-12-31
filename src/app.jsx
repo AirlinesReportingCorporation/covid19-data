@@ -314,15 +314,14 @@ class App extends Component {
       { a: new Date(2020, 9, 11), b: -66.97, c: 1.12 },
       { a: new Date(2020, 9, 18), b: -66.17, c: 0.8 },
       { a: new Date(2020, 9, 25), b: -66.15, c: 0.02 },
-      { a: new Date(2020, 10, 1), b: -68.55, c: -2.40},
-      { a: new Date(2020, 10, 8), b: -68.42, c: 0.13},
-      { a: new Date(2020, 10, 15), b: -67.44, c: 0.98},
-      { a: new Date(2020, 10, 22), b: -71.22, c: -3.78},
-      { a: new Date(2020, 10, 29), b: -70.54, c: 0.68},
-      { a: new Date(2020, 11, 6), b: -70.79, c: -0.25},
+      { a: new Date(2020, 10, 1), b: -68.55, c: -2.4 },
+      { a: new Date(2020, 10, 8), b: -68.42, c: 0.13 },
+      { a: new Date(2020, 10, 15), b: -67.44, c: 0.98 },
+      { a: new Date(2020, 10, 22), b: -71.22, c: -3.78 },
+      { a: new Date(2020, 10, 29), b: -70.54, c: 0.68 },
+      { a: new Date(2020, 11, 6), b: -70.79, c: -0.25 },
       { a: new Date(2020, 11, 13), b: -68.28, c: 2.51 },
       { a: new Date(2020, 11, 20), b: -66.17, c: 2.11 }
-      
     ];
 
     var varianceDomain = [20, 10, 0, -10, -20, -30, -40];
@@ -372,7 +371,13 @@ class App extends Component {
             </small>
           </p>
 
-          <a href="https://www2.arccorp.com/products-participation/products/arc-travel-demand?utm_source=covid-19-data"><img className="img-fluid" src="https://www2.arccorp.com/globalassets/covid19/arc-travel-demand.png" alt="ARC Travel Demand"/></a>
+          <a href="https://www2.arccorp.com/products-participation/products/arc-travel-demand?utm_source=covid-19-data">
+            <img
+              className="img-fluid"
+              src="https://www2.arccorp.com/globalassets/covid19/arc-travel-demand.png"
+              alt="ARC Travel Demand"
+            />
+          </a>
         </div>
 
         <div className="covidGraphContainer">
@@ -413,10 +418,7 @@ class App extends Component {
             data1={varianceData}
             ytdData={ytdData1}
             dataDomain={varianceDomain}
-            tableHeaders={[
-              "7-Day Period Ending",
-              "Change in Variance"
-            ]}
+            tableHeaders={["7-Day Period Ending", "Change in Variance"]}
             layout="0"
           />
         </div>
@@ -583,19 +585,18 @@ class App extends Component {
         <div className="bottomData container">
           <div className="row">
             <div className="col-md-6">
-              <h2>Country-Specific Data</h2>
+              <h2>ARC's Airline Sales Data Available on Snowflake</h2>
               <p>
-                ARC is also tracking the impact of COVID-19 on airline ticketing
-                in regions that have been most impacted, including China, Italy,
-                Japan, and South Korea. Data on air tickets sold for domestic,
-                global inbound, and global outbound flights for each of these
-                countries is publicly available. This data is updated weekly.
+                Snowflake data users can now access a complimentary subset of
+                ARC Travel Demand, the company’s latest data solution, through
+                the Snowflake Data Marketplace.
               </p>
               <a
-                href="https://www2.arccorp.com/articles-trends/the-latest/coronavirus-data/"
+                href="https://www2.arccorp.com/articles-trends/the-latest/arc-global-airline-sales-data-now-available-through-snowflake
+                "
                 className="ctaBtn"
               >
-                View Data
+                Learn More
               </a>
             </div>
             <div className="col-md-6">

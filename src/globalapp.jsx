@@ -609,7 +609,7 @@ class App extends Component {
           { a: new Date(2020, 4, 26), b: -25 },
           { a: new Date(2020, 5, 2), b: -45 },
           { a: new Date(2020, 5, 9), b: -31 },
-          { a: new Date(2020, 5, 16), b: -37}
+          { a: new Date(2020, 5, 16), b: -37 }
         ],
         [
           { a: new Date(2020, 0, 7), b: 27 },
@@ -802,7 +802,7 @@ class App extends Component {
           { a: new Date(2020, 0, 21), b: 210 },
           { a: new Date(2020, 0, 28), b: 221 },
           { a: new Date(2020, 1, 4), b: 255 },
-          { a: new Date(2020, 1, 11), b: 298  },
+          { a: new Date(2020, 1, 11), b: 298 },
           { a: new Date(2020, 1, 18), b: 297 },
           { a: new Date(2020, 1, 25), b: 372 },
           { a: new Date(2020, 2, 3), b: 569 },
@@ -896,9 +896,9 @@ class App extends Component {
           { a: new Date(2020, 3, 28), b: 137 },
           { a: new Date(2020, 4, 5), b: 98 },
           { a: new Date(2020, 4, 12), b: 88 },
-          { a: new Date(2020, 4, 19), b:  73 },
+          { a: new Date(2020, 4, 19), b: 73 },
           { a: new Date(2020, 4, 26), b: 52 },
-          { a: new Date(2020, 5, 2), b:70 },
+          { a: new Date(2020, 5, 2), b: 70 },
           { a: new Date(2020, 5, 9), b: 98 },
           { a: new Date(2020, 5, 16), b: 67 }
         ]
@@ -1390,14 +1390,33 @@ class App extends Component {
             The Impact of the Coronavirus (COVID-19) Outbreak on Global Air
             Travel Transactions - Data
           </h1>
+
+          <p>
+            As of June 16, 2020, ARC has discontinued updating this page.
+            Rather, we encourage our visitors to explore{" "}
+            <a href="https://www2.arccorp.com/products-participation/products/arc-travel-demand/">
+              ARC Travel Demand
+            </a>
+            , which features{" "}
+            <a href="https://www2.arccorp.com/about-us/arc-data/">
+              airline sales data
+            </a>{" "}
+            from ARC and provides a more robust and global view of transactions
+            in these and other critical markets.{" "}
+          </p>
+
           <p>
             This data shows{" "}
             <strong>
               the year-over-year change in air travel transactions between 2020
-              and 2019 for each given seven-day period
-            </strong>
-            . Data is derived from Direct Data Solutions, a global air
-            transaction dataset managed by ARC and IATA.
+              and 2019 for each given seven-day period, from sales periods
+              ending January 7 to June 16, 2020.
+            </strong>{" "}
+            Data is derived from{" "}
+            <a href="https://www2.arccorp.com/products-participation/products/direct-data-solutions/">
+              Direct Data Solutions
+            </a>
+            , a global air transaction dataset managed by ARC and IATA.
           </p>
 
           <p>
