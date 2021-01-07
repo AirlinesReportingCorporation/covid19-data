@@ -481,15 +481,15 @@ class App extends Component {
           <div className="covid-table overflow-auto">
             <div className="row covid-headers">
               <div className="col-4">Month</div>
-              <div className="col-4">Change from prior month</div>
+              <div className="col-4">Change from prior year</div>
               <div className="col-4">Average Ticket Price</div>
             </div>
             <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">January 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-0.02%</div>
+                <div className="d-flex mainStatPercentChange">0.42%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "0.02%" }}></div>
+                  <div className="barChange" style={{ width: "0.42%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
@@ -499,9 +499,9 @@ class App extends Component {
             <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">February 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-2.0%</div>
+                <div className="d-flex mainStatPercentChange">0.41%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "2.0%" }}></div>
+                  <div className="barChange" style={{ width: "0.41%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
@@ -511,9 +511,9 @@ class App extends Component {
             <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">March 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-21.9%</div>
+                <div className="d-flex mainStatPercentChange">-22.59%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "21.9%" }}></div>
+                  <div className="barChange" style={{ width: "22.59%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
@@ -523,9 +523,9 @@ class App extends Component {
             <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">April 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-10.0%</div>
+                <div className="d-flex mainStatPercentChange">-32.67%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "10.0%" }}></div>
+                  <div className="barChange" style={{ width: "32.67%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
@@ -537,7 +537,7 @@ class App extends Component {
               <div className="d-flex align-items-center flex-row col-4">
                 <div className="d-flex mainStatPercentChange">-31.0%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "31.0%" }}></div>
+                  <div className="barChange" style={{ width: "30.92%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
@@ -547,9 +547,9 @@ class App extends Component {
             <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">June 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-27.0%</div>
+                <div className="d-flex mainStatPercentChange">-26.95%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "27.0%" }}></div>
+                  <div className="barChange" style={{ width: "26.95%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
@@ -559,9 +559,9 @@ class App extends Component {
             <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">July 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-29.0%</div>
+                <div className="d-flex mainStatPercentChange">-28.71%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "29.0%" }}></div>
+                  <div className="barChange" style={{ width: "28.71%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
@@ -571,9 +571,9 @@ class App extends Component {
             <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">August 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-36.0%</div>
+                <div className="d-flex mainStatPercentChange">-33.54%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "36.0%" }}></div>
+                  <div className="barChange" style={{ width: "33.54%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
@@ -583,13 +583,37 @@ class App extends Component {
             <div className="covid-row row d-flex flex-row">
               <div className="d-flex col-4">September 2020</div>
               <div className="d-flex align-items-center flex-row col-4">
-                <div className="d-flex mainStatPercentChange">-38.5%</div>
+                <div className="d-flex mainStatPercentChange">-30.85%</div>
                 <div className="d-flex mainStatPercentChangeBar">
-                  <div className="barChange" style={{ width: "38.5%" }}></div>
+                  <div className="barChange" style={{ width: "30.85%" }}></div>
                 </div>
               </div>
               <div className="d-flex align-items-center flex-row col-4">
                 $343
+              </div>
+            </div>
+            <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">October 2020</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-25.49%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "25.49%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $377
+              </div>
+            </div>
+            <div className="covid-row row d-flex flex-row">
+              <div className="d-flex col-4">November 2020</div>
+              <div className="d-flex align-items-center flex-row col-4">
+                <div className="d-flex mainStatPercentChange">-25.81%</div>
+                <div className="d-flex mainStatPercentChangeBar">
+                  <div className="barChange" style={{ width: "25.81%" }}></div>
+                </div>
+              </div>
+              <div className="d-flex align-items-center flex-row col-4">
+                $368
               </div>
             </div>
           </div>
