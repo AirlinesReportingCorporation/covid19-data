@@ -683,12 +683,13 @@ class Graph extends Component {
                 (data3 ? " col-lg-4 " : " col-lg-6 ")
               }
             >
-              <div className="ytd-symbol">YTD</div>
+              <div className="ytd-symbol">AVG</div>
               <div className="ytd-data-container">
                 <div className="ytd-data">
                   {numeral(ytdData[0]).format("0.00")}%
                 </div>
                 <div className="ytd-label">{ytdLabels[0]}</div>
+                <div className="ytd-label" style={{opacity: ".6"}}><small>52-Week Rolling Average</small></div>
               </div>
             </div>
             <div
@@ -697,22 +698,24 @@ class Graph extends Component {
                 (data3 ? " col-lg-4 " : " col-lg-6 ")
               }
             >
-              <div className="ytd-symbol">YTD</div>
+              <div className="ytd-symbol">AVG</div>
               <div className="ytd-data-container">
                 <div className="ytd-data">
                   {numeral(ytdData[1]).format("0.00")}%
                 </div>
                 <div className="ytd-label">{ytdLabels[1]}</div>
+                <div className="ytd-label" style={{opacity: ".6"}}><small>52-Week Rolling Average</small></div>
               </div>
             </div>
             {data3 && (
               <div className="col-lg-4 d-flex flex-row align-items-center">
-                <div className="ytd-symbol">YTD</div>
+                <div className="ytd-symbol">AVG</div>
                 <div className="ytd-data-container">
                   <div className="ytd-data">
                     {numeral(ytdData[2]).format("0.00")}%
                   </div>
                   <div className="ytd-label">{ytdLabels[2]}</div>
+                  <div className="ytd-label" style={{opacity: ".6"}}><small>52-Week Rolling Average</small></div>
                 </div>
               </div>
             )}
