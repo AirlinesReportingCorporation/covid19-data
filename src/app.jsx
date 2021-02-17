@@ -150,7 +150,7 @@ class App extends Component {
       { x: 44, a: new Date(2021, 0, 24), b: -83.7 },
       { x: 45, a: new Date(2021, 0, 31), b: -81.8 },
       { x: 46, a: new Date(2021, 1, 7), b: -81.5 },
-      { x: 47, a: new Date(2021, 1, 14), b: -82.9 }
+      { x: 47, a: new Date(2021, 1, 14), b: -81.0 }
     ];
 
     var ytdData1 = [-73.10, -82.90];
