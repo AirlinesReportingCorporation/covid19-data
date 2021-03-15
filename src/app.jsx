@@ -324,7 +324,7 @@ class App extends Component {
 
     var ytdData2 = [-88.00, -62.90, -75.60];
 
-    var dataDomain1 = [-40, -50, -60, -70, -80, -90, -100];
+    var dataDomain1 = [-30, -40, -50, -60, -70, -80, -90, -100];
 
     // ============= Variance =============== //
 

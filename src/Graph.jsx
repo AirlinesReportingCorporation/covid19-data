@@ -449,13 +449,13 @@ class Graph extends Component {
               },
               grid: {
                 stroke: ({ tick }) =>
-                  tick == 0 || tick == 10 || tick == -40 || tick <= -99
+                  tick == 0 || tick == 10 || tick == -30 || tick <= -99
                     ? tick == 0
                       ? "#414042"
                       : "#ffffff"
                     : "#d7d7d7",
                 strokeWidth: ({ tick }) =>
-                  tick == 10 || tick == -100 ? 1 : tick == 40 ? 0 : 1
+                  tick == 10 || tick == -100 ? 1 : tick == 30 ? 0 : 1
               }
             }}
             dependentAxis
