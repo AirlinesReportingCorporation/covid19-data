@@ -271,7 +271,7 @@ class GraphVariance extends Component {
             name="bar"
             style={{ data: { fill: "#dddddd", opacity: ".2" } }}
             data={alternatingDataset}
-            barRatio={2}
+            barRatio={2.6}
             y="b"
           />
 

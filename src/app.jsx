@@ -103,8 +103,9 @@ class App extends Component {
       { x: 48, a: new Date(2021, 1, 21), b: -64.0 },
       { x: 49, a: new Date(2021, 1, 28), b: -58.8 },
       { x: 50, a: new Date(2021, 2, 7), b: -56.4 },
-      { x: 51, a: new Date(2021, 2, 14), b: -56.5 }
-      
+      { x: 51, a: new Date(2021, 2, 14), b: -56.4 },
+      { x: 52, a: new Date(2021, 2, 21), b: -49.4 },
+      { x: 53, a: new Date(2021, 2, 28), b: -51.2 }
     ];
 
     //sales variance
@@ -159,10 +160,12 @@ class App extends Component {
       { x: 48, a: new Date(2021, 1, 21), b: -79.9 },
       { x: 49, a: new Date(2021, 1, 28), b: -76.1 },
       { x: 50, a: new Date(2021, 2, 7), b: -73.7 },
-      { x: 51, a: new Date(2021, 2, 14), b: -72.2 }
+      { x: 51, a: new Date(2021, 2, 14), b: -72.2 },
+      { x: 52, a: new Date(2021, 2, 21), b: -68.2 },
+      { x: 53, a: new Date(2021, 2, 28), b: -68.1 }
     ];
 
-    var ytdData1 = [-74.20, -84.30];
+    var ytdData1 = [-72.9, -83.6];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -215,7 +218,9 @@ class App extends Component {
       { x: 48, a: new Date(2021, 1, 21), b: -84.7 },
       { x: 49, a: new Date(2021, 1, 28), b: -82.9 },
       { x: 50, a: new Date(2021, 2, 7), b: -82.8 },
-      { x: 51, a: new Date(2021, 2, 14), b: -83.1 }
+      { x: 51, a: new Date(2021, 2, 14), b: -83.1 },
+      { x: 52, a: new Date(2021, 2, 21), b: -82.3 },
+      { x: 53, a: new Date(2021, 2, 28), b: -81.6 }
     ];
 
     var online = [
@@ -269,8 +274,9 @@ class App extends Component {
       { x: 48, a: new Date(2021, 1, 21), b: -46.4 },
       { x: 49, a: new Date(2021, 1, 28), b: -40.3 },
       { x: 50, a: new Date(2021, 2, 7), b: -37.2 },
-      { x: 51, a: new Date(2021, 2, 14), b: -37.6 }
-      
+      { x: 51, a: new Date(2021, 2, 14), b: -37.4 },
+      { x: 52, a: new Date(2021, 2, 21), b: -22.9 },
+      { x: 53, a: new Date(2021, 2, 28), b: -27.0 }
     ];
 
     var leisure = [
@@ -324,12 +330,14 @@ class App extends Component {
       { x: 48, a: new Date(2021, 1, 21), b: -67.8 },
       { x: 49, a: new Date(2021, 1, 28), b: -62.8 },
       { x: 50, a: new Date(2021, 2, 7), b: -60.3 },
-      { x: 51, a: new Date(2021, 2, 14), b: -59.4 }
+      { x: 51, a: new Date(2021, 2, 14), b: -59.3 },
+      { x: 52, a: new Date(2021, 2, 21), b: -56.3 },
+      { x: 53, a: new Date(2021, 2, 28), b: -56.2 }
     ];
 
-    var ytdData2 = [-88.30, -63.10, -75.80];
+    var ytdData2 = [-87.9, -60.9, -74.9];
 
-    var dataDomain1 = [-30, -40, -50, -60, -70, -80, -90, -100];
+    var dataDomain1 = [-20, -30, -40, -50, -60, -70, -80, -90, -100];
 
     // ============= Variance =============== //
 
@@ -395,8 +403,9 @@ class App extends Component {
       { a: new Date(2021, 1, 21), b: -64.0, c: 2.5 },
       { a: new Date(2021, 1, 28), b: -58.8, c: 5.2 },
       { a: new Date(2021, 2, 7), b: -56.4, c: 2.4 },
-      { a: new Date(2021, 2, 14), b: -56.5, c: -0.01 }
-      
+      { a: new Date(2021, 2, 14), b: -56.5, c: -0.01 },
+      { a: new Date(2021, 2, 21), b: -49.5, c: 7.0 },
+      { a: new Date(2021, 2, 28), b: -51.2, c: -1.8 }
     ];
 
     var varianceDomain = [20, 10, 0, -10, -20, -30, -40];
@@ -483,22 +492,6 @@ class App extends Component {
         </div>
 
         <div className="covidGraphContainer">
-          <GraphVariance
-            graphTitle={"Air Transaction Variances"}
-            graphSubTitle={
-              "A week-over-week view of annual transaction variances for airline tickets sold by U.S. travel agencies"
-            }
-            dataTitle={["Transaction Variance", "Change in Variance"]}
-            ytdLabels={ytdLabels1}
-            data1={varianceData}
-            ytdData={ytdData1}
-            dataDomain={varianceDomain}
-            tableHeaders={["7-Day Period Ending", "Change in Variance"]}
-            layout="0"
-          />
-        </div>
-
-        <div className="covidGraphContainer">
           <Graph
             graphTitle={graphTitle2}
             graphSubTitle={""}
@@ -524,6 +517,22 @@ class App extends Component {
             *<strong>Sales variance</strong>: Total value (dollar amount) paid
             compared to the same time period in 2019.
           </small>
+        </div>
+
+        <div className="covidGraphContainer">
+          <GraphVariance
+            graphTitle={"Air Transaction Variances"}
+            graphSubTitle={
+              "A week-over-week view of annual transaction variances for airline tickets sold by U.S. travel agencies"
+            }
+            dataTitle={["Transaction Variance", "Change in Variance"]}
+            ytdLabels={ytdLabels1}
+            data1={varianceData}
+            ytdData={ytdData1}
+            dataDomain={varianceDomain}
+            tableHeaders={["7-Day Period Ending", "Change in Variance"]}
+            layout="0"
+          />
         </div>
 
         <div

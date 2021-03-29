@@ -449,7 +449,7 @@ class Graph extends Component {
               },
               grid: {
                 stroke: ({ tick }) =>
-                  tick == 0 || tick == 10 || tick == -30 || tick <= -99
+                  tick == 0 || tick == 10 || tick == -20 || tick <= -99
                     ? tick == 0
                       ? "#414042"
                       : "#ffffff"
@@ -469,7 +469,7 @@ class Graph extends Component {
             name="bar"
             style={{ data: { fill: "#dddddd", opacity: ".2" } }}
             data={alternatingDataset}
-            barRatio={1.5}
+            barRatio={2.25}
             y="b"
           />
 
