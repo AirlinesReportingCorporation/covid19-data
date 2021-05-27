@@ -13,6 +13,7 @@ import {
 import Graph from "./Graph.jsx";
 import GraphVariance from "./GraphVariance.jsx";
 import Loading from "./Loading.jsx";
+import AMGraph from "./AMGraph.jsx";
 
 import * as moment from "moment";
 import numeral from "numeral";
@@ -111,7 +112,9 @@ class App extends Component {
       { x: 56, a: new Date(2021, 3, 18), b: -46.9 },
       { x: 57, a: new Date(2021, 3, 25), b: -44.5 },
       { x: 58, a: new Date(2021, 4, 2), b: -45.6 },
-      { x: 59, a: new Date(2021, 4, 9), b: -46.3 }
+      { x: 59, a: new Date(2021, 4, 9), b: -46.3 },
+      { x: 60, a: new Date(2021, 4, 16), b: -42.1 },
+      { x: 61, a: new Date(2021, 4, 23), b: -39.1 }
     ];
 
     //sales variance
@@ -174,10 +177,12 @@ class App extends Component {
       { x: 56, a: new Date(2021, 3, 18), b: -65.3 },
       { x: 57, a: new Date(2021, 3, 25), b: -63.1 },
       { x: 58, a: new Date(2021, 4, 2), b: -62.8 },
-      { x: 59, a: new Date(2021, 4, 9), b: -62.8 }
+      { x: 59, a: new Date(2021, 4, 9), b: -62.8 },
+      { x: 60, a: new Date(2021, 4, 16), b: -59.9 },
+      { x: 61, a: new Date(2021, 4, 23), b: -56.5 }
     ];
 
-    var ytdData1 = [-67.8, -80.1];
+    var ytdData1 = [-66.0, -78.8];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -238,7 +243,9 @@ class App extends Component {
       { x: 56, a: new Date(2021, 3, 18), b: -77.7 },
       { x: 57, a: new Date(2021, 3, 25), b: -76.4 },
       { x: 58, a: new Date(2021, 4, 2), b: -76.0 },
-      { x: 59, a: new Date(2021, 4, 9), b: -75.2 }
+      { x: 59, a: new Date(2021, 4, 9), b: -75.2 },
+      { x: 60, a: new Date(2021, 4, 16), b: -72.8 },
+      { x: 61, a: new Date(2021, 4, 23), b: -71.6 }
     ];
 
     var online = [
@@ -300,7 +307,9 @@ class App extends Component {
       { x: 56, a: new Date(2021, 3, 18), b: -22.0 },
       { x: 57, a: new Date(2021, 3, 25), b: -18.3 },
       { x: 58, a: new Date(2021, 4, 2), b: -19.3 },
-      { x: 59, a: new Date(2021, 4, 9), b: -21.8 }
+      { x: 59, a: new Date(2021, 4, 9), b: -21.8 },
+      { x: 60, a: new Date(2021, 4, 16), b: -16.3 },
+      { x: 61, a: new Date(2021, 4, 23), b: -13.5 }
     ];
 
     var leisure = [
@@ -362,10 +371,12 @@ class App extends Component {
       { x: 56, a: new Date(2021, 3, 18), b: -52.4 },
       { x: 57, a: new Date(2021, 3, 25), b: -49.8 },
       { x: 58, a: new Date(2021, 4, 2), b: -52.0 },
-      { x: 59, a: new Date(2021, 4, 9), b: -52.9 }
+      { x: 59, a: new Date(2021, 4, 9), b: -52.9 },
+      { x: 60, a: new Date(2021, 4, 16), b: -49.1 },
+      { x: 61, a: new Date(2021, 4, 23), b: -44.8 }
     ];
 
-    var ytdData2 = [-85.9, -53.4, -70.6];
+    var ytdData2 = [-85.0, -50.7, -69.0];
 
     var dataDomain1 = [-20, -30, -40, -50, -60, -70, -80, -90, -100];
 
@@ -543,7 +554,7 @@ class App extends Component {
           />
         </div>
 
-        <div className="covid-table">
+        <div  className="covid-table">
           <small>
             *<strong>Ticket variance</strong>: Total number of tickets purchased
             compared to the same time period in 2019.
@@ -557,7 +568,7 @@ class App extends Component {
 
         <div
           className="covidGraphContianer"
-          style={{ marginTop: "60px", marginBottom: "60px" }}
+          style={{ marginTop: "60px", marginBottom: "60px", display: "none" }}
         >
           <div
             style={{
