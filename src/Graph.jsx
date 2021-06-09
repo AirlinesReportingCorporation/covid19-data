@@ -449,10 +449,8 @@ class Graph extends Component {
               },
               grid: {
                 stroke: ({ tick }) =>
-                  tick == 0 || tick == 10 || tick == -20 || tick <= -99
-                    ? tick == 0
-                      ? "#414042"
-                      : "#ffffff"
+                  tick == 0 || tick == 100 || tick == 0 || tick <= -99
+                    ? (tick = 0 ? "#414042" : "#ffffff")
                     : "#d7d7d7",
                 strokeWidth: ({ tick }) =>
                   tick == 10 || tick == -100 ? 1 : tick == 30 ? 0 : 1
@@ -689,7 +687,9 @@ class Graph extends Component {
                   {numeral(ytdData[0]).format("0.00")}%
                 </div>
                 <div className="ytd-label">{ytdLabels[0]}</div>
-                <div className="ytd-label" style={{opacity: ".6"}}><small>52-Week Rolling Average</small></div>
+                <div className="ytd-label" style={{ opacity: ".6" }}>
+                  <small>52-Week Rolling Average</small>
+                </div>
               </div>
             </div>
             <div
@@ -704,7 +704,9 @@ class Graph extends Component {
                   {numeral(ytdData[1]).format("0.00")}%
                 </div>
                 <div className="ytd-label">{ytdLabels[1]}</div>
-                <div className="ytd-label" style={{opacity: ".6"}}><small>52-Week Rolling Average</small></div>
+                <div className="ytd-label" style={{ opacity: ".6" }}>
+                  <small>52-Week Rolling Average</small>
+                </div>
               </div>
             </div>
             {data3 && (
@@ -715,7 +717,9 @@ class Graph extends Component {
                     {numeral(ytdData[2]).format("0.00")}%
                   </div>
                   <div className="ytd-label">{ytdLabels[2]}</div>
-                  <div className="ytd-label" style={{opacity: ".6"}}><small>52-Week Rolling Average</small></div>
+                  <div className="ytd-label" style={{ opacity: ".6" }}>
+                    <small>52-Week Rolling Average</small>
+                  </div>
                 </div>
               </div>
             )}
@@ -723,8 +727,16 @@ class Graph extends Component {
         </div>
 
         <div className="covid-table overflow-auto">
-          <div className="row">
-            <div className="graphSubTitle" style={{marginBottom: "15px", marginLeft: "40px"}}>List View</div>
+          <div
+            className="row"
+            style={{ background: "#189bb0", color: "#ffffff" }}
+          >
+            <div
+              className="graphSubTitle"
+              style={{ marginBottom: "15px", marginLeft: "40px", marginTop: "15px" }}
+            >
+              List View <div style={{fontSize: "12px"}}>*Same Data as Chart Above</div>
+            </div>
           </div>
           <div className="row covid-headers">{tableHeaderDisplay}</div>
           {graphDisplay}
@@ -769,7 +781,7 @@ class CustomHandle extends React.Component {
               padding: "5px 0px",
               lineHeight: "1",
               background: "#f1f2f2",
-              color: "#414042",
+              color: "#414042"
               //display: this.props.x > 350 ? "block" : "none"
             }}
           >
