@@ -735,7 +735,7 @@ class Graph extends Component {
               className="graphSubTitle"
               style={{ marginBottom: "15px", marginLeft: "40px", marginTop: "15px" }}
             >
-              List View <div style={{fontSize: "12px"}}>*Same Data as Chart Above</div>
+              List View <div style={{fontSize: "12px", lineHeight: "1.25"}}>*Same Data as Chart Above</div>
             </div>
           </div>
           <div className="row covid-headers">{tableHeaderDisplay}</div>

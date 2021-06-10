@@ -522,6 +522,21 @@ class App extends Component {
         </div>
 
         <div className="covidGraphContainer">
+          <AMGraph
+            graphTitle={graphTitle1}
+            graphSubTitle={graphSubTitle}
+            dataTitle={dataTitle1}
+            ytdLabels={ytdLabels1}
+            data1={data1}
+            data2={data2}
+            ytdData={ytdData1}
+            dataDomain={dataDomain1}
+            tableHeaders={tableHeaders1}
+            layout="1"
+          />
+        </div>
+
+        <div className="covidGraphContainer">
           <Graph
             graphTitle={graphTitle1}
             graphSubTitle={graphSubTitle}
