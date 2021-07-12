@@ -116,7 +116,12 @@ class App extends Component {
       { x: 60, a: new Date(2021, 4, 16), b: -42.1 },
       { x: 61, a: new Date(2021, 4, 23), b: -39.1 },
       { x: 62, a: new Date(2021, 4, 30), b: -35.0 },
-      { x: 63, a: new Date(2021, 5, 6), b: -32.9 }
+      { x: 63, a: new Date(2021, 5, 6), b: -32.9 },
+      { x: 64, a: new Date(2021, 5, 13), b: -33.9 },
+      { x: 65, a: new Date(2021, 5, 20), b: -31.3 },
+      { x: 66, a: new Date(2021, 5, 27), b: -32.5 },
+      { x: 67, a: new Date(2021, 6, 4), b: -31.6 }
+      
     ];
 
     //sales variance
@@ -183,10 +188,14 @@ class App extends Component {
       { x: 60, a: new Date(2021, 4, 16), b: -59.9 },
       { x: 61, a: new Date(2021, 4, 23), b: -56.5 },
       { x: 62, a: new Date(2021, 4, 30), b: -52.9 },
-      { x: 63, a: new Date(2021, 5, 6), b: -50.9 }
+      { x: 63, a: new Date(2021, 5, 6), b: -50.9 },
+      { x: 64, a: new Date(2021, 5, 13), b: -50.7 },
+      { x: 65, a: new Date(2021, 5, 20), b: -47.5 },
+      { x: 66, a: new Date(2021, 5, 27), b: -47.0 },
+      { x: 67, a: new Date(2021, 6, 4), b: -46.2 }
     ];
 
-    var ytdData1 = [-64.2, -77.4];
+    var ytdData1 = [-60.7, -74.5];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -251,7 +260,11 @@ class App extends Component {
       { x: 60, a: new Date(2021, 4, 16), b: -72.8 },
       { x: 61, a: new Date(2021, 4, 23), b: -71.6 },
       { x: 62, a: new Date(2021, 4, 30), b: -68.4 },
-      { x: 63, a: new Date(2021, 5, 6), b: -67.4 }
+      { x: 63, a: new Date(2021, 5, 6), b: -67.4 },
+      { x: 64, a: new Date(2021, 5, 13), b: -66.4 },
+      { x: 65, a: new Date(2021, 5, 20), b: -64.6 },
+      { x: 66, a: new Date(2021, 5, 27), b: -62.2 },
+      { x: 67, a: new Date(2021, 6, 4), b: -58.2 }
     ];
 
     var online = [
@@ -317,7 +330,11 @@ class App extends Component {
       { x: 60, a: new Date(2021, 4, 16), b: -16.3 },
       { x: 61, a: new Date(2021, 4, 23), b: -13.5 },
       { x: 62, a: new Date(2021, 4, 30), b: -7.7 },
-      { x: 63, a: new Date(2021, 5, 6), b: -7.4 }
+      { x: 63, a: new Date(2021, 5, 6), b: -7.4 },
+      { x: 64, a: new Date(2021, 5, 13), b: -10.1 },
+      { x: 65, a: new Date(2021, 5, 20), b: -6.5 },
+      { x: 66, a: new Date(2021, 5, 27), b: -11.2 },
+      { x: 67, a: new Date(2021, 6, 4), b: -11.7 }
     ];
 
     var leisure = [
@@ -383,10 +400,14 @@ class App extends Component {
       { x: 60, a: new Date(2021, 4, 16), b: -49.1 },
       { x: 61, a: new Date(2021, 4, 23), b: -44.8 },
       { x: 62, a: new Date(2021, 4, 30), b: -42.1 },
-      { x: 63, a: new Date(2021, 5, 6), b: -38.8 }
+      { x: 63, a: new Date(2021, 5, 6), b: -38.8 },
+      { x: 64, a: new Date(2021, 5, 13), b: -38.0 },
+      { x: 65, a: new Date(2021, 5, 20), b: -36.1 },
+      { x: 66, a: new Date(2021, 5, 27), b: -37.4 },
+      { x: 67, a: new Date(2021, 6, 4), b: -38.7 }
     ];
 
-    var ytdData2 = [-84.1, -48.1, -67.3];
+    var ytdData2 = [-82.0, -43.6, -64.1];
 
     var dataDomain1 = [0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100];
 
@@ -519,21 +540,6 @@ class App extends Component {
               alt="ARC Travel Demand"
             />
           </a>
-        </div>
-
-        <div className="covidGraphContainer">
-          <AMGraph
-            graphTitle={graphTitle1}
-            graphSubTitle={graphSubTitle}
-            dataTitle={dataTitle1}
-            ytdLabels={ytdLabels1}
-            data1={data1}
-            data2={data2}
-            ytdData={ytdData1}
-            dataDomain={dataDomain1}
-            tableHeaders={tableHeaders1}
-            layout="1"
-          />
         </div>
 
         <div className="covidGraphContainer">
