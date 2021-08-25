@@ -121,7 +121,12 @@ class App extends Component {
       { x: 65, a: new Date(2021, 5, 20), b: -31.3 },
       { x: 66, a: new Date(2021, 5, 27), b: -32.5 },
       { x: 67, a: new Date(2021, 6, 4), b: -31.6 },
-      { x: 68, a: new Date(2021, 6, 11), b: -22.7 }
+      { x: 68, a: new Date(2021, 6, 11), b: -22.6 },
+      { x: 69, a: new Date(2021, 6, 18), b: -31.1 },
+      { x: 70, a: new Date(2021, 6, 25), b: -34.1 },
+      { x: 71, a: new Date(2021, 7, 1), b: -33.5 },
+      { x: 72, a: new Date(2021, 7, 8), b: -34.7 },
+      { x: 73, a: new Date(2021, 7, 15), b: -41.1 }
     ];
 
     //sales variance
@@ -193,10 +198,15 @@ class App extends Component {
       { x: 65, a: new Date(2021, 5, 20), b: -47.5 },
       { x: 66, a: new Date(2021, 5, 27), b: -47.0 },
       { x: 67, a: new Date(2021, 6, 4), b: -46.2 },
-      { x: 68, a: new Date(2021, 6, 11), b: -39.9 }
+      { x: 68, a: new Date(2021, 6, 11), b: -39.8 },
+      { x: 69, a: new Date(2021, 6, 18), b: -46.1 },
+      { x: 70, a: new Date(2021, 6, 25), b: -48.3 },
+      { x: 71, a: new Date(2021, 7, 1), b: -48.4 },
+      { x: 72, a: new Date(2021, 7, 8), b: -51.3 },
+      { x: 73, a: new Date(2021, 7, 15), b: -56.4 }
     ];
 
-    var ytdData1 = [-59.6, -73.5];
+    var ytdData1 = [-55.4, -70.0];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -266,7 +276,12 @@ class App extends Component {
       { x: 65, a: new Date(2021, 5, 20), b: -64.6 },
       { x: 66, a: new Date(2021, 5, 27), b: -62.2 },
       { x: 67, a: new Date(2021, 6, 4), b: -58.2 },
-      { x: 68, a: new Date(2021, 6, 11), b: -51.6 }
+      { x: 68, a: new Date(2021, 6, 11), b: -51.5 },
+      { x: 69, a: new Date(2021, 6, 18), b: -59.3 },
+      { x: 70, a: new Date(2021, 6, 25), b: -58.9 },
+      { x: 71, a: new Date(2021, 7, 1), b: -55.8 },
+      { x: 72, a: new Date(2021, 7, 8), b: -54.8 },
+      { x: 73, a: new Date(2021, 7, 15), b: -62.4 }
     ];
 
     var online = [
@@ -337,7 +352,12 @@ class App extends Component {
       { x: 65, a: new Date(2021, 5, 20), b: -6.5 },
       { x: 66, a: new Date(2021, 5, 27), b: -11.2 },
       { x: 67, a: new Date(2021, 6, 4), b: -11.7 },
-      { x: 68, a: new Date(2021, 6, 11), b: -1.7 }
+      { x: 68, a: new Date(2021, 6, 11), b: -1.6 },
+      { x: 69, a: new Date(2021, 6, 18), b: -8.8 },
+      { x: 70, a: new Date(2021, 6, 25), b: -13.9 },
+      { x: 71, a: new Date(2021, 7, 1), b: -14.4 },
+      { x: 72, a: new Date(2021, 7, 8), b: -16.4 },
+      { x: 73, a: new Date(2021, 7, 15), b: -24.0 }
     ];
 
     var leisure = [
@@ -408,10 +428,15 @@ class App extends Component {
       { x: 65, a: new Date(2021, 5, 20), b: -36.1 },
       { x: 66, a: new Date(2021, 5, 27), b: -37.4 },
       { x: 67, a: new Date(2021, 6, 4), b: -38.7 },
-      { x: 68, a: new Date(2021, 6, 11), b: -30.5 }
+      { x: 68, a: new Date(2021, 6, 11), b: -30.3 },
+      { x: 69, a: new Date(2021, 6, 18), b: -35.4 },
+      { x: 70, a: new Date(2021, 6, 25), b: -39.1 },
+      { x: 71, a: new Date(2021, 7, 1), b: -38.8 },
+      { x: 72, a: new Date(2021, 7, 8), b: -41.0 },
+      { x: 73, a: new Date(2021, 7, 15), b: -43.4 }
     ];
 
-    var ytdData2 = [-81.3, -42.2, -63.2];
+    var ytdData2 = [-78.3, -37.1, -59.3];
 
     var dataDomain1 = [0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100];
 
