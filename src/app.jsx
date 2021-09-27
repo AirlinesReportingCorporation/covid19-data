@@ -132,7 +132,7 @@ class App extends Component {
       { x: 76, a: new Date(2021, 8, 5), b: -40.7 },
       { x: 77, a: new Date(2021, 8, 12), b: -40.7 },
       { x: 78, a: new Date(2021, 8, 19), b: -39.4 },
-      { x: 79, a: new Date(2021, 8, 27), b: -38.0 }
+      { x: 79, a: new Date(2021, 8, 26), b: -38.0 }
     ];
 
     //sales variance
@@ -215,7 +215,7 @@ class App extends Component {
       { x: 76, a: new Date(2021, 8, 5), b: -60.0 },
       { x: 77, a: new Date(2021, 8, 12), b: -59.6 },
       { x: 78, a: new Date(2021, 8, 19), b: -59.1 },
-      { x: 79, a: new Date(2021, 8, 27), b: -55.9 }
+      { x: 79, a: new Date(2021, 8, 26), b: -55.9 }
     ];
 
     var ytdData1 = [-51.9, -67.1];
@@ -299,7 +299,7 @@ class App extends Component {
       { x: 76, a: new Date(2021, 8, 5), b: -62.3 },
       { x: 77, a: new Date(2021, 8, 12), b: -62.9 },
       { x: 78, a: new Date(2021, 8, 19), b: -61.7 },
-      { x: 79, a: new Date(2021, 8, 27), b: -60.6 }
+      { x: 79, a: new Date(2021, 8, 26), b: -60.6 }
     ];
 
     var online = [
@@ -381,7 +381,7 @@ class App extends Component {
       { x: 76, a: new Date(2021, 8, 5), b: -19.7 },
       { x: 77, a: new Date(2021, 8, 12), b: -21.0 },
       { x: 78, a: new Date(2021, 8, 19), b: -16.1 },
-      { x: 79, a: new Date(2021, 8, 27), b: -16.0 }
+      { x: 79, a: new Date(2021, 8, 26), b: -16.0 }
     ];
 
     var leisure = [
@@ -463,7 +463,7 @@ class App extends Component {
       { x: 76, a: new Date(2021, 8, 5), b: -45.8 },
       { x: 77, a: new Date(2021, 8, 12), b: -44.1 },
       { x: 78, a: new Date(2021, 8, 19), b: -45.6 },
-      { x: 79, a: new Date(2021, 8, 27), b: -42.7 }
+      { x: 79, a: new Date(2021, 8, 26), b: -42.7 }
     ];
 
     var ytdData2 = [-75.4, -33.0, -55.8];
