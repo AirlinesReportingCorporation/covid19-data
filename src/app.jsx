@@ -140,7 +140,7 @@ class App extends Component {
       { x: 84, a: new Date(2021, 9, 31), b: -25.4 },
       { x: 85, a: new Date(2021, 10, 7), b: -24.7 },
       { x: 86, a: new Date(2021, 10, 14), b: -27.0 },
-      { x: 86, a: new Date(2021, 10, 21), b: -28.4 }
+      { x: 87, a: new Date(2021, 10, 21), b: -28.4 }
     ];
 
     //sales variance
