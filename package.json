@@ -12,8 +12,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "copy-webpack-plugin": "^6.3.0",
@@ -30,6 +30,8 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.18",
     "axios": "^0.21.1",
+    "highcharts": "^9.3.2",
+    "highcharts-react-official": "^3.1.0",
     "moment": "^2.24.0",
     "numeral": "^2.0.6",
     "react": "^16.13.1",
