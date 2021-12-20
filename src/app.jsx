@@ -17,7 +17,6 @@ import AMGraph from "./AMGraph.jsx";
 
 import * as moment from "moment";
 import numeral from "numeral";
-import HCGraph from "./HCGraph.jsx";
 
 class App extends Component {
   constructor() {
@@ -662,11 +661,6 @@ class App extends Component {
           </a>
         </div>
         <div className="covidGraphContainer">
-          <div className="hcgraph container mt-5">
-            <HCGraph
-            />
-            </div>
-          
           <Graph
             graphTitle={graphTitle1}
             graphSubTitle={graphSubTitle}
