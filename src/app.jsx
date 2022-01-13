@@ -248,7 +248,7 @@ class App extends Component {
       { x: 94, a: new Date(2022, 0, 9), b: -44.6},
     ];
 
-    var ytdData1 = [-32.5 -46.1];
+    var ytdData1 = [-32.5, -46.1];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
