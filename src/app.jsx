@@ -7,7 +7,7 @@ import {
   VictoryScatter,
   VictoryVoronoiContainer,
   VictoryTooltip,
-  VictoryLabel
+  VictoryLabel,
 } from "victory";
 
 import Graph from "./Graph.jsx";
@@ -36,18 +36,18 @@ class App extends Component {
     var tableHeaders1 = [
       "7-Day Period Ending",
       "Ticket Variance vs. Same Week 2019",
-      "Sales Variance vs. Same Week 2019"
+      "Sales Variance vs. Same Week 2019",
     ];
     var tableHeaders2 = [
       "7-Day Period Ending",
       "Corporate",
       "Online",
-      "Leisure / Other"
+      "Leisure / Other",
     ];
 
     var ytdLabels1 = [
       "Ticket Variance vs. Same Week 2019",
-      "Sales Variance vs. Same Week 2019"
+      "Sales Variance vs. Same Week 2019",
     ];
 
     var ytdLabels2 = ["Corporate", "Online", "Leisure / Other"];
@@ -147,8 +147,9 @@ class App extends Component {
       { x: 91, a: new Date(2021, 11, 19), b: -34.5 },
       { x: 92, a: new Date(2021, 11, 26), b: -45.0 },
       { x: 93, a: new Date(2022, 0, 2), b: -19.9 },
-      { x: 94, a: new Date(2022, 0, 9), b: -30.9},
-      { x: 95, a: new Date(2022, 0, 16), b: -44.6},
+      { x: 94, a: new Date(2022, 0, 9), b: -30.9 },
+      { x: 95, a: new Date(2022, 0, 16), b: -44.6 },
+      { x: 96, a: new Date(2022, 0, 23), b: -44.1 },
     ];
 
     //sales variance
@@ -242,15 +243,16 @@ class App extends Component {
       { x: 87, a: new Date(2021, 10, 21), b: -36.0 },
       { x: 88, a: new Date(2021, 10, 28), b: -45.1 },
       { x: 89, a: new Date(2021, 11, 5), b: -27.5 },
-      { x: 90, a: new Date(2021, 11, 12), b: -48.6},
+      { x: 90, a: new Date(2021, 11, 12), b: -48.6 },
       { x: 91, a: new Date(2021, 11, 19), b: -45.9 },
       { x: 92, a: new Date(2021, 11, 26), b: -59.4 },
       { x: 93, a: new Date(2022, 0, 2), b: -34.9 },
-      { x: 94, a: new Date(2022, 0, 9), b: -44.6},
-      { x: 95, a: new Date(2022, 0, 16), b: -57.2},
+      { x: 94, a: new Date(2022, 0, 9), b: -44.6 },
+      { x: 95, a: new Date(2022, 0, 16), b: -57.2 },
+      { x: 96, a: new Date(2022, 0, 23), b: -54.9 },
     ];
 
-    var ytdData1 = [-40.7, -54.2];
+    var ytdData1 = [-31.1, -47.6];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -346,8 +348,9 @@ class App extends Component {
       { x: 91, a: new Date(2021, 11, 19), b: -52.1 },
       { x: 92, a: new Date(2021, 11, 26), b: -62.1 },
       { x: 93, a: new Date(2022, 0, 2), b: -18.8 },
-      { x: 94, a: new Date(2022, 0, 9), b: -49.5},
-      { x: 95, a: new Date(2022, 0, 16), b: -65.6},
+      { x: 94, a: new Date(2022, 0, 9), b: -49.5 },
+      { x: 95, a: new Date(2022, 0, 16), b: -65.6 },
+      { x: 96, a: new Date(2022, 0, 23), b: -63.0 },
     ];
 
     var online = [
@@ -440,12 +443,13 @@ class App extends Component {
       { x: 87, a: new Date(2021, 10, 21), b: -15.0 },
       { x: 88, a: new Date(2021, 10, 28), b: -24.0 },
       { x: 89, a: new Date(2021, 11, 5), b: -8.1 },
-      { x: 90, a: new Date(2021, 11, 12), b: -31.4},
+      { x: 90, a: new Date(2021, 11, 12), b: -31.4 },
       { x: 91, a: new Date(2021, 11, 19), b: -25.0 },
       { x: 92, a: new Date(2021, 11, 26), b: -34.0 },
       { x: 93, a: new Date(2022, 0, 2), b: -17.6 },
-      { x: 94, a: new Date(2022, 0, 9), b: -26.6},
-      { x: 95, a: new Date(2022, 0, 16), b: -35.0},
+      { x: 94, a: new Date(2022, 0, 9), b: -26.6 },
+      { x: 95, a: new Date(2022, 0, 16), b: -35.0 },
+      { x: 96, a: new Date(2022, 0, 23), b: -30.4 },
     ];
 
     var leisure = [
@@ -542,11 +546,12 @@ class App extends Component {
       { x: 91, a: new Date(2021, 11, 19), b: -31.7 },
       { x: 92, a: new Date(2021, 11, 26), b: -44.6 },
       { x: 93, a: new Date(2022, 0, 2), b: -24.2 },
-      { x: 94, a: new Date(2022, 0, 9), b: -18.1},
-      { x: 95, a: new Date(2022, 0, 16), b: -35.4},
+      { x: 94, a: new Date(2022, 0, 9), b: -18.1 },
+      { x: 95, a: new Date(2022, 0, 16), b: -35.3 },
+      { x: 96, a: new Date(2022, 0, 23), b: -33.2 },
     ];
 
-    var ytdData2 = [-66.1, -23.4, -40.5];
+    var ytdData2 = [-58.2, -12.3, -33.2];
 
     var dataDomain1 = [0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100];
 
@@ -622,7 +627,7 @@ class App extends Component {
       { a: new Date(2021, 3, 18), b: -46.9, c: 0.6 },
       { a: new Date(2021, 3, 25), b: -44.5, c: 2.4 },
       { a: new Date(2021, 4, 2), b: -45.6, c: -1.2 },
-      { a: new Date(2021, 4, 9), b: -46.3, c: -0.7 }    
+      { a: new Date(2021, 4, 9), b: -46.3, c: -0.7 },
     ];
 
     var varianceDomain = [20, 10, 0, -10, -20, -30, -40];
@@ -743,7 +748,7 @@ class App extends Component {
             style={{
               margin: "0 auto 60px auto",
               maxWidth: "1030px",
-              textAlign: "center"
+              textAlign: "center",
             }}
           >
             <div className="graphTitle">
