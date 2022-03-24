@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import Highcharts from "highcharts/highstock";
 // import ReactHighstock from "react-highcharts/ReactHighstock.src";
 import HighchartsReact from "highcharts-react-official";
-
+import moment from "moment";
 import axios from "axios";
 import XLSX from "xlsx";
 
@@ -29,6 +29,9 @@ function flattenArray(arrayData, columnName, type = "string") {
     const element = arrayData[i][columnName];
     if (type === "number") {
       element = parseFloat(element.replace("%", ""));
+    }
+    if (type === "date") {
+      element = moment(element).format("MMM D");
     }
     newArray.push(element);
   }
@@ -59,7 +62,7 @@ class HCGraph extends Component {
           "https://www2.arccorp.com/globalassets/covid19/covid-data.xlsx?" +
           new Date().toLocaleString(),
         responseType: "arraybuffer",
-      }).then(function(response) {
+      }).then(function (response) {
         console.log("===== All Airline Data Chart Loaded ===== ");
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
@@ -89,9 +92,13 @@ class HCGraph extends Component {
 
   dataLoaded() {
     console.log("loaded!");
-    console.log(flattenArray(this.state.covidData, "Day of Week Ending"));
+    console.log("Testing time:");
+    console.log(moment("1/12/2020").format("MMM D"));
+    console.log(
+      flattenArray(this.state.covidData, "Day of Week Ending", "date")
+    );
     this.setState({
-      dates: flattenArray(this.state.covidData, "Day of Week Ending"),
+      dates: flattenArray(this.state.covidData, "Day of Week Ending", "date"),
     });
     this.setState({
       corporate: flattenArray(
@@ -140,6 +147,16 @@ class HCGraph extends Component {
       chart: {
         zoomType: "x",
         backgroundColor: "#fff",
+        events: {
+            load: function() {
+                var chart = this,
+                xAxis = chart.xAxis[0],
+                newStart = dates.length - 7,
+                newEnd = dates.length - 1;
+    
+              xAxis.setExtremes(newStart, newEnd);
+            }
+        }
       },
       title: {
         text: "U.S. Travel Agency Seven-Day Air Ticket & Sales Volume",
@@ -159,9 +176,21 @@ class HCGraph extends Component {
         },
         align: "left",
       },
+      legend: {
+        enabled: true,
+        align: "left",
+        verticalAlign: "top",
+        borderWidth: 0,
+      },
       yAxis: {
+        opposite: false,
         floor: -100,
         ceiling: 0,
+        legend: {
+          align: "left",
+          verticalAlign: "top",
+          borderWidth: 0,
+        },
         title: {
           text: "Variance %",
           tickInterval: 11,
@@ -172,11 +201,14 @@ class HCGraph extends Component {
         },
         legend: {
           enabled: true,
+          align: "left",
+          verticalAlign: "top",
+          borderWidth: 0,
         },
       },
       xAxis: {
         labels: {
-          formatter: function() {
+          formatter: function () {
             return dates[this.value];
           },
         },
@@ -189,7 +221,7 @@ class HCGraph extends Component {
       navigator: {
         xAxis: {
           labels: {
-            formatter: function(f) {
+            formatter: function (f) {
               return dates[this.value];
             },
           },
@@ -199,8 +231,8 @@ class HCGraph extends Component {
         enabled: false,
       },
       tooltip: {
-        formatter: function() {
-          return this.points.reduce(function(s, point) {
+        formatter: function () {
+          return this.points.reduce(function (s, point) {
             return s + "<br/>" + point.series.name + ": " + point.y + "%";
           }, "<b>" + this.x + "</b>");
         },
@@ -211,15 +243,28 @@ class HCGraph extends Component {
           name: "Ticket Variance",
           data: this.state.ticket,
           type: "line",
-          color: "#189bb0",
+          color: "#000",
+          marker: {
+            enabled: true,
+            radius: 3.5,
+            symbol: "circle",
+          },
         },
         {
           name: "Sales Variance",
           data: this.state.sales,
           type: "line",
           color: "#ffca75",
+          marker: {
+            enabled: true,
+            radius: 3.5,
+            symbol: "circle",
+          },
         },
       ],
+      credits: {
+        enabled: false
+    },
     };
 
     return (
