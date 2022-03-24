@@ -101,7 +101,7 @@ class HCGraph extends Component {
       ),
     });
     this.setState({
-      tickets: flattenArray(
+      ticket: flattenArray(
         this.state.covidData,
         "Ticket Variance v.2019",
         "number"
@@ -134,6 +134,8 @@ class HCGraph extends Component {
   }
 
   render() {
+    var dates = this.state.dates;
+
     const options1 = {
       chart: {
         zoomType: "x",
@@ -173,25 +175,43 @@ class HCGraph extends Component {
         },
       },
       xAxis: {
-        type: "datetime",
-        categories: this.state.dates,
-        tickCount: 10,
+        labels: {
+          formatter: function() {
+            return dates[this.value];
+          },
+        },
         alternateGridColor: "#f7f5f5",
         style: {
           fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
           color: "",
         },
       },
+      navigator: {
+        xAxis: {
+          labels: {
+            formatter: function(f) {
+              return dates[this.value];
+            },
+          },
+        },
+      },
+      rangeSelector: {
+        enabled: false,
+      },
       tooltip: {
+        formatter: function() {
+          return this.points.reduce(function(s, point) {
+            return s + "<br/>" + point.series.name + ": " + point.y + "%";
+          }, "<b>" + this.x + "</b>");
+        },
         shared: true,
       },
       series: [
         {
           name: "Ticket Variance",
-          data: [this.state.ticket],
-          tooltip: {
-            valueDecimals: 2,
-          },
+          data: this.state.ticket,
+          type: "line",
+          color: "#189bb0",
         },
         {
           name: "Sales Variance",
@@ -204,11 +224,13 @@ class HCGraph extends Component {
 
     return (
       <div>
-        <HighchartsReact
-          highcharts={Highcharts}
-          constructorType={"stockChart"}
-          options={options1}
-        />
+        {this.state.dates && this.state.ticket && this.state.sales && (
+          <HighchartsReact
+            highcharts={Highcharts}
+            constructorType={"stockChart"}
+            options={options1}
+          />
+        )}
       </div>
     );
   }
