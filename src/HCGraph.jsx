@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import { render } from "react-dom";
 import Highcharts from "highcharts/highstock";
+// import ReactHighstock from "react-highcharts/ReactHighstock.src";
 import HighchartsReact from "highcharts-react-official";
 
 import axios from "axios";
@@ -86,15 +87,20 @@ class HCGraph extends Component {
   dataLoaded() {
     console.log("loaded!");
     console.log(flattenArray(this.state.covidData, "Day of Week Ending"));
-  }
+    this.setState({dates: flattenArray(this.state.covidData, "Day of Week Ending")})
+    this.setState({corporate: flattenArray(this.state.covidData, "Corporate Variance v.2019")});
+    this.setState({tickets: flattenArray(this.state.covidData, "Ticket Variance v.2019")});
+    this.setState({sales: flattenArray(this.state.covidData, "Sales Variance v.2019")});
+    this.setState({leisure: flattenArray(this.state.covidData, "Leisure/Other Variance v.2019")});
+    this.setState({online: flattenArray(this.state.covidData, "Online Variance v.2019")});
+    console.log(flattenArray(this.state.covidData, "Ticket Variance v.2019"));
+}
 
   render() {
     const options1 = {
       chart: {
-        width: 1170,
-        height: 530,
         zoomType: "x",
-        backgroundColor: "#D4D4D4",
+        backgroundColor: "#fff",
       },
       title: {
         text: "U.S. Travel Agency Seven-Day Air Ticket & Sales Volume",
@@ -115,22 +121,28 @@ class HCGraph extends Component {
         align: "left",
       },
       yAxis: {
+        floor: -100,
+        ceiling: 0,
         title: {
-          text: "Variance %",
-          tickInterval: 10,
+            text: 'Variance %',
+            tickInterval: 11,
         },
         style: {
           fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
           color: "#2A2B2C",
         },
+        legend: {
+            enabled: true
+          },
       },
       xAxis: {
         type: "datetime",
         categories: this.state.dates,
         tickCount: 10,
+        alternateGridColor: '#f7f5f5',
         style: {
           fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-          color: "#2A2B2C",
+          color: "",
         },
       },
       tooltip: {
@@ -139,12 +151,16 @@ class HCGraph extends Component {
       series: [
         {
           name: "Ticket Variance",
-          data: [-42.7, -39.9, -36.4, -37.1, -36.0, -45.1, -27.5, -48.6],
-          color: "#316677",
+          data: [this.state.ticket],
+          tooltip: {
+            valueDecimals: 2
+          }
         },
         {
           name: "Sales Variance",
-          data: [-40.7, -33.9, -39.4, -37.1, -56.0, -45.1, -21.5, -28.6],
+          data: this.state.sales,
+          type: 'line',
+          color: '#ffca75'
         },
       ],
     };
