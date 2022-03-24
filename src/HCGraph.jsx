@@ -23,10 +23,13 @@ var dates = [
   new Date(2021, 11, 12),
 ];
 
-function flattenArray(arrayData, columnName) {
+function flattenArray(arrayData, columnName, type = "string") {
   var newArray = [];
   for (let i = 0; i < arrayData.length; i++) {
     const element = arrayData[i][columnName];
+    if (type === "number") {
+      element = parseFloat(element.replace("%", ""));
+    }
     newArray.push(element);
   }
   return newArray;
@@ -87,14 +90,48 @@ class HCGraph extends Component {
   dataLoaded() {
     console.log("loaded!");
     console.log(flattenArray(this.state.covidData, "Day of Week Ending"));
-    this.setState({dates: flattenArray(this.state.covidData, "Day of Week Ending")})
-    this.setState({corporate: flattenArray(this.state.covidData, "Corporate Variance v.2019")});
-    this.setState({tickets: flattenArray(this.state.covidData, "Ticket Variance v.2019")});
-    this.setState({sales: flattenArray(this.state.covidData, "Sales Variance v.2019")});
-    this.setState({leisure: flattenArray(this.state.covidData, "Leisure/Other Variance v.2019")});
-    this.setState({online: flattenArray(this.state.covidData, "Online Variance v.2019")});
-    console.log(flattenArray(this.state.covidData, "Ticket Variance v.2019"));
-}
+    this.setState({
+      dates: flattenArray(this.state.covidData, "Day of Week Ending"),
+    });
+    this.setState({
+      corporate: flattenArray(
+        this.state.covidData,
+        "Corporate Variance v.2019",
+        "number"
+      ),
+    });
+    this.setState({
+      tickets: flattenArray(
+        this.state.covidData,
+        "Ticket Variance v.2019",
+        "number"
+      ),
+    });
+    this.setState({
+      sales: flattenArray(
+        this.state.covidData,
+        "Sales Variance v.2019",
+        "number"
+      ),
+    });
+    this.setState({
+      leisure: flattenArray(
+        this.state.covidData,
+        "Leisure/Other Variance v.2019",
+        "number"
+      ),
+    });
+    this.setState({
+      online: flattenArray(
+        this.state.covidData,
+        "Online Variance v.2019",
+        "number"
+      ),
+    });
+    console.log(
+      flattenArray(this.state.covidData, "Ticket Variance v.2019", "number")
+    );
+  }
 
   render() {
     const options1 = {
@@ -124,22 +161,22 @@ class HCGraph extends Component {
         floor: -100,
         ceiling: 0,
         title: {
-            text: 'Variance %',
-            tickInterval: 11,
+          text: "Variance %",
+          tickInterval: 11,
         },
         style: {
           fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
           color: "#2A2B2C",
         },
         legend: {
-            enabled: true
-          },
+          enabled: true,
+        },
       },
       xAxis: {
         type: "datetime",
         categories: this.state.dates,
         tickCount: 10,
-        alternateGridColor: '#f7f5f5',
+        alternateGridColor: "#f7f5f5",
         style: {
           fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
           color: "",
@@ -153,14 +190,14 @@ class HCGraph extends Component {
           name: "Ticket Variance",
           data: [this.state.ticket],
           tooltip: {
-            valueDecimals: 2
-          }
+            valueDecimals: 2,
+          },
         },
         {
           name: "Sales Variance",
           data: this.state.sales,
-          type: 'line',
-          color: '#ffca75'
+          type: "line",
+          color: "#ffca75",
         },
       ],
     };
