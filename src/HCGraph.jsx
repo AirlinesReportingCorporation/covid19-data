@@ -1,7 +1,7 @@
-import React from 'react'
-import { render } from 'react-dom'
-import Highcharts from 'highcharts'
-import HighchartsReact from 'highcharts-react-official'
+import React from 'react';
+import { render } from 'react-dom';
+import Highcharts from 'highcharts/highstock';
+import HighchartsReact from 'highcharts-react-official';
 
 // //ticket variance
 // var data1 = [
@@ -254,8 +254,9 @@ const options = {
 
 const HCGraph = () => <div>
     <HighchartsReact
-        highcharts={Highcharts}
-        options={options}
+      highcharts={Highcharts}
+      constructorType={'stockChart'}
+      options={options}
     />
 </div>
 
