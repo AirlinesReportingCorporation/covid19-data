@@ -43,12 +43,18 @@ class HCGraph extends Component {
     super(props);
     this.state = {
       covidData: [],
+      covid52Week: [],
       dates: [],
       ticket: [],
       sales: [],
       leisure: [],
       corporate: [],
       online: [],
+      ticket52: [],
+      sales52: [],
+      leisure52: [],
+      corporate52: [],
+      online52: [],
     };
   }
 
@@ -63,7 +69,7 @@ class HCGraph extends Component {
           new Date().toLocaleString(),
         responseType: "arraybuffer",
       }).then(function (response) {
-        console.log("===== All Airline Data Chart Loaded ===== ");
+        console.log("===== Covid Sales Data Loaded ===== ");
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
         console.log(workbook);
@@ -81,7 +87,33 @@ class HCGraph extends Component {
       });
     });
 
-    Promise.all([covidDataCall])
+    const covid52Week = new Promise((resolve, reject) => {
+        axios({
+          method: "get",
+          url:
+            "https://www2.arccorp.com/globalassets/covid19/52-covid-data.xlsx?" +
+            new Date().toLocaleString(),
+          responseType: "arraybuffer",
+        }).then(function (response) {
+          console.log("===== Covid 52 Week Data Loaded ===== ");
+          var data = new Uint8Array(response.data);
+          var workbook = XLSX.read(data, { type: "array" });
+          console.log(workbook);
+          var workbookData = workbook["Sheets"]["covid-data"];
+  
+          var json = XLSX.utils.sheet_to_json(workbookData, {
+            raw: false,
+          });
+  
+          console.log(json);
+  
+          e.setState({ covid52Week: json });
+  
+          resolve(true);
+        });
+      });
+
+    Promise.all([covidDataCall, covid52Week])
       .then((values) => {
         e.dataLoaded();
       })
@@ -92,8 +124,6 @@ class HCGraph extends Component {
 
   dataLoaded() {
     console.log("loaded!");
-    console.log("Testing time:");
-    console.log(moment("1/12/2020").format("MMM D"));
     console.log(
       flattenArray(this.state.covidData, "Day of Week Ending", "date")
     );
@@ -135,8 +165,24 @@ class HCGraph extends Component {
         "number"
       ),
     });
+    this.setState({
+        corporate52: flattenArray(this.state.covid52Week, "Moving Average of Corporate Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
+    })
+    this.setState({
+        online52: flattenArray(this.state.covid52Week, "Moving Average of Online Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
+    })
+    this.setState({
+        leisure52: flattenArray(this.state.covid52Week, "Moving Average of Leisure/Other Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
+    })
+    this.setState({
+        ticket52: flattenArray(this.state.covid52Week, "Moving Average of Ticket Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
+    })
+    this.setState({
+        sales52: flattenArray(this.state.covid52Week, "Moving Average of Sales Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
+    })
+    
     console.log(
-      flattenArray(this.state.covidData, "Ticket Variance v.2019", "number")
+      flattenArray(this.state.covid52Week, "Moving Average of Sales Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
     );
   }
 
@@ -148,15 +194,15 @@ class HCGraph extends Component {
         zoomType: "x",
         backgroundColor: "#fff",
         events: {
-            load: function() {
-                var chart = this,
-                xAxis = chart.xAxis[0],
-                newStart = dates.length - 7,
-                newEnd = dates.length - 1;
-    
-              xAxis.setExtremes(newStart, newEnd);
-            }
-        }
+          load: function () {
+            var chart = this,
+              xAxis = chart.xAxis[0],
+              newStart = dates.length - 7,
+              newEnd = dates.length - 1;
+
+            xAxis.setExtremes(newStart, newEnd);
+          },
+        },
       },
       title: {
         text: "U.S. Travel Agency Seven-Day Air Ticket & Sales Volume",
@@ -181,23 +227,15 @@ class HCGraph extends Component {
         align: "left",
         verticalAlign: "top",
         borderWidth: 0,
+        fontWeight: "bold",
       },
       yAxis: {
         opposite: false,
         floor: -100,
         ceiling: 0,
-        legend: {
-          align: "left",
-          verticalAlign: "top",
-          borderWidth: 0,
-        },
         title: {
           text: "Variance %",
-          tickInterval: 11,
-        },
-        style: {
-          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-          color: "#2A2B2C",
+          tickInterval: 1,
         },
         legend: {
           enabled: true,
@@ -205,24 +243,37 @@ class HCGraph extends Component {
           verticalAlign: "top",
           borderWidth: 0,
         },
+        labels: {
+          style: {
+            fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+            color: "#2A2B2C",
+          },
+        },
       },
       xAxis: {
+        tickLength: 0,
         labels: {
           formatter: function () {
             return dates[this.value];
           },
+          style: {
+            fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
+            color: "#000",
+          },
         },
         alternateGridColor: "#f7f5f5",
-        style: {
-          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-          color: "",
-        },
       },
       navigator: {
         xAxis: {
           labels: {
             formatter: function (f) {
               return dates[this.value];
+            },
+            style: {
+              fontFamily:
+                "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+              color: "#000",
+              fontWeight: "bold",
             },
           },
         },
@@ -263,8 +314,158 @@ class HCGraph extends Component {
         },
       ],
       credits: {
-        enabled: false
-    },
+        enabled: false,
+      },
+    };
+    const options2 = {
+      chart: {
+        zoomType: "x",
+        backgroundColor: "#fff",
+        events: {
+          load: function () {
+            var chart = this,
+              xAxis = chart.xAxis[0],
+              newStart = dates.length - 7,
+              newEnd = dates.length - 1;
+
+            xAxis.setExtremes(newStart, newEnd);
+          },
+        },
+      },
+      title: {
+        text: "Ticket Variance Sold by Segment",
+        style: {
+          fontSize: "30px",
+          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+          color: "#2A2B2C",
+        },
+        align: "left",
+      },
+      subtitle: {
+        text: "Tickets Issued for All Itineraries",
+        style: {
+          fontSize: "18px",
+          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+          color: "#2A2B2C",
+        },
+        align: "left",
+      },
+      legend: {
+        enabled: true,
+        align: "left",
+        verticalAlign: "top",
+        borderWidth: 0,
+      },
+      yAxis: {
+        opposite: false,
+        floor: -100,
+        ceiling: 0,
+        endOnTick: true,
+        legend: {
+          align: "left",
+          verticalAlign: "top",
+          borderWidth: 0,
+        },
+        labels:{
+            style: {
+                fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+                color: "#2A2B2C",
+              },
+        },
+        title: {
+          text: "Variance %",
+          tickInterval: 11,
+        },
+        style: {
+          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+          color: "#2A2B2C",
+        },
+        legend: {
+          enabled: true,
+          align: "left",
+          verticalAlign: "top",
+          borderWidth: 0,
+        },
+      },
+      xAxis: {
+        tickLength: 0,
+        labels: {
+          formatter: function () {
+            return dates[this.value];
+          },
+          style: {
+            fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
+            color: "#2A2B2C",
+          },
+        },
+        alternateGridColor: "#f7f5f5",
+        style: {
+          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+          color: "",
+        },
+      },
+      navigator: {
+        xAxis: {
+          labels: {
+            formatter: function (f) {
+              return dates[this.value];
+            },
+            style: {
+                fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
+                color: "#2A2B2C",
+              },
+          },
+        },
+      },
+      rangeSelector: {
+        enabled: false,
+      },
+      tooltip: {
+        formatter: function () {
+          return this.points.reduce(function (s, point) {
+            return s + "<br/>" + point.series.name + ": " + point.y + "%";
+          }, "<b>" + this.x + "</b>");
+        },
+        shared: true,
+      },
+      series: [
+        {
+          name: "Corporate",
+          data: this.state.corporate,
+          type: "line",
+          color: "#000",
+          marker: {
+            enabled: true,
+            radius: 3.5,
+            symbol: "circle",
+          },
+        },
+        {
+          name: "Online",
+          data: this.state.online,
+          type: "line",
+          color: "#ffca75",
+          marker: {
+            enabled: true,
+            radius: 3.5,
+            symbol: "circle",
+          },
+        },
+        {
+          name: "Leisure/Other",
+          data: this.state.leisure,
+          type: "line",
+          color: "#ff1b71",
+          marker: {
+            enabled: true,
+            radius: 3.5,
+            symbol: "circle",
+          },
+        },
+      ],
+      credits: {
+        enabled: false,
+      },
     };
 
     return (
@@ -276,6 +477,16 @@ class HCGraph extends Component {
             options={options1}
           />
         )}
+        {this.state.dates &&
+          this.state.online &&
+          this.state.leisure &&
+          this.state.corporate && (
+            <HighchartsReact
+              highcharts={Highcharts}
+              constructorType={"stockChart"}
+              options={options2}
+            />
+          )}
       </div>
     );
   }
