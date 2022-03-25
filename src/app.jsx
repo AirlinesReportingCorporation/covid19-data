@@ -13,7 +13,6 @@ import {
 import Graph from "./Graph.jsx";
 import GraphVariance from "./GraphVariance.jsx";
 import Loading from "./Loading.jsx";
-import AMGraph from "./AMGraph.jsx";
 
 import * as moment from "moment";
 import numeral from "numeral";
