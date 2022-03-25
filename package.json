@@ -28,6 +28,7 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
+    "@highcharts/map-collection": "^2.0.0",
     "axios": "^0.21.4",
     "highcharts": "^9.3.2",
     "highcharts-react-official": "^3.1.0",
