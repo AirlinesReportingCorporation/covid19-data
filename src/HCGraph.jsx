@@ -50,11 +50,7 @@ class HCGraph extends Component {
       leisure: [],
       corporate: [],
       online: [],
-      ticket52: [],
-      sales52: [],
-      leisure52: [],
-      corporate52: [],
-      online52: [],
+      thisWeek: [],
     };
   }
 
@@ -88,29 +84,29 @@ class HCGraph extends Component {
     });
 
     const covid52Week = new Promise((resolve, reject) => {
-        axios({
-          method: "get",
-          url:
-            "https://www2.arccorp.com/globalassets/covid19/52-covid-data.xlsx?" +
-            new Date().toLocaleString(),
-          responseType: "arraybuffer",
-        }).then(function (response) {
-          console.log("===== Covid 52 Week Data Loaded ===== ");
-          var data = new Uint8Array(response.data);
-          var workbook = XLSX.read(data, { type: "array" });
-          console.log(workbook);
-          var workbookData = workbook["Sheets"]["52-covid-data"];
-  
-          var json = XLSX.utils.sheet_to_json(workbookData, {
-            raw: false,
-          });
-          console.log(json);
-  
-          e.setState({ covid52Week: json });
-  
-          resolve(true);
+      axios({
+        method: "get",
+        url:
+          "https://www2.arccorp.com/globalassets/covid19/52-covid-data.xlsx?" +
+          new Date().toLocaleString(),
+        responseType: "arraybuffer",
+      }).then(function (response) {
+        console.log("===== Covid 52 Week Data Loaded ===== ");
+        var data = new Uint8Array(response.data);
+        var workbook = XLSX.read(data, { type: "array" });
+        console.log(workbook);
+        var workbookData = workbook["Sheets"]["52-covid-data"];
+
+        var json = XLSX.utils.sheet_to_json(workbookData, {
+          raw: false,
         });
+        console.log(json);
+
+        e.setState({ covid52Week: json });
+
+        resolve(true);
       });
+    });
 
     Promise.all([covidDataCall, covid52Week])
       .then((values) => {
@@ -164,25 +160,19 @@ class HCGraph extends Component {
         "number"
       ),
     });
+
     this.setState({
-        corporate52: flattenArray(this.state.covid52Week, "Moving Average of Corporate Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
-    })
+      covid52Week: this.state.covid52Week[this.state.covid52Week.length - 1],
+    });
+
+    console.log("52week");
+    console.log(this.state.covid52Week);
+
     this.setState({
-        online52: flattenArray(this.state.covid52Week, "Moving Average of Online Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
-    })
-    this.setState({
-        leisure52: flattenArray(this.state.covid52Week, "Moving Average of Leisure/Other Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
-    })
-    this.setState({
-        ticket52: flattenArray(this.state.covid52Week, "Moving Average of Ticket Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
-    })
-    this.setState({
-        sales52: flattenArray(this.state.covid52Week, "Moving Average of Sales Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
-    })
-    
-    console.log(
-      flattenArray(this.state.covid52Week, "Moving Average of Sales Variance v.2019 from the previous 51 to the next 0 along WeekLabel, Day of Week Ending", "number")
-    );
+      thisWeek: Object.values(this.state.covid52Week),
+    });
+
+    console.log(this.state.thisWeek);
   }
 
   render() {
@@ -365,11 +355,11 @@ class HCGraph extends Component {
           verticalAlign: "top",
           borderWidth: 0,
         },
-        labels:{
-            style: {
-                fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-                color: "#2A2B2C",
-              },
+        labels: {
+          style: {
+            fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+            color: "#2A2B2C",
+          },
         },
         title: {
           text: "Variance %",
@@ -410,9 +400,9 @@ class HCGraph extends Component {
               return dates[this.value];
             },
             style: {
-                fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
-                color: "#2A2B2C",
-              },
+              fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
+              color: "#2A2B2C",
+            },
           },
         },
       },
@@ -476,6 +466,22 @@ class HCGraph extends Component {
             options={options1}
           />
         )}
+        <div className="row">
+          <div className="col-lg-6">
+            <div className="avg-card">
+              <h1 className="average">{this.state.thisWeek[5]}</h1>
+              <div className="avg-card-main">Ticket Variance vs. Same Week 2019</div>
+              <div className="avg-card-small">52-Week Rolling Average</div>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <div className="avg-card">
+              <h1 className="average">{this.state.thisWeek[6]}</h1>
+              <div className="avg-card-main">Sales Variance vs. Same Week 2019</div>
+              <div className="avg-card-small">52-Week Rolling Average</div>
+            </div>
+          </div>
+        </div>
         {this.state.dates &&
           this.state.online &&
           this.state.leisure &&
@@ -486,6 +492,31 @@ class HCGraph extends Component {
               options={options2}
             />
           )}
+        <div className="row">
+          <div className="col-lg-4">
+            <div className="avg-card">
+              <h1 className="average">{this.state.thisWeek[2]}</h1>
+              <div className="avg-card-main">Corporate</div>
+              <div className="avg-card-small">52-Week Rolling Average</div>
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div className="avg-card">
+              <div className="avg-card-inner">
+              <h1 className="average">{this.state.thisWeek[3]}</h1>
+              <div className="avg-card-main">Online</div>
+              <div className="avg-card-small">52-Week Rolling Average</div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div className="avg-card">
+              <h1 className="average">{this.state.thisWeek[4]}</h1>
+              <div className="avg-card-main">Leisure/Other</div>
+              <div className="avg-card-small">52-Week Rolling Average</div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
