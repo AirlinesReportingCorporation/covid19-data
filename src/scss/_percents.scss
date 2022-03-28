@@ -1,12 +1,20 @@
 .avg-card {
-    background-image: url(https://www2.arccorp.com/globalassets/covid19/average-background.png);
+    background-color: #000000;
+    background-image: url(https://www2.arccorp.com/globalassets/covid19/avg-slants.png);
     background-size:cover;
     background-repeat: no-repeat;
+    border-radius: 10px;
 }
 
 .avg-card-inner {
     text-align: left;
-    padding: 30px 45px;
+    padding: 10px 45px 30px;
+}
+
+.avg-circle {
+    position: absolute;
+    right: 35px;
+    top: 30px;
 }
 
 .average {

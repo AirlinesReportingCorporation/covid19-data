@@ -469,16 +469,22 @@ class HCGraph extends Component {
         <div className="row">
           <div className="col-lg-6">
             <div className="avg-card">
-              <h1 className="average">{this.state.thisWeek[5]}</h1>
+                <div className="avg-card-inner">
+                <h1 className="average">{this.state.thisWeek[5]}</h1>
               <div className="avg-card-main">Ticket Variance vs. Same Week 2019</div>
               <div className="avg-card-small">52-Week Rolling Average</div>
+              <div className="avg-circle"><img src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png" alt="" /></div>
+                </div>
             </div>
           </div>
           <div className="col-lg-6">
             <div className="avg-card">
-              <h1 className="average">{this.state.thisWeek[6]}</h1>
+                <div className="avg-card-inner">
+                <h1 className="average">{this.state.thisWeek[6]}</h1>
               <div className="avg-card-main">Sales Variance vs. Same Week 2019</div>
               <div className="avg-card-small">52-Week Rolling Average</div>
+              <div className="avg-circle"><img src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png" alt="" /></div>
+                </div>
             </div>
           </div>
         </div>
@@ -495,9 +501,12 @@ class HCGraph extends Component {
         <div className="row">
           <div className="col-lg-4">
             <div className="avg-card">
-              <h1 className="average">{this.state.thisWeek[2]}</h1>
+                <div className="avg-card-inner">
+                <h1 className="average">{this.state.thisWeek[2]}</h1>
               <div className="avg-card-main">Corporate</div>
               <div className="avg-card-small">52-Week Rolling Average</div>
+              <div className="avg-circle"><img src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png" alt="" /></div>
+                </div>
             </div>
           </div>
           <div className="col-lg-4">
@@ -506,14 +515,18 @@ class HCGraph extends Component {
               <h1 className="average">{this.state.thisWeek[3]}</h1>
               <div className="avg-card-main">Online</div>
               <div className="avg-card-small">52-Week Rolling Average</div>
+              <div className="avg-circle"><img src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png" alt="" /></div>
               </div>
             </div>
           </div>
           <div className="col-lg-4">
             <div className="avg-card">
-              <h1 className="average">{this.state.thisWeek[4]}</h1>
+                <div className="avg-card-inner">
+                <h1 className="average">{this.state.thisWeek[4]}</h1>
               <div className="avg-card-main">Leisure/Other</div>
               <div className="avg-card-small">52-Week Rolling Average</div>
+              <div className="avg-circle"><img src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png" alt="" /></div>
+                </div>
             </div>
           </div>
         </div>
