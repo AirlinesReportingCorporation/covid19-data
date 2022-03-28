@@ -466,7 +466,7 @@ class HCGraph extends Component {
             options={options1}
           />
         )}
-        <div className="row">
+        <div className="row covid19-row">
           <div className="col-lg-6">
             <div className="avg-card">
                 <div className="avg-card-inner">
@@ -488,6 +488,8 @@ class HCGraph extends Component {
             </div>
           </div>
         </div>
+
+        <hr />
         {this.state.dates &&
           this.state.online &&
           this.state.leisure &&
@@ -498,7 +500,7 @@ class HCGraph extends Component {
               options={options2}
             />
           )}
-        <div className="row">
+        <div className="row covid19-row">
           <div className="col-lg-4">
             <div className="avg-card">
                 <div className="avg-card-inner">
@@ -530,6 +532,7 @@ class HCGraph extends Component {
             </div>
           </div>
         </div>
+        <hr />
       </div>
     );
   }
