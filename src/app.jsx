@@ -13,7 +13,6 @@ import {
 import Graph from "./Graph.jsx";
 import GraphVariance from "./GraphVariance.jsx";
 import Loading from "./Loading.jsx";
-import AMGraph from "./AMGraph.jsx";
 
 import * as moment from "moment";
 import numeral from "numeral";
@@ -158,6 +157,7 @@ class App extends Component {
       { x: 102, a: new Date(2022, 2, 6), b: -19.7},
       { x: 103, a: new Date(2022, 2, 13), b: -17.4},
       { x: 104, a: new Date(2022, 2, 20), b: -22.3},
+      { x: 105, a: new Date(2022, 2, 27), b: -20.7},
     ];
 
     //sales variance
@@ -266,9 +266,10 @@ class App extends Component {
       { x: 102, a: new Date(2022, 2, 6), b: -23.4},
       { x: 103, a: new Date(2022, 2, 13), b: -17.6},
       { x: 104, a: new Date(2022, 2, 20), b: -20.9},
+      { x: 105, a: new Date(2022, 2, 27), b: -18.1},
     ];
 
-    var ytdData1 = [-35.4 , -48.5];
+    var ytdData1 = [-35.2 , -47.9];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -375,6 +376,7 @@ class App extends Component {
       { x: 102, a: new Date(2022, 2, 6), b: -40.1},
       { x: 103, a: new Date(2022, 2, 13), b: -39.3},
       { x: 104, a: new Date(2022, 2, 20), b: -39.2},
+      { x: 105, a: new Date(2022, 2, 27), b: -36.4},
     ];
 
     var online = [
@@ -482,6 +484,7 @@ class App extends Component {
       { x: 102, a: new Date(2022, 2, 6), b: -15.7},
       { x: 103, a: new Date(2022, 2, 13), b: -12.8},
       { x: 104, a: new Date(2022, 2, 20), b: -20.5},
+      { x: 105, a: new Date(2022, 2, 27), b: -20.3},
     ];
 
     var leisure = [
@@ -589,9 +592,10 @@ class App extends Component {
       { x: 102, a: new Date(2022, 2, 6), b: -5.5},
       { x: 103, a: new Date(2022, 2, 13), b: -2.4},
       { x: 104, a: new Date(2022, 2, 20), b: -7.9},
+      { x: 105, a: new Date(2022, 2, 27), b: -5.5},
     ];
 
-    var ytdData2 = [-58.9, -20.0, -34.8];
+    var ytdData2 = [-58.2, -20.3, -34.2];
 
     var dataDomain1 = [0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100];
 
