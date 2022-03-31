@@ -7,7 +7,7 @@ import {
   VictoryScatter,
   VictoryVoronoiContainer,
   VictoryTooltip,
-  VictoryLabel
+  VictoryLabel,
 } from "victory";
 
 import Graph from "./Graph.jsx";
@@ -25,61 +25,59 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <div className="covidPage">
+        <div className="covidHeader">
         <div className="covidJumbo">
-          <h1>ARC Provides Updated Air Travel Data During COVID-19</h1>
+          <img src="https://www2.arccorp.com/globalassets/covid19/Header-img.png" alt="" />
+          </div>
+          <div className="covidInfo">
           <p>
-            As the air travel community deals with the turbulent landscape
-            caused by COVID-19, ARC is committed to providing timely information
-            to help our partners and all those involved in the industry make
-            responsible, informed decisions.
+            As air travel continues to recover from the COVID-19 pandemic, <b>ARC
+            is committed to providing timely data to help our partners and
+            stakeholders make responsible, informed decisions based on recovery
+            trends.</b>
           </p>
 
           <p>
-            The data figures below show the effect COVID-19 has had on airline
-            ticketing by comparing this year’s numbers to 2019. ARC is currently
-            collecting data on YOY changes in tickets issued and variance in
-            tickets sold by segment by US travel agencies and processed through
-            the ARC settlement system, plus the average air ticket price for US
-            domestic round trips.
+          The figures below show airline ticketing recovery by
+            comparing current weekly ticket purchases to 2019 levels for tickets
+            sold by U.S. travel agencies and processed through the ARC
+            settlement system. The data includes average air ticket price for
+            weekly U.S. domestic round trips, state-by-state travel recovery,
+            and a comparison of new transactions for U.S. and international
+            destinations.
           </p>
 
           <p>
-            <small>
-              <span style={{ fontWeight: "bold", color: "#414042" }}>
-                Please note:
-              </span>{" "}
-              Some data may slightly change over time due to variability in
-              transaction and data reporting timing.
-            </small>
-            <br />
-            <small style={{ fontWeight: "bold", color: "#414042" }}>
-              This page will be updated on a weekly basis.
-            </small>
+          <b>Please note:</b> Some data may slightly change over time
+            due to variability in transaction and data reporting timing. <b>This
+            page will be updated on a weekly basis.</b>
           </p>
-
-          <a href="https://www2.arccorp.com/products-participation/products/arc-travel-demand?utm_source=covid-19-data">
+          </div>
+          </div>
+          <a href="https://www2.arccorp.com/products-participation/products/arc-travel-demand/">
+          <div className="snowflakeImg">
             <img
               className="img-fluid"
-              src="https://www2.arccorp.com/globalassets/covid19/arc-travel-demand.png"
+              src="https://www2.arccorp.com/globalassets/covid19/Snowflake-info.png"
               alt="ARC Travel Demand"
             />
+            <p className="snowflakeBold">Snowflake data users can access a complimentary subset of ARC Travel Demand through the Snowflake Data Marketplace,</p>
+            <p className="snowflakeSmall">providing insights into daily air travel purchases, cancellations and departures. <span className="snowflakeCTA"><a href="">Learn More</a></span></p>
+          </div>
           </a>
-        </div>
+
+          <hr className="covid-hr"/>
         <div className="covidGraphContainer">
           <div className="hcgraph container mt-5">
-            <HCGraph
-            />
-            </div>
+            <HCGraph />
+          </div>
 
-            <div className="container mt-5">
-              <Map/>
-            </div>
-        
+          <div className="container mt-5">
+            <Map />
+          </div>
         </div>
-
 
         <div className="bottomData container">
           <div className="row">

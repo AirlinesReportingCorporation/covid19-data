@@ -52,20 +52,22 @@
   color: #414042;
   width: 100%;
 }
+.covidHeader {
+  background-color: #f7f5f5;
+}
 
 .covidJumbo {
+  margin: auto;
+  max-width: 1210px;
+  width: 100%;
+  height: auto;
+}
+
+.covidInfo {
+  padding-top: 130px;
+  padding-bottom: 100px;
+  margin: auto;
   max-width: 960px;
-  margin: 60px auto 30px;
-  h1 {
-    font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
-    text-align: center;
-    line-height: 1.1;
-    margin-bottom: 40px;
-    font-size: 3rem;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
   p {
     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
     font-size: 20px;
@@ -76,6 +78,56 @@
   small {
     font-size: 14px;
   }
+}
+
+.snowflakeImg {
+  background-image: url(https://www2.arccorp.com/globalassets/covid19/Snowflake-ad.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 100px !important;
+  max-width: 1170px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  left: 60px;
+  padding-left: 60px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.snowflakeBold {
+  color: #ffa619;
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.snowflakeSmall {
+  color: #aaaaaa;
+  font-size: 18px;
+}
+
+.snowflakeCTA {
+  padding-left: 15px;
+  a:link {
+    text-decoration: none !important;
+  }
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #1d9cb1;
+
+  &::after {
+    font-family: "icomoon";
+    content: "\E909";
+    font-size: 0.675rem;
+    margin-left: 10px;
+    }
+  
+}
+
+.covid-hr{
+  border-bottom: 2px solid #5d5c68;
+  max-width: 1170px;
+  width: 100%;
 }
 
 .bottomData {

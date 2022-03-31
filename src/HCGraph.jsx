@@ -531,7 +531,7 @@ class HCGraph extends Component {
               </div>
             </div>
 
-            <hr />
+            <hr className="covid-hr"/>
             {this.state.dates &&
               this.state.online &&
               this.state.leisure &&
@@ -595,7 +595,7 @@ class HCGraph extends Component {
                 </div>
               </div>
             </div>
-            <hr />
+            <hr className="covid-hr" />
           </div>
         ) : (
           <div className="container">
