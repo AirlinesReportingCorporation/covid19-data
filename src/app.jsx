@@ -29,7 +29,12 @@ class App extends Component {
       <div className="covidPage">
         <div className="covidHeader">
         <div className="covidJumbo">
-          <img src="https://www2.arccorp.com/globalassets/covid19/Header-img.png" alt="" />
+          <div className="jumboInfo">
+          <h1><img src="https://www2.arccorp.com/globalassets/covid19/ARC.png" alt="" /> Data</h1>
+          <h1>Shows Weekly</h1>
+          <h1>Air Travel Recovery</h1>
+          </div>
+         
           </div>
           <div className="covidInfo">
           <p>

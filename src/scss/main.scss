@@ -57,14 +57,28 @@
 }
 
 .covidJumbo {
+  background-image: url(https://www2.arccorp.com/globalassets/covid19/Header-img.png);
+  background-repeat: no-repeat;
+  background-size: contain;
   margin: auto;
   max-width: 1210px;
   width: 100%;
   height: auto;
 }
 
+.jumboInfo {
+  padding: 205px 560px 215px 95px;
+  font-size: 66px;
+  color: #6c6d70;
+  width: max-content;
+    background: -webkit-linear-gradient(180deg, #ff1b71, #ff1b71, #ffa619);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
+
 .covidInfo {
-  padding-top: 130px;
   padding-bottom: 100px;
   margin: auto;
   max-width: 960px;
