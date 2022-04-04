@@ -483,6 +483,8 @@ class HCGraph extends Component {
       <div>
         {this.state.loaded && this.state.options1 && this.state.options2 ? (
           <div>
+            <div className="graphInfo">
+            <div className="covidSheets"><a href="" className="covidDownload">Download Full Recovery Data</a> <div className="covidNoteDiv"><p className="covidNote">*Ticket variance: Total number of tickets purchased compared to the same period in 2019.</p><p className="covidNote">*Sales variance: Total value (dollar amount) paid compared to the same period in 2019.</p></div></div>
             {this.state.dates && this.state.ticket && this.state.sales && (
               <HighchartsReact
                 highcharts={Highcharts}
@@ -530,8 +532,11 @@ class HCGraph extends Component {
                 </div>
               </div>
             </div>
+            </div>
 
             <hr className="covid-hr"/>
+            <div className="graphInfo">
+            <div className="covidSheets"><a href="" className="covidDownload">Download Full Recovery Data</a></div>
             {this.state.dates &&
               this.state.online &&
               this.state.leisure &&
@@ -594,6 +599,7 @@ class HCGraph extends Component {
                   </div>
                 </div>
               </div>
+            </div>
             </div>
             <hr className="covid-hr" />
           </div>
