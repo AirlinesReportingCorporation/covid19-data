@@ -79,6 +79,10 @@
     -moz-text-fill-color: transparent;
 }
 
+.icon-arc-logo {
+  font-size: 44px;
+}
+
 .covidInfo {
   padding-bottom: 100px;
   margin: auto;
@@ -435,6 +439,58 @@
     font-size: 12px;
   }
   font-family: SourceSansPro-Black, Arial, Helvetica, sans-serif;
+}
+
+@media (max-width: 990px) {
+  .jumboInfo > h1 {
+    font-size: 30px;
+    margin-bottom: 0;
+    line-height: 1;
+  }
+
+  .icon-arc-logo {
+    font-size: 21px;
+  }
+
+  .jumboInfo {
+    padding: 56px 26px 66px;
+  }
+
+  .covidInfo {
+    padding-bottom: 30px;
+
+  }
+
+  .covidInfo > p {
+    font-size: 16px;
+    margin: 10px;
+  }
+
+  .snowflakeImg {
+    margin-top: 45px !important;
+    padding-bottom: 30px;
+    max-width: 365px;
+    left: 60px;
+    padding-top: 8px;
+    padding-left: 25px;
+  }
+
+  .covid-hr {
+    max-width: 340px;
+  }
+
+  .covidSheets {
+    margin-left: 10px;
+    top: auto;
+    text-align: left;
+    position: relative;
+  }
+
+  .covidNoteDiv {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
 }
 
 @media screen and (-ms-high-contrast: active),
