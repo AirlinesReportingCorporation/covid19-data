@@ -158,6 +158,7 @@ class App extends Component {
       { x: 103, a: new Date(2022, 2, 13), b: -17.4},
       { x: 104, a: new Date(2022, 2, 20), b: -22.3},
       { x: 105, a: new Date(2022, 2, 27), b: -20.7},
+      { x: 106, a: new Date(2022, 3, 3), b: -19.1},
     ];
 
     //sales variance
@@ -267,9 +268,10 @@ class App extends Component {
       { x: 103, a: new Date(2022, 2, 13), b: -17.6},
       { x: 104, a: new Date(2022, 2, 20), b: -20.9},
       { x: 105, a: new Date(2022, 2, 27), b: -18.1},
+      { x: 106, a: new Date(2022, 3, 3), b: -15.3},
     ];
 
-    var ytdData1 = [-35.2 , -47.9];
+    var ytdData1 = [-34.8 , -47.1];
 
     var corporate = [
       { x: 1, a: new Date(2020, 2, 29), b: -94.0 },
@@ -377,6 +379,7 @@ class App extends Component {
       { x: 103, a: new Date(2022, 2, 13), b: -39.3},
       { x: 104, a: new Date(2022, 2, 20), b: -39.2},
       { x: 105, a: new Date(2022, 2, 27), b: -36.4},
+      { x: 106, a: new Date(2022, 3, 3), b: -33.2},
     ];
 
     var online = [
@@ -485,6 +488,7 @@ class App extends Component {
       { x: 103, a: new Date(2022, 2, 13), b: -12.8},
       { x: 104, a: new Date(2022, 2, 20), b: -20.5},
       { x: 105, a: new Date(2022, 2, 27), b: -20.3},
+      { x: 106, a: new Date(2022, 3, 3), b: -18.1},
     ];
 
     var leisure = [
@@ -593,9 +597,10 @@ class App extends Component {
       { x: 103, a: new Date(2022, 2, 13), b: -2.4},
       { x: 104, a: new Date(2022, 2, 20), b: -7.9},
       { x: 105, a: new Date(2022, 2, 27), b: -5.5},
+      { x: 106, a: new Date(2022, 3, 3), b: -7.0},
     ];
 
-    var ytdData2 = [-58.2, -20.3, -34.2];
+    var ytdData2 = [-57.4, -20.4, -33.7];
 
     var dataDomain1 = [0, -10, -20, -30, -40, -50, -60, -70, -80, -90, -100];
 
