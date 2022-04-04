@@ -31,8 +31,10 @@ class Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      covidData: [],
-      mapData: [],
+      stateData: [],
+      topData: [],
+      mapOptions: [],
+      loaded: false,
     };
   }
 
@@ -40,7 +42,7 @@ class Map extends Component {
     var e = this;
 
     const topology = await fetch(
-      "https://code.highcharts.com/mapdata/countries/us/us-all.topo.json"
+      "https://code.highcharts.com/mapdata/countries/us/us-all.geo.json"
     ).then((response) => response.json());
 
     const covidDataCall = new Promise((resolve, reject) => {
@@ -51,11 +53,11 @@ class Map extends Component {
           new Date().toLocaleString(),
         responseType: "arraybuffer",
       }).then(function(response) {
-        console.log("===== All Airline Data Chart Loaded ===== ");
+        console.log("===== Map Data Chart Loaded ===== ");
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
         console.log(workbook);
-        var workbookData = workbook["Sheets"]["covid-map"];
+        var workbookData = workbook["Sheets"]["Map_View_data"];
 
         var json = XLSX.utils.sheet_to_json(workbookData, {
           raw: false,
@@ -63,7 +65,19 @@ class Map extends Component {
 
         console.log(json);
 
-        e.setState({ covidData: json });
+        var stateArray = [];
+
+        for (let i = 0; i < json.length; i++) {
+          const element = json[i];
+          stateArray.push({
+            "postal-code": stateNameToAbbreviation(element["State"]),
+            value: parseFloat(element["YoY Change"].replace("%", "")),
+          });
+        }
+
+        e.setState({ stateData: stateArray });
+
+        console.log(stateArray);
 
         resolve(true);
       });
@@ -72,7 +86,7 @@ class Map extends Component {
     Promise.all([covidDataCall, topology])
       .then((values) => {
         e.dataLoaded();
-        e.setState({ mapData: topology });
+        e.setState({ topData: topology });
       })
       .catch((error) => {
         console.error(error.message);
@@ -81,56 +95,70 @@ class Map extends Component {
 
   dataLoaded() {
     console.log("loaded!");
-  }
-
-  render() {
-    var dates = this.state.dates;
-
+    console.log(this.state.stateData);
     const options1 = {
+      title: "",
       chart: {
         map: usAll,
         borderWidth: 0,
       },
       exporting: {
         sourceWidth: 600,
-        sourceHeight: 500
+        sourceHeight: 500,
       },
       series: [
         {
+          data: this.state.stateData,
           mapData: usAll,
+          //joinBy: null,
+          joinBy: "postal-code",
           name: "USA",
           dataLabels: {
-            //enabled: true,
-            format: "{point.name}"
-          }
-        }
+            enabled: true,
+            format: "{point.name}",
+          },
+          tooltip: {
+            pointFormat: "{point.postal-code}: {point.value}%",
+          },
+        },
       ],
-      title: {
-        text: "Map Demo",
-      },
       colorAxis: {
-        min: 0,
-        minColor: "#E6E7E8",
-        maxColor: "#005645"
+        stops: [
+          [0, "#EF233C"],
+          [0.5, "#fffbbc"],
+          [0.9, "#8AC926"],
+        ],
+        min: -100,
+        max: 100,
+        type: "linear",
       },
       credits: {
         enabled: false,
       },
       mapNavigation: {
-        enabled: true,
+        enabled: false,
       },
       credits: {
         enabled: false,
       },
     };
+    this.setState({ mapOptions: options1, loaded: true });
+  }
 
+  render() {
     return (
       <div>
-        {true && (
+        <div className="graphTitle mt-5">
+          U.S. State-by-State Air Travel Recovery
+        </div>
+        <div className="graphSubTitle">
+          Based on Round-Trip Air Travel Destination
+        </div>
+        {this.state.loaded && (
           <HighchartsReact
             highcharts={Highcharts}
             constructorType={"mapChart"}
-            options={options1}
+            options={this.state.mapOptions}
           />
         )}
       </div>
@@ -139,3 +167,75 @@ class Map extends Component {
 }
 
 export default Map;
+
+function stateNameToAbbreviation(name) {
+  let states = {
+    arizona: "AZ",
+    alabama: "AL",
+    alaska: "AK",
+    arkansas: "AR",
+    california: "CA",
+    colorado: "CO",
+    connecticut: "CT",
+    "district of columbia": "DC",
+    delaware: "DE",
+    florida: "FL",
+    georgia: "GA",
+    hawaii: "HI",
+    idaho: "ID",
+    illinois: "IL",
+    indiana: "IN",
+    iowa: "IA",
+    kansas: "KS",
+    kentucky: "KY",
+    louisiana: "LA",
+    maine: "ME",
+    maryland: "MD",
+    massachusetts: "MA",
+    michigan: "MI",
+    minnesota: "MN",
+    mississippi: "MS",
+    missouri: "MO",
+    montana: "MT",
+    nebraska: "NE",
+    nevada: "NV",
+    "new hampshire": "NH",
+    "new jersey": "NJ",
+    "new mexico": "NM",
+    "new york": "NY",
+    "north carolina": "NC",
+    "north dakota": "ND",
+    ohio: "OH",
+    oklahoma: "OK",
+    oregon: "OR",
+    pennsylvania: "PA",
+    "rhode island": "RI",
+    "south carolina": "SC",
+    "south dakota": "SD",
+    tennessee: "TN",
+    texas: "TX",
+    utah: "UT",
+    vermont: "VT",
+    virginia: "VA",
+    washington: "WA",
+    "west virginia": "WV",
+    wisconsin: "WI",
+    wyoming: "WY",
+    "american samoa": "AS",
+    guam: "GU",
+    "northern mariana islands": "MP",
+    "puerto rico": "PR",
+    "us virgin islands": "VI",
+    "us minor outlying islands": "UM",
+  };
+
+  let a = name
+    .trim()
+    .replace(/[^\w ]/g, "")
+    .toLowerCase(); //Trim, remove all non-word characters with the exception of spaces, and convert to lowercase
+  if (states[a] !== null) {
+    return states[a];
+  }
+
+  return null;
+}
