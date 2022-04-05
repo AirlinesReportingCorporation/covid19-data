@@ -30,9 +30,7 @@ class App extends Component {
         <div className="covidHeader">
         <div className="covidJumbo">
           <div className="jumboInfo">
-          <h1><span className="icon-arc-logo"></span> Data</h1>
-          <h1>Shows Weekly</h1>
-          <h1>Air Travel Recovery</h1>
+          <h1><span className="icon-arc-logo"></span> Data Shows Weekly Air Travel Recovery</h1>
           </div>
          
           </div>
@@ -61,7 +59,7 @@ class App extends Component {
           </p>
           </div>
           </div>
-          <a href="https://www2.arccorp.com/products-participation/products/arc-travel-demand/">
+          <a className="snowflakeContainer" href="https://www2.arccorp.com/products-participation/products/arc-travel-demand/">
           <div className="snowflakeImg">
             <img
               className="img-fluid"

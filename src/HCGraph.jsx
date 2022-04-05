@@ -195,16 +195,6 @@ class HCGraph extends Component {
       chart: {
         zoomType: "x",
         backgroundColor: "#fff",
-        events: {
-          load: function() {
-            var chart = this,
-              xAxis = chart.xAxis[0],
-              newStart = dates.length - 7,
-              newEnd = dates.length - 1;
-
-            xAxis.setExtremes(newStart, newEnd);
-          },
-        },
       },
       title: {
         text: "U.S. Travel Agency Seven-Day Air Ticket & Sales Volume",
@@ -251,7 +241,8 @@ class HCGraph extends Component {
         },
       },
       xAxis: {
-        tickLength: 0,
+        range: 7,
+        tickLength: 1,
         labels: {
           formatter: function() {
             return dates[this.value];
@@ -277,6 +268,12 @@ class HCGraph extends Component {
               fontWeight: "bold",
             },
           },
+        },
+      },
+      plotOptions: {
+        series: {
+          pointStart: dates.legnth,
+          pointEnd: dates.length - 7,
         },
       },
       rangeSelector: {
@@ -323,16 +320,6 @@ class HCGraph extends Component {
       chart: {
         zoomType: "x",
         backgroundColor: "#fff",
-        events: {
-          load: function() {
-            var chart = this,
-              xAxis = chart.xAxis[0],
-              newStart = dates.length - 7,
-              newEnd = dates.length - 1;
-
-            xAxis.setExtremes(newStart, newEnd);
-          },
-        },
       },
       title: {
         text: "Ticket Variance Sold by Segment",
@@ -388,7 +375,8 @@ class HCGraph extends Component {
         },
       },
       xAxis: {
-        tickLength: 0,
+        range: 7,
+        tickLength: 1,
         labels: {
           formatter: function() {
             return dates[this.value];
@@ -484,122 +472,140 @@ class HCGraph extends Component {
         {this.state.loaded && this.state.options1 && this.state.options2 ? (
           <div>
             <div className="graphInfo">
-            <div className="covidSheets"><a href="" className="covidDownload">Download Full Recovery Data</a> <div className="covidNoteDiv"><p className="covidNote">*Ticket variance: Total number of tickets purchased compared to the same period in 2019.</p><p className="covidNote">*Sales variance: Total value (dollar amount) paid compared to the same period in 2019.</p></div></div>
-            {this.state.dates && this.state.ticket && this.state.sales && (
-              <HighchartsReact
-                highcharts={Highcharts}
-                constructorType={"stockChart"}
-                options={this.state.options1}
-              />
-            )}
-            <div className="row covid19-row">
-              <div className="col-lg-6">
-                <div className="avg-card">
-                  <div className="avg-card-inner">
-                    <h1 className="average">{this.state.thisWeek[5]}</h1>
-                    <div className="avg-card-main">
-                      Ticket Variance vs. Same Week 2019
-                    </div>
-                    <div className="avg-card-small">
-                      52-Week Rolling Average
-                    </div>
-                    <div className="avg-circle">
-                      <img
-                        src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
+              <div className="covidSheets">
+                <a href="" className="covidDownload">
+                  Download Full Recovery Data
+                </a>{" "}
+                <div className="covidNoteDiv">
+                  <p className="covidNote">
+                    *Ticket variance: Total number of tickets purchased compared
+                    to the same period in 2019.
+                  </p>
+                  <p className="covidNote">
+                    *Sales variance: Total value (dollar amount) paid compared
+                    to the same period in 2019.
+                  </p>
                 </div>
               </div>
-              <div className="col-lg-6">
-                <div className="avg-card">
-                  <div className="avg-card-inner">
-                    <h1 className="average">{this.state.thisWeek[6]}</h1>
-                    <div className="avg-card-main">
-                      Sales Variance vs. Same Week 2019
-                    </div>
-                    <div className="avg-card-small">
-                      52-Week Rolling Average
-                    </div>
-                    <div className="avg-circle">
-                      <img
-                        src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
-
-            <hr className="covid-hr"/>
-            <div className="graphInfo">
-            <div className="covidSheets"><a href="" className="covidDownload">Download Full Recovery Data</a></div>
-            {this.state.dates &&
-              this.state.online &&
-              this.state.leisure &&
-              this.state.corporate && (
+              {this.state.dates && this.state.ticket && this.state.sales && (
                 <HighchartsReact
                   highcharts={Highcharts}
                   constructorType={"stockChart"}
-                  options={this.state.options2}
+                  options={this.state.options1}
                 />
               )}
-            <div className="row covid19-row">
-              <div className="col-lg-4">
-                <div className="avg-card">
-                  <div className="avg-card-inner">
-                    <h1 className="average">{this.state.thisWeek[2]}</h1>
-                    <div className="avg-card-main">Corporate</div>
-                    <div className="avg-card-small">
-                      52-Week Rolling Average
-                    </div>
-                    <div className="avg-circle">
-                      <img
-                        src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="avg-card">
-                  <div className="avg-card-inner">
-                    <h1 className="average">{this.state.thisWeek[3]}</h1>
-                    <div className="avg-card-main">Online</div>
-                    <div className="avg-card-small">
-                      52-Week Rolling Average
-                    </div>
-                    <div className="avg-circle">
-                      <img
-                        src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                        alt=""
-                      />
+              <div className="row covid19-row">
+                <div className="col-lg-6">
+                  <div className="avg-card">
+                    <div className="avg-card-inner">
+                      <h1 className="average">{this.state.thisWeek[5]}</h1>
+                      <div className="avg-card-main">
+                        Ticket Variance vs. Same Week 2019
+                      </div>
+                      <div className="avg-card-small">
+                        52-Week Rolling Average
+                      </div>
+                      <div className="avg-circle">
+                        <img
+                          src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
+                          alt=""
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="avg-card">
-                  <div className="avg-card-inner">
-                    <h1 className="average">{this.state.thisWeek[4]}</h1>
-                    <div className="avg-card-main">Leisure/Other</div>
-                    <div className="avg-card-small">
-                      52-Week Rolling Average
-                    </div>
-                    <div className="avg-circle">
-                      <img
-                        src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                        alt=""
-                      />
+                <div className="col-lg-6">
+                  <div className="avg-card">
+                    <div className="avg-card-inner">
+                      <h1 className="average">{this.state.thisWeek[6]}</h1>
+                      <div className="avg-card-main">
+                        Sales Variance vs. Same Week 2019
+                      </div>
+                      <div className="avg-card-small">
+                        52-Week Rolling Average
+                      </div>
+                      <div className="avg-circle">
+                        <img
+                          src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
+                          alt=""
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            <hr className="covid-hr" />
+            <div className="graphInfo">
+              <div className="covidSheets">
+                <a href="" className="covidDownload">
+                  Download Full Recovery Data
+                </a>
+              </div>
+              {this.state.dates &&
+                this.state.online &&
+                this.state.leisure &&
+                this.state.corporate && (
+                  <HighchartsReact
+                    highcharts={Highcharts}
+                    constructorType={"stockChart"}
+                    options={this.state.options2}
+                  />
+                )}
+              <div className="row covid19-row">
+                <div className="col-lg-4">
+                  <div className="avg-card">
+                    <div className="avg-card-inner">
+                      <h1 className="average">{this.state.thisWeek[2]}</h1>
+                      <div className="avg-card-main">Corporate</div>
+                      <div className="avg-card-small">
+                        52-Week Rolling Average
+                      </div>
+                      <div className="avg-circle">
+                        <img
+                          src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-4">
+                  <div className="avg-card">
+                    <div className="avg-card-inner">
+                      <h1 className="average">{this.state.thisWeek[3]}</h1>
+                      <div className="avg-card-main">Online</div>
+                      <div className="avg-card-small">
+                        52-Week Rolling Average
+                      </div>
+                      <div className="avg-circle">
+                        <img
+                          src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-4">
+                  <div className="avg-card">
+                    <div className="avg-card-inner">
+                      <h1 className="average">{this.state.thisWeek[4]}</h1>
+                      <div className="avg-card-main">Leisure/Other</div>
+                      <div className="avg-card-small">
+                        52-Week Rolling Average
+                      </div>
+                      <div className="avg-circle">
+                        <img
+                          src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <hr className="covid-hr" />
           </div>

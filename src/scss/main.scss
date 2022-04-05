@@ -58,25 +58,33 @@
 }
 
 .covidJumbo {
-  background-image: url(https://www2.arccorp.com/globalassets/covid19/Header-img.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin: auto;
+  background: #2a2b2c url("https://www2.arccorp.com/globalassets/covid19/Header-img.png") center center no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  margin: 0 auto 60px;
   max-width: 1210px;
   width: 100%;
   height: auto;
 }
 
 .jumboInfo {
-  padding: 205px 560px 215px 95px;
+  padding-left: 90px;
+  max-width: 650px;
+  display: flex;
+  align-items: center;
+  height: 600px;
   font-size: 66px;
   color: #6c6d70;
-  width: max-content;
-    background: -webkit-linear-gradient(180deg, #ff1b71, #ff1b71, #ffa619);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-text-fill-color: transparent;
+
+  background: -webkit-linear-gradient(180deg, #ff1b71, #ff1b71, #ffa619);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+
+  h1 {
+    line-height: 64px;
+  }
 }
 
 .icon-arc-logo {
@@ -99,22 +107,26 @@
   }
 }
 
-.snowflakeImg {
-  background-image: url(https://www2.arccorp.com/globalassets/covid19/Snowflake-ad.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-top: 100px !important;
-  max-width: 1170px;
-  width: 100%;
-  height: auto;
-  margin: auto;
-  left: 60px;
-  padding-left: 60px;
-    padding-top: 30px;
-    padding-bottom: 80px;
+.snowflakeContainer {
+  display: block;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
+.snowflakeImg {
+  font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
+  background: #2a2b2c url(https://www2.arccorp.com/globalassets/covid19/Snowflake-ad.png) center center no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-width: 1170px;
+  padding: 30px 60px 25px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+
 .snowflakeBold {
+  font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
   color: #ffa619;
   font-size: 18px;
   margin-bottom: 0;
@@ -128,6 +140,7 @@
 .snowflakeCTA {
   padding-left: 15px;
   a:link {
+    font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
     text-decoration: none !important;
   }
   font-size: 14px;
@@ -139,12 +152,11 @@
     content: "\E909";
     font-size: 0.675rem;
     margin-left: 10px;
-    }
-  
+  }
 }
 
-.covid-hr{
-  border-bottom: 2px solid #5d5c68;
+.covid-hr {
+  border-bottom: 1px solid #5d5c68;
   max-width: 1170px;
   width: 100%;
 }
@@ -153,7 +165,8 @@
   position: relative;
 }
 
-.covidDownload {
+a.covidDownload {
+  font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 14px;
   font-weight: bold;
@@ -165,15 +178,15 @@
     font-size: 0.675rem;
     margin-left: 10px;
     transform: rotate(90deg);
-    }
+  }
 }
 
 .covidSheets {
   top: 20px;
-    right: 0px;
-    text-align: right;
-    position: absolute;
-    z-index: 1;
+  right: 0px;
+  text-align: right;
+  position: absolute;
+  z-index: 1;
 }
 
 .covidNoteDiv {
@@ -293,7 +306,7 @@
 }
 
 .graphToggleKeyRed {
-  color: rgba(0,0,0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .graphToggleLabel {
@@ -458,7 +471,6 @@
 
   .covidInfo {
     padding-bottom: 30px;
-
   }
 
   .covidInfo > p {
@@ -467,12 +479,7 @@
   }
 
   .snowflakeImg {
-    margin-top: 45px !important;
-    padding-bottom: 30px;
-    max-width: 365px;
-    left: 60px;
-    padding-top: 8px;
-    padding-left: 25px;
+    margin: 10px;
   }
 
   .covid-hr {
@@ -494,7 +501,6 @@
   .avg-card {
     margin: 10px;
   }
-  
 }
 
 @media screen and (-ms-high-contrast: active),
