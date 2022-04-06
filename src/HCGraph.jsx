@@ -309,6 +309,7 @@ class HCGraph extends Component {
         {
           name: "Ticket Variance",
           data: this.state.ticket,
+          softThreshold: true,
           type: "line",
           color: "#000",
           marker: {
@@ -320,6 +321,7 @@ class HCGraph extends Component {
         {
           name: "Sales Variance",
           data: this.state.sales,
+          softThreshold: true,
           type: "line",
           color: "#ffca75",
           marker: {
@@ -455,6 +457,7 @@ class HCGraph extends Component {
       series: [
         {
           name: "Corporate",
+          softThreshold: true,
           data: this.state.corporate,
           type: "line",
           color: "#000",
@@ -466,6 +469,7 @@ class HCGraph extends Component {
         },
         {
           name: "Online",
+          softThreshold: true,
           data: this.state.online,
           type: "line",
           color: "#ffca75",
@@ -477,6 +481,7 @@ class HCGraph extends Component {
         },
         {
           name: "Leisure/Other",
+          softThreshold: true,
           data: this.state.leisure,
           type: "line",
           color: "#ff1b71",
