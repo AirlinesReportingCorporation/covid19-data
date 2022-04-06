@@ -483,6 +483,13 @@ class HCGraph extends Component {
         {this.state.loaded && this.state.options1 && this.state.options2 ? (
           <div>
             <div className="graphInfo">
+              {this.state.dates && this.state.ticket && this.state.sales && (
+                <HighchartsReact
+                  highcharts={Highcharts}
+                  constructorType={"stockChart"}
+                  options={this.state.options1}
+                />
+              )}
               <div className="covidSheets">
                 <a href="" className="covidDownload">
                   Download Full Recovery Data
@@ -498,14 +505,7 @@ class HCGraph extends Component {
                   </p>
                 </div>
               </div>
-              {this.state.dates && this.state.ticket && this.state.sales && (
-                <HighchartsReact
-                  highcharts={Highcharts}
-                  constructorType={"stockChart"}
-                  options={this.state.options1}
-                />
-              )}
-              <div className="container" style={{ marginLeft: "90px" }}>
+              <div className="container avg-container">
                 <div className="row covid19-row">
                   <div className="col-lg-6">
                     <div className="avg-card">
@@ -551,11 +551,6 @@ class HCGraph extends Component {
 
             <hr className="covid-hr" />
             <div className="graphInfo">
-              <div className="covidSheets">
-                <a href="" className="covidDownload">
-                  Download Full Recovery Data
-                </a>
-              </div>
               {this.state.dates &&
                 this.state.online &&
                 this.state.leisure &&
@@ -566,7 +561,12 @@ class HCGraph extends Component {
                     options={this.state.options2}
                   />
                 )}
-              <div className="container" style={{ marginLeft: "90px" }}>
+                <div className="covidSheets">
+                <a href="" className="covidDownload">
+                  Download Full Recovery Data
+                </a>
+              </div>
+              <div className="container avg-container">
                 <div className="row covid19-row">
                   <div className="col-lg-4">
                     <div className="avg-card">
@@ -619,7 +619,7 @@ class HCGraph extends Component {
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> 
               </div>
             </div>
             <hr className="covid-hr" />

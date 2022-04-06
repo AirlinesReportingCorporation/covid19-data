@@ -82,44 +82,6 @@ class App extends Component {
             <Map />
           </div>
         </div>
-
-        <div className="bottomData container">
-          <div className="row">
-            <div className="col-md-6">
-              <h2>ARC's Airline Sales Data Available on Snowflake</h2>
-              <p>
-                Snowflake data users can now access a complimentary subset of
-                ARC Travel Demand, the company’s latest data solution, through
-                the Snowflake Data Marketplace.
-              </p>
-              <a
-                href="https://www2.arccorp.com/articles-trends/the-latest/arc-global-airline-sales-data-now-available-through-snowflake
-                "
-                className="ctaBtn"
-              >
-                Learn More
-              </a>
-            </div>
-            <div className="col-md-6">
-              <h2>
-                Interested in a custom report for a specific region or country?
-              </h2>
-              <p>
-                ARC offers a wide range of data products and services to help
-                airlines, travel agencies and other organizations understand the
-                forces impacting the marketplace. ARC can apply the same filters
-                above to data around the globe to help analyze trends and gain
-                more visibility.
-              </p>
-              <a
-                href="https://www2.arccorp.com/support-training/product-sales-request/"
-                className="ctaBtn"
-              >
-                Submit Request
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }

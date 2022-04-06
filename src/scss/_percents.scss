@@ -37,6 +37,16 @@
     font-weight: bold;
 }
 
+.avg-container {
+    margin-left: 90px;
+}
+
 .avg-card-small {
     color: #888888;
+}
+
+@media (max-width: 990px) {
+    .avg-container {
+        margin-left: auto;
+    }
 }
