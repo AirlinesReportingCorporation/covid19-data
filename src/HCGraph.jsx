@@ -252,6 +252,7 @@ class HCGraph extends Component {
         },
       },
       xAxis: {
+        crosshair: false,
         range: 7,
         tickLength: 1,
         labels: {
@@ -402,6 +403,7 @@ class HCGraph extends Component {
         },
       },
       xAxis: {
+        crosshair: false,
         range: 7,
         tickLength: 1,
         labels: {
