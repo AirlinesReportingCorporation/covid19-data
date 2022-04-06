@@ -67,7 +67,7 @@ class HCGraph extends Component {
           "https://www2.arccorp.com/globalassets/covid19/covid-data.xlsx?" +
           new Date().toLocaleString(),
         responseType: "arraybuffer",
-      }).then(function (response) {
+      }).then(function(response) {
         console.log("===== Covid Sales Data Loaded ===== ");
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
@@ -93,7 +93,7 @@ class HCGraph extends Component {
           "https://www2.arccorp.com/globalassets/covid19/52-covid-data.xlsx?" +
           new Date().toLocaleString(),
         responseType: "arraybuffer",
-      }).then(function (response) {
+      }).then(function(response) {
         console.log("===== Covid 52 Week Data Loaded ===== ");
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
@@ -196,7 +196,6 @@ class HCGraph extends Component {
         margin: [150, 0, 40, 100],
         zoomType: "x",
         backgroundColor: "#fff",
-        height: 425,
         style: {
           fontFamily: "Source Sans Pro, Arial, Helvetica, sans-serif",
         },
@@ -229,7 +228,14 @@ class HCGraph extends Component {
       yAxis: {
         opposite: false,
         title: {
-          text: "Variance %",
+          margin: 45,
+          text: "VARIANCE %",
+          style: {
+            textTransform: "uppercase",
+            fontFamily: "SourceSansPro-SemiBold",
+            fontSize: "14px",
+            paddingRight: "40px",
+          },
           tickInterval: 1,
         },
         legend: {
@@ -249,7 +255,7 @@ class HCGraph extends Component {
         range: 7,
         tickLength: 1,
         labels: {
-          formatter: function () {
+          formatter: function() {
             return dates[this.value];
           },
           style: {
@@ -263,7 +269,7 @@ class HCGraph extends Component {
       navigator: {
         xAxis: {
           labels: {
-            formatter: function (f) {
+            formatter: function(f) {
               return dates[this.value];
             },
             style: {
@@ -285,8 +291,14 @@ class HCGraph extends Component {
         enabled: false,
       },
       tooltip: {
-        formatter: function () {
-          return this.points.reduce(function (s, point) {
+        backgroundColor: "#ffffff",
+        borderWidth: 0,
+        borderRadius: 5,
+        style: {
+          fontSize: "14px",
+        },
+        formatter: function() {
+          return this.points.reduce(function(s, point) {
             return s + "<br/>" + point.series.name + ": " + point.y + "%";
           }, "<b>" + dates[this.x] + "</b>");
         },
@@ -324,7 +336,6 @@ class HCGraph extends Component {
     const options2 = {
       chart: {
         margin: [150, 0, 40, 100],
-        height: 425,
         zoomType: "x",
         backgroundColor: "#fff",
         style: {
@@ -370,9 +381,14 @@ class HCGraph extends Component {
           },
         },
         title: {
-          text: "Variance %",
-          padding: 10,
-          tickInterval: 11,
+          margin: 45,
+          text: "VARIANCE %",
+          style: {
+            textTransform: "uppercase",
+            fontFamily: "SourceSansPro-SemiBold",
+            fontSize: "14px",
+          },
+          tickInterval: 1,
         },
         style: {
           fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
@@ -389,7 +405,7 @@ class HCGraph extends Component {
         range: 7,
         tickLength: 1,
         labels: {
-          formatter: function () {
+          formatter: function() {
             return dates[this.value];
           },
           style: {
@@ -407,7 +423,7 @@ class HCGraph extends Component {
       navigator: {
         xAxis: {
           labels: {
-            formatter: function (f) {
+            formatter: function(f) {
               return dates[this.value];
             },
             style: {
@@ -421,8 +437,14 @@ class HCGraph extends Component {
         enabled: false,
       },
       tooltip: {
-        formatter: function () {
-          return this.points.reduce(function (s, point) {
+        backgroundColor: "#ffffff",
+        borderWidth: 0,
+        borderRadius: 5,
+        style: {
+          fontSize: "14px",
+        },
+        formatter: function() {
+          return this.points.reduce(function(s, point) {
             return s + "<br/>" + point.series.name + ": " + point.y + "%";
           }, "<b>" + dates[this.x] + "</b>");
         },
@@ -486,12 +508,16 @@ class HCGraph extends Component {
               {this.state.dates && this.state.ticket && this.state.sales && (
                 <HighchartsReact
                   highcharts={Highcharts}
+                  containerProps={{ className: "covidChartContainer" }}
                   constructorType={"stockChart"}
                   options={this.state.options1}
                 />
               )}
               <div className="covidSheets">
-                <a href="" className="covidDownload">
+                <a
+                  href="https://www2.arccorp.com/globalassets/covid19/covid-data.xlsx"
+                  className="covidDownload"
+                >
                   Download Full Recovery Data
                 </a>{" "}
                 <div className="covidNoteDiv">
@@ -557,12 +583,16 @@ class HCGraph extends Component {
                 this.state.corporate && (
                   <HighchartsReact
                     highcharts={Highcharts}
+                    containerProps={{ className: "covidChartContainer" }}
                     constructorType={"stockChart"}
                     options={this.state.options2}
                   />
                 )}
-                <div className="covidSheets">
-                <a href="" className="covidDownload">
+              <div className="covidSheets">
+                <a
+                  href="https://www2.arccorp.com/globalassets/covid19/52-covid-data.xlsx"
+                  className="covidDownload"
+                >
                   Download Full Recovery Data
                 </a>
               </div>
@@ -619,7 +649,7 @@ class HCGraph extends Component {
                       </div>
                     </div>
                   </div>
-                </div> 
+                </div>
               </div>
             </div>
             <hr className="covid-hr" />

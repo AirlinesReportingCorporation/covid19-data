@@ -101,7 +101,6 @@ class Map extends Component {
       chart: {
         map: usAll,
         borderWidth: 0,
-        height: (9 / 16 * 100) + '%' // 16:9 ratio
       },
       exporting: {
         sourceWidth: 600,
@@ -119,6 +118,7 @@ class Map extends Component {
             enabled: true,
             format: "{point.name}",
           },
+
           tooltip: {
             pointFormat: "{point.postal-code}: {point.value}%",
           },
@@ -151,23 +151,38 @@ class Map extends Component {
         sourceWidth: 600,
         sourceHeight: 500,
       },
+      tooltip: {
+        backgroundColor: "#ffffff",
+        borderWidth: 0,
+        borderRadius: 5,
+        style: {
+          fontSize: "14px",
+        },
+      },
     };
     this.setState({ mapOptions: options1, loaded: true });
   }
 
   render() {
     return (
-      <div>
-        <div className="graphTitle mt-5">
+      <div className="graphInfo ">
+        <div className="graphTitle">
           U.S. State-by-State Air Travel Recovery
         </div>
         <div className="graphSubTitle">
           Based on Round-Trip Air Travel Destination
         </div>
+        <div className="covidSheets">
+          <a href="https://www2.arccorp.com/globalassets/covid19/covid-map.xlsx" className="covidDownload">
+            Download Full Recovery Data
+          </a>{" "}
+        </div>
+
         {this.state.loaded && (
-          <div className="py-3" style={{ padding: "60px 0" }}>
+          <div style={{ margin: "30px 0 90px" }}>
             <HighchartsReact
               highcharts={Highcharts}
+              containerProps={{ className: "covidMapContainer" }}
               constructorType={"mapChart"}
               options={this.state.mapOptions}
             />

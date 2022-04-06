@@ -58,7 +58,9 @@
 }
 
 .covidJumbo {
-  background: #2a2b2c url("https://www2.arccorp.com/globalassets/covid19/Header-img.png") center center no-repeat;
+  background: #2a2b2c
+    url("https://www2.arccorp.com/globalassets/covid19/Header-img.png") center
+    center no-repeat;
   background-size: cover;
   border-radius: 10px;
   margin: 0 auto 60px;
@@ -115,7 +117,9 @@
 
 .snowflakeImg {
   font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
-  background: #2a2b2c url(https://www2.arccorp.com/globalassets/covid19/Snowflake-ad.png) center center no-repeat;
+  background: #2a2b2c
+    url(https://www2.arccorp.com/globalassets/covid19/Snowflake-ad.png) center
+    center no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 1170px;
@@ -123,7 +127,6 @@
   margin: 0 auto;
   border-radius: 10px;
 }
-
 
 .snowflakeBold {
   font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
@@ -234,8 +237,7 @@ a.covidDownload {
   font-family: SourceSansPro-SemiBold, Arial, Helvetica, sans-serif;
   font-size: 30px;
   margin-left: 35px;
-  padding-top: 40px;
-  border-top: 1px solid #aeadb3;
+  padding-top: 10px;
   margin-top: 0 !important;
   max-width: 1030px;
 }
@@ -454,6 +456,14 @@ a.covidDownload {
   font-family: SourceSansPro-Black, Arial, Helvetica, sans-serif;
 }
 
+.covidChartContainer {
+  min-height: 600px;
+}
+
+.covidMapContainer {
+  min-height: 650px;
+}
+
 @media (max-width: 990px) {
   .jumboInfo > h1 {
     font-size: 30px;
@@ -500,6 +510,16 @@ a.covidDownload {
 
   .avg-card {
     margin: 10px;
+  }
+}
+
+@media screen and(max-width: 767.999px) {
+  .covidChartContainer {
+    min-height: 300px;
+  }
+
+  .covidMapContainer {
+    min-height: 350px;
   }
 }
 
