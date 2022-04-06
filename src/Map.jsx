@@ -101,6 +101,7 @@ class Map extends Component {
       chart: {
         map: usAll,
         borderWidth: 0,
+        height: (9 / 16 * 100) + '%' // 16:9 ratio
       },
       exporting: {
         sourceWidth: 600,
@@ -110,6 +111,7 @@ class Map extends Component {
         {
           data: this.state.stateData,
           mapData: usAll,
+          showInLegend: false,
           //joinBy: null,
           joinBy: "postal-code",
           name: "USA",
@@ -123,13 +125,14 @@ class Map extends Component {
         },
       ],
       colorAxis: {
-        stops: [
-          [0, "#EF233C"],
-          [0.5, "#fffbbc"],
-          [0.9, "#8AC926"],
-        ],
-        min: -100,
-        max: 100,
+        // stops: [
+        //   [-100, "#EF233C"],
+        //   [100, "#189bb0"],
+        // ],
+        // min: -100,
+        // max: 100,
+        minColor: "#EF233C",
+        maxColor: "#189bb0",
         type: "linear",
       },
       credits: {
@@ -140,6 +143,13 @@ class Map extends Component {
       },
       credits: {
         enabled: false,
+      },
+      legend: {
+        enabled: false,
+      },
+      exporting: {
+        sourceWidth: 600,
+        sourceHeight: 500,
       },
     };
     this.setState({ mapOptions: options1, loaded: true });
@@ -155,11 +165,13 @@ class Map extends Component {
           Based on Round-Trip Air Travel Destination
         </div>
         {this.state.loaded && (
-          <HighchartsReact
-            highcharts={Highcharts}
-            constructorType={"mapChart"}
-            options={this.state.mapOptions}
-          />
+          <div className="py-3" style={{ padding: "60px 0" }}>
+            <HighchartsReact
+              highcharts={Highcharts}
+              constructorType={"mapChart"}
+              options={this.state.mapOptions}
+            />
+          </div>
         )}
       </div>
     );
