@@ -176,6 +176,7 @@ class Map extends Component {
           <a href="https://www2.arccorp.com/globalassets/covid19/covid-map.xlsx" className="covidDownload">
             Download Full Recovery Data
           </a>{" "}
+          <div class="covidNoteDiv"><p class="covidNote">*Compared to similiar week in 2019</p></div>
         </div>
 
         {this.state.loaded && (
