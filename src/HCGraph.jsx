@@ -419,6 +419,7 @@ class HCGraph extends Component {
             return dates[this.value];
           },
           style: {
+            textTransform: "uppercase",
             fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
             color: "#2A2B2C",
           },
