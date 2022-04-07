@@ -229,7 +229,7 @@ class HCGraph extends Component {
         opposite: false,
         title: {
           margin: 45,
-          text: "VARIANCE %",
+          text: "Variance %",
           style: {
             textTransform: "uppercase",
             fontFamily: "SourceSansPro-SemiBold",
@@ -253,7 +253,7 @@ class HCGraph extends Component {
       },
       xAxis: {
         crosshair: false,
-        range: 7,
+        range: 12,
         tickLength: 1,
         labels: {
           formatter: function() {
@@ -261,7 +261,8 @@ class HCGraph extends Component {
           },
           style: {
             fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
-            color: "#000",
+            textTransform: "uppercase",
+            color: "#2a2b2c",
           },
         },
         plotBands: this.state.alternatingBands,
@@ -406,7 +407,7 @@ class HCGraph extends Component {
       },
       xAxis: {
         crosshair: false,
-        range: 7,
+        range: 12,
         tickLength: 1,
         labels: {
           formatter: function() {
