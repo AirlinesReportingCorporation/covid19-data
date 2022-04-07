@@ -193,6 +193,8 @@ class HCGraph extends Component {
     var dates = this.state.dates;
     const options1 = {
       chart: {
+        plotBorderColor: '#000',
+        plotBorderWidth: 2,
         margin: [150, 0, 40, 100],
         zoomType: "x",
         backgroundColor: "#fff",
@@ -214,7 +216,7 @@ class HCGraph extends Component {
         style: {
           fontSize: "18px",
           fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-          color: "#2A2B2C",
+          color: "#888888",
         },
         align: "left",
       },
@@ -301,10 +303,11 @@ class HCGraph extends Component {
         },
         formatter: function() {
           return this.points.reduce(function(s, point) {
-            return s + "<br/>" + point.series.name + ": " + point.y + "%";
+            return s + "<br/>" + "<span class='tooltip-dot-custom' style='color:" + point.series.color + "'>\u25CF</span>" + point.series.name + ": " + point.y + "%";
           }, "<b>" + dates[this.x] + "</b>");
         },
         shared: true,
+  	    useHTML: true
       },
       series: [
         {
@@ -339,6 +342,8 @@ class HCGraph extends Component {
 
     const options2 = {
       chart: {
+        plotBorderColor: '#000',
+        plotBorderWidth: 2,
         margin: [150, 0, 40, 100],
         zoomType: "x",
         backgroundColor: "#fff",
@@ -360,7 +365,7 @@ class HCGraph extends Component {
         style: {
           fontSize: "18px",
           fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-          color: "#2A2B2C",
+          color: "#888888",
         },
         align: "left",
       },
@@ -450,7 +455,7 @@ class HCGraph extends Component {
         },
         formatter: function() {
           return this.points.reduce(function(s, point) {
-            return s + "<br/>" + point.series.name + ": " + point.y + "%";
+            return s + "<br/>" + "<span class='tooltip-dot-custom' style='color:" + point.series.color + "'>\u25CF</span>" + point.series.name + ": " + point.y + "%";
           }, "<b>" + dates[this.x] + "</b>");
         },
         shared: true,

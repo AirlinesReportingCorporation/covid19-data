@@ -74,7 +74,7 @@ class App extends Component {
           <hr className="covid-hr"/>
 
         <div className="covidGraphContainer">
-          <div className="hcgraph container mt-5">
+          <div className="hcgraph mt-5">
             <HCGraph />
           </div>
 
