@@ -193,7 +193,7 @@ class HCGraph extends Component {
     var dates = this.state.dates;
     const options1 = {
       chart: {
-        plotBorderColor: '#000',
+        plotBorderColor: "#000",
         plotBorderWidth: 2,
         margin: [150, 0, 40, 100],
         zoomType: "x",
@@ -303,11 +303,21 @@ class HCGraph extends Component {
         },
         formatter: function() {
           return this.points.reduce(function(s, point) {
-            return s + "<br/>" + "<span class='tooltip-dot-custom' style='color:" + point.series.color + "'>\u25CF</span>" + point.series.name + ": " + point.y + "%";
+            return (
+              s +
+              "<br/>" +
+              "<span class='tooltip-dot-custom' style='color:" +
+              point.series.color +
+              "'>\u25CF</span>" +
+              point.series.name +
+              ": " +
+              point.y +
+              "%"
+            );
           }, "<b>" + dates[this.x] + "</b>");
         },
         shared: true,
-  	    useHTML: true
+        useHTML: true,
       },
       series: [
         {
@@ -342,7 +352,7 @@ class HCGraph extends Component {
 
     const options2 = {
       chart: {
-        plotBorderColor: '#000',
+        plotBorderColor: "#000",
         plotBorderWidth: 2,
         margin: [150, 0, 40, 100],
         zoomType: "x",
@@ -456,7 +466,17 @@ class HCGraph extends Component {
         },
         formatter: function() {
           return this.points.reduce(function(s, point) {
-            return s + "<br/>" + "<span class='tooltip-dot-custom' style='color:" + point.series.color + "'>\u25CF</span>" + point.series.name + ": " + point.y + "%";
+            return (
+              s +
+              "<br/>" +
+              "<span class='tooltip-dot-custom' style='color:" +
+              point.series.color +
+              "'>\u25CF</span>" +
+              point.series.name +
+              ": " +
+              point.y +
+              "%"
+            );
           }, "<b>" + dates[this.x] + "</b>");
         },
         shared: true,
@@ -589,6 +609,8 @@ class HCGraph extends Component {
               </div>
             </div>
 
+            <div id="segment"></div>
+
             <hr className="covid-hr" />
             <div className="graphInfo">
               {this.state.dates &&
@@ -666,7 +688,7 @@ class HCGraph extends Component {
                 </div>
               </div>
             </div>
-            <hr className="covid-hr" />
+            <hr id="map" className="covid-hr" />
           </div>
         ) : (
           <div className="container">
