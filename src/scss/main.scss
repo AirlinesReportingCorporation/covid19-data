@@ -62,7 +62,7 @@
 
 .covidJumbo {
   background: #2a2b2c
-    url("https://www2.arccorp.com/globalassets/covid19/Header-img.png") center
+    url("https://www2.arccorp.com/globalassets/covid19/COVID_data_retina.jpg") center
     center no-repeat;
   background-size: cover;
   border-radius: 20px;
@@ -104,7 +104,7 @@
   max-width: 960px;
   p {
     font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 18px;
   }
   a {
     font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
@@ -123,7 +123,7 @@
 .snowflakeImg {
   font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
   background: #2a2b2c
-    url(https://www2.arccorp.com/globalassets/covid19/Snowflake-ad.png) center
+    url("https://www2.arccorp.com/globalassets/covid19/snowflake_retina.jpg") center
     center no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
@@ -463,7 +463,22 @@ a.covidDownload {
 }
 
 .covidChartContainer {
-  min-height: 600px;
+  min-height: 700px;
+
+  .highcharts-plot-background {
+    //border: 1px solid #2a2b2c;
+  }
+
+  .highcharts-legend-item {
+
+    .highcharts-graph {
+      display: none;
+    }
+  }
+
+  g.highcharts-legend-item:before {
+    content: "3"
+  }
 }
 
 .covidMapContainer {
@@ -472,13 +487,13 @@ a.covidDownload {
 
 @media (max-width: 990px) {
   .jumboInfo > h1 {
-    font-size: 30px;
+    font-size: 45px;
     margin-bottom: 0;
     line-height: 1;
   }
 
   .icon-arc-logo {
-    font-size: 21px;
+    font-size: 31px;
   }
 
   .jumboInfo {
@@ -490,7 +505,7 @@ a.covidDownload {
   }
 
   .covidInfo > p {
-    font-size: 16px;
+    font-size: 18px;
     margin: 10px;
   }
 
@@ -503,11 +518,11 @@ a.covidDownload {
   }
 
   .covidSheets {
-    margin-left: 10px;
+    margin-left: 30px;
     top: auto;
-    right: 0px;
-    text-align: right;
+    text-align: left;
     position: relative;
+    
   }
 
   .covidNoteDiv {
@@ -522,11 +537,22 @@ a.covidDownload {
 
 @media screen and(max-width: 767.999px) {
   .covidChartContainer {
-    min-height: 300px;
+    //min-height: 300px;
   }
 
   .covidMapContainer {
     min-height: 350px;
+  }
+
+  .covidJumbo {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+
+  .jumboInfo {
+    height: auto;
+    padding: 120px 15px;
   }
 }
 

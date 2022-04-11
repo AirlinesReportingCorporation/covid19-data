@@ -193,7 +193,8 @@ class HCGraph extends Component {
     var dates = this.state.dates;
     const options1 = {
       chart: {
-        plotBorderColor: "#000",
+        styledMode: true,
+        plotBorderColor: "#2a2b2c",
         plotBorderWidth: 2,
         margin: [150, 0, 40, 100],
         zoomType: "x",
@@ -226,6 +227,11 @@ class HCGraph extends Component {
         verticalAlign: "top",
         borderWidth: 0,
         fontWeight: "semi-bold",
+        useHTML: true,
+        labelFormatter: function() {
+          console.log(this);
+          return this.name;
+        },
       },
       yAxis: {
         opposite: false,
@@ -352,7 +358,7 @@ class HCGraph extends Component {
 
     const options2 = {
       chart: {
-        plotBorderColor: "#000",
+        plotBorderColor: "#2a2b2c",
         plotBorderWidth: 2,
         margin: [150, 0, 40, 100],
         zoomType: "x",
