@@ -576,7 +576,7 @@ class HCGraph extends Component {
                   <div className="col-lg-6">
                     <div className="avg-card">
                       <div className="avg-card-inner">
-                        <h1 className="average">{this.state.thisWeek[5]}</h1>
+                        <div className="average">{this.state.thisWeek[5]}</div>
                         <div className="avg-card-main">
                           Ticket Variance vs. Same Week 2019
                         </div>
@@ -677,7 +677,7 @@ class HCGraph extends Component {
                   <div className="col-lg-4">
                     <div className="avg-card">
                       <div className="avg-card-inner">
-                        <h1 className="average">{this.state.thisWeek[4]}</h1>
+                        <div className="average">{this.state.thisWeek[4]}</div>
                         <div className="avg-card-main">Leisure/Other</div>
                         <div className="avg-card-small">
                           52-Week Rolling Average
