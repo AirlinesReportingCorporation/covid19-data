@@ -7,30 +7,32 @@
 }
 
 .covid19-row {
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding-top: 50px;
+    padding-bottom: 40px;
 }
 
 .avg-card-inner {
     text-align: left;
-    padding: 10px 45px 30px;
+    padding: 30px 30px 30px 40px;
 }
 
 .avg-circle {
     position: absolute;
-    right: 35px;
+    right: 30px;
     top: 30px;
 }
 
 .average {
     font-family: Oswald-Bold;
     font-size: 44px;
+    margin-bottom: 20px;
     color: white;
     background: -webkit-linear-gradient(180deg, #ff1b71, #ff1b71 20%, #ffa619);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent; 
     -moz-text-fill-color: transparent;
+    line-height: 1;
 }
 
 .avg-card-main{

@@ -85,7 +85,7 @@ class App extends Component {
               destinations.
             </p>
 
-            <p>
+            <p className="mb-0">
               <b>Please note:</b> Some data may slightly change over time due to
               variability in transaction and data reporting timing.{" "}
               <b>This page will be updated on a weekly basis.</b>
@@ -123,7 +123,7 @@ class App extends Component {
             <HCGraph />
           </div>
 
-          <div className="container mt-5">
+          <div className="mapgraph">
             <Map />
           </div>
         </div>

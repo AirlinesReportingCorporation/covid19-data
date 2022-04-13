@@ -196,7 +196,7 @@ class HCGraph extends Component {
         styledMode: true,
         plotBorderColor: "#2a2b2c",
         plotBorderWidth: 2,
-        margin: [150, 0, 40, 100],
+        margin: [150, 40, 40, 100],
         zoomType: "x",
         backgroundColor: "#fff",
         style: {
@@ -236,7 +236,7 @@ class HCGraph extends Component {
       yAxis: {
         opposite: false,
         title: {
-          margin: 45,
+          margin: 43,
           text: "Variance %",
           style: {
             textTransform: "uppercase",
@@ -256,13 +256,18 @@ class HCGraph extends Component {
           style: {
             fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
             color: "#2A2B2C",
+            fontSize: "14px"
           },
         },
       },
       xAxis: {
         crosshair: false,
-        range: 12,
-        tickLength: 1,
+        range: 12.5,
+        tickLength: 1.5,
+        offset: 5,
+        lineWidth: 0,
+        maxPadding: dates.length + 1,
+        minPadding: -1,
         labels: {
           formatter: function() {
             return dates[this.value];
@@ -271,10 +276,14 @@ class HCGraph extends Component {
             fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
             textTransform: "uppercase",
             color: "#2a2b2c",
+            fontSize: "16px"
           },
         },
         plotBands: this.state.alternatingBands,
         //alternateGridColor: "#f7f5f5",
+      },
+      scrollbar: {
+        enabled: false
       },
       navigator: {
         xAxis: {
@@ -332,9 +341,10 @@ class HCGraph extends Component {
           softThreshold: true,
           type: "line",
           color: "#000",
+          lineWidth: 3,
           marker: {
             enabled: true,
-            radius: 3.5,
+            radius: 5.0,
             symbol: "circle",
           },
         },
@@ -344,9 +354,10 @@ class HCGraph extends Component {
           softThreshold: true,
           type: "line",
           color: "#ffca75",
+          lineWidth: 3,
           marker: {
             enabled: true,
-            radius: 3.5,
+            radius: 5.0,
             symbol: "circle",
           },
         },
@@ -399,12 +410,6 @@ class HCGraph extends Component {
           verticalAlign: "top",
           borderWidth: 0,
         },
-        labels: {
-          style: {
-            fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-            color: "#2A2B2C",
-          },
-        },
         title: {
           margin: 45,
           text: "VARIANCE %",
@@ -418,6 +423,7 @@ class HCGraph extends Component {
         style: {
           fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
           color: "#2A2B2C",
+          fontSize: "14px"
         },
         legend: {
           enabled: true,
@@ -446,6 +452,9 @@ class HCGraph extends Component {
           color: "",
         },
         plotBands: this.state.alternatingBands,
+      },
+      scrollbar: {
+        enabled: false
       },
       navigator: {
         xAxis: {
@@ -494,9 +503,10 @@ class HCGraph extends Component {
           data: this.state.corporate,
           type: "line",
           color: "#000",
+          lineWidth: 3,
           marker: {
             enabled: true,
-            radius: 3.5,
+            radius: 5.0,
             symbol: "circle",
           },
         },
@@ -506,9 +516,10 @@ class HCGraph extends Component {
           data: this.state.online,
           type: "line",
           color: "#ffca75",
+          lineWidth: 3,
           marker: {
             enabled: true,
-            radius: 3.5,
+            radius: 5.0,
             symbol: "circle",
           },
         },
@@ -518,9 +529,10 @@ class HCGraph extends Component {
           data: this.state.leisure,
           type: "line",
           color: "#ff1b71",
+          lineWidth: 3,
           marker: {
             enabled: true,
-            radius: 3.5,
+            radius: 5.0,
             symbol: "circle",
           },
         },

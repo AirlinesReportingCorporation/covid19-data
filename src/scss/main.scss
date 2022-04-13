@@ -22,14 +22,23 @@
 }
 
 .covidGraphContainer {
-  max-width: 1200px;
+  max-width: 1170px;
   width: 100%;
-  margin: 60px auto 0px;
+  margin: 0 auto;
 }
 
 .hcgraph {
   margin: 0, 85.5;
   padding: 0, 15;
+}
+
+.mapgraph {
+  max-width: 1170px;
+  margin: 30px auto 60px;
+
+  .graphTitle, .graphSubTitle {
+    margin-left: 0;
+  }
 }
 
 #app {
@@ -172,6 +181,7 @@
 
 .graphInfo {
   position: relative;
+  margin-top: 40px;
 }
 
 a.covidDownload {
@@ -478,6 +488,10 @@ a.covidDownload {
 
   g.highcharts-legend-item:before {
     content: "3"
+  }
+
+  .highcharts-title, .highcharts-subtitle {
+    transform: translateX(-10px);
   }
 }
 
