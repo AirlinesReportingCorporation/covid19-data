@@ -129,10 +129,10 @@ class Map extends Component {
         //   [-100, "#EF233C"],
         //   [100, "#189bb0"],
         // ],
-        // min: -100,
-        // max: 100,
-        minColor: "#EF233C",
-        maxColor: "#189bb0",
+        //min: -100,
+        //max: 100,
+        minColor: "#ffffff",
+        maxColor: "#8AC926",
         type: "linear",
       },
       credits: {
@@ -142,9 +142,6 @@ class Map extends Component {
         enabled: false,
       },
       credits: {
-        enabled: false,
-      },
-      legend: {
         enabled: false,
       },
       exporting: {
@@ -173,10 +170,15 @@ class Map extends Component {
           Based on Round-Trip Air Travel Destination
         </div>
         <div className="covidSheets">
-          <a href="https://www2.arccorp.com/globalassets/covid19/covid-map.xlsx" className="covidDownload">
+          <a
+            href="https://www2.arccorp.com/globalassets/covid19/covid-map.xlsx"
+            className="covidDownload"
+          >
             Download Full Recovery Data
           </a>{" "}
-          <div class="covidNoteDiv" style={{paddingTop: "15px"}}><p class="covidNote">*Compared to similiar week in 2019</p></div>
+          <div class="covidNoteDiv" style={{ paddingTop: "15px" }}>
+            <p class="covidNote">*Compared to similiar week in 2019</p>
+          </div>
         </div>
 
         {this.state.loaded && (

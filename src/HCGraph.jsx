@@ -32,6 +32,7 @@ function createAlternatingBands(length) {
       color: "#f7f5f5", // Color value
       from: i + 0.5, // Start of the plot band
       to: i + 1.5, // End of the plot band .5 1.5  2.5 3.5
+      zIndex: -1,
     });
   }
 
@@ -195,7 +196,7 @@ class HCGraph extends Component {
       chart: {
         styledMode: true,
         plotBorderColor: "#2a2b2c",
-        plotBorderWidth: 2,
+        plotBorderWidth: 1,
         margin: [150, 40, 40, 100],
         zoomType: "x",
         backgroundColor: "#fff",
@@ -256,18 +257,20 @@ class HCGraph extends Component {
           style: {
             fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
             color: "#2A2B2C",
-            fontSize: "14px"
+            fontSize: "14px",
           },
         },
+        gridZIndex: "0",
       },
       xAxis: {
         crosshair: false,
-        range: 12.5,
-        tickLength: 1.5,
-        offset: 5,
+        //overscroll: .5,
+        ordinal: false,
         lineWidth: 0,
-        maxPadding: dates.length + 1,
-        minPadding: -1,
+        min: -0.5,
+        range: 12,
+        max: dates.length - 0.5,
+        minPadding: 5000,
         labels: {
           formatter: function() {
             return dates[this.value];
@@ -276,14 +279,14 @@ class HCGraph extends Component {
             fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
             textTransform: "uppercase",
             color: "#2a2b2c",
-            fontSize: "16px"
+            fontSize: "16px",
           },
         },
         plotBands: this.state.alternatingBands,
         //alternateGridColor: "#f7f5f5",
       },
       scrollbar: {
-        enabled: false
+        enabled: false,
       },
       navigator: {
         xAxis: {
@@ -367,180 +370,69 @@ class HCGraph extends Component {
       },
     };
 
-    const options2 = {
-      chart: {
-        plotBorderColor: "#2a2b2c",
-        plotBorderWidth: 2,
-        margin: [150, 0, 40, 100],
-        zoomType: "x",
-        backgroundColor: "#fff",
-        style: {
-          fontFamily: "Source Sans Pro, Arial, Helvetica, sans-serif",
-        },
+    const options2 = Object.assign({}, options1);
+
+    options2.title = {
+      text: "Ticket Variance Sold by Segment",
+      style: {
+        fontSize: "30px",
+        fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+        color: "#2A2B2C",
       },
-      title: {
-        text: "Ticket Variance Sold by Segment",
-        style: {
-          fontSize: "30px",
-          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-          color: "#2A2B2C",
-        },
-        align: "left",
-      },
-      subtitle: {
-        text: "Tickets Issued for All Itineraries",
-        style: {
-          fontSize: "18px",
-          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-          color: "#888888",
-        },
-        align: "left",
-      },
-      legend: {
-        enabled: true,
-        align: "left",
-        verticalAlign: "top",
-        borderWidth: 0,
-      },
-      yAxis: {
-        opposite: false,
-        endOnTick: true,
-        legend: {
-          align: "left",
-          verticalAlign: "top",
-          borderWidth: 0,
-        },
-        title: {
-          margin: 45,
-          text: "VARIANCE %",
-          style: {
-            textTransform: "uppercase",
-            fontFamily: "SourceSansPro-SemiBold",
-            fontSize: "14px",
-          },
-          tickInterval: 1,
-        },
-        style: {
-          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-          color: "#2A2B2C",
-          fontSize: "14px"
-        },
-        legend: {
-          enabled: true,
-          align: "left",
-          verticalAlign: "top",
-          borderWidth: 0,
-        },
-      },
-      xAxis: {
-        crosshair: false,
-        range: 12,
-        tickLength: 1,
-        labels: {
-          formatter: function() {
-            return dates[this.value];
-          },
-          style: {
-            textTransform: "uppercase",
-            fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
-            color: "#2A2B2C",
-          },
-        },
-        //alternateGridColor: "#f7f5f5",
-        style: {
-          fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
-          color: "",
-        },
-        plotBands: this.state.alternatingBands,
-      },
-      scrollbar: {
-        enabled: false
-      },
-      navigator: {
-        xAxis: {
-          labels: {
-            formatter: function(f) {
-              return dates[this.value];
-            },
-            style: {
-              fontFamily: "SourceSansPro-Bold, Arial, Helvetica, sans-serif",
-              color: "#2A2B2C",
-            },
-          },
-        },
-      },
-      rangeSelector: {
-        enabled: false,
-      },
-      tooltip: {
-        backgroundColor: "#ffffff",
-        borderWidth: 0,
-        borderRadius: 5,
-        style: {
-          fontSize: "14px",
-        },
-        formatter: function() {
-          return this.points.reduce(function(s, point) {
-            return (
-              s +
-              "<br/>" +
-              "<span class='tooltip-dot-custom' style='color:" +
-              point.series.color +
-              "'>\u25CF</span>" +
-              point.series.name +
-              ": " +
-              point.y +
-              "%"
-            );
-          }, "<b>" + dates[this.x] + "</b>");
-        },
-        shared: true,
-      },
-      series: [
-        {
-          name: "Corporate",
-          softThreshold: true,
-          data: this.state.corporate,
-          type: "line",
-          color: "#000",
-          lineWidth: 3,
-          marker: {
-            enabled: true,
-            radius: 5.0,
-            symbol: "circle",
-          },
-        },
-        {
-          name: "Online",
-          softThreshold: true,
-          data: this.state.online,
-          type: "line",
-          color: "#ffca75",
-          lineWidth: 3,
-          marker: {
-            enabled: true,
-            radius: 5.0,
-            symbol: "circle",
-          },
-        },
-        {
-          name: "Leisure/Other",
-          softThreshold: true,
-          data: this.state.leisure,
-          type: "line",
-          color: "#ff1b71",
-          lineWidth: 3,
-          marker: {
-            enabled: true,
-            radius: 5.0,
-            symbol: "circle",
-          },
-        },
-      ],
-      credits: {
-        enabled: false,
-      },
+      align: "left",
     };
+
+    options2.subtitle = {
+      text: "Tickets Issued for All Itineraries",
+      style: {
+        fontSize: "18px",
+        fontFamily: "SourceSansPro-SemiBold, Arial, Helvetica, sans-serif",
+        color: "#888888",
+      },
+      align: "left",
+    };
+
+    options2.series = [
+      {
+        name: "Corporate",
+        softThreshold: true,
+        data: this.state.corporate,
+        type: "line",
+        color: "#000",
+        lineWidth: 3,
+        marker: {
+          enabled: true,
+          radius: 5.0,
+          symbol: "circle",
+        },
+      },
+      {
+        name: "Online",
+        softThreshold: true,
+        data: this.state.online,
+        type: "line",
+        color: "#ffca75",
+        lineWidth: 3,
+        marker: {
+          enabled: true,
+          radius: 5.0,
+          symbol: "circle",
+        },
+      },
+      {
+        name: "Leisure/Other",
+        softThreshold: true,
+        data: this.state.leisure,
+        type: "line",
+        color: "#ff1b71",
+        lineWidth: 3,
+        marker: {
+          enabled: true,
+          radius: 5.0,
+          symbol: "circle",
+        },
+      },
+    ];
 
     this.setState({
       options1: options1,
