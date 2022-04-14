@@ -366,9 +366,17 @@ class HCGraph extends Component {
             symbol: "circle",
             states: {
               hover: {
+                lineWidth: 3,
                 lineWidthPlus: 0,
                 radiusPlus: 1,
               },
+            },
+          },
+          states: {
+            hover: {
+              lineWidth: 3,
+              lineWidthPlus: 0,
+              radiusPlus: 1,
             },
           },
         },
@@ -385,9 +393,20 @@ class HCGraph extends Component {
             symbol: "circle",
             states: {
               hover: {
+                lineWidth: 3,
                 lineWidthPlus: 0,
                 radiusPlus: 1,
               },
+              selected: {
+                lineWidthPlus: 0,
+              },
+            },
+          },
+          states: {
+            hover: {
+              lineWidth: 3,
+              lineWidthPlus: 0,
+              radiusPlus: 1,
             },
           },
         },
@@ -438,6 +457,13 @@ class HCGraph extends Component {
             },
           },
         },
+        states: {
+          hover: {
+            lineWidth: 3,
+            lineWidthPlus: 0,
+            radiusPlus: 1,
+          },
+        },
       },
       {
         name: "Online",
@@ -457,6 +483,13 @@ class HCGraph extends Component {
             },
           },
         },
+        states: {
+          hover: {
+            lineWidth: 3,
+            lineWidthPlus: 0,
+            radiusPlus: 1,
+          },
+        },
       },
       {
         name: "Leisure/Other",
@@ -474,6 +507,13 @@ class HCGraph extends Component {
               lineWidthPlus: 0,
               radiusPlus: 1,
             },
+          },
+        },
+        states: {
+          hover: {
+            lineWidth: 3,
+            lineWidthPlus: 0,
+            radiusPlus: 1,
           },
         },
       },
