@@ -165,7 +165,7 @@ class Map extends Component {
   render() {
     return (
       <div className="graphInfo ">
-        <div className="graphTitle">
+        <div className="graphTitle pt-0">
           U.S. State-by-State Air Travel Recovery
         </div>
         <div className="graphSubTitle">
