@@ -601,6 +601,18 @@ class HCGraph extends Component {
                     </div>
                   </div>
                 </div>
+                <div className="row">
+                  <div className="col-lg-12">
+                    <p className="mb-0">
+                      <small>
+                        *The 52-week rolling average is the average ticketing
+                        volume and other variances over the past 52 weeks,
+                        ending with the most recent week, compared to 2019
+                        baseline numbers.
+                      </small>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -679,6 +691,18 @@ class HCGraph extends Component {
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div className="row">
+                  <div className="col-lg-12">
+                    <p className="mb-0">
+                      <small>
+                        *The 52-week rolling average is the average ticketing
+                        volume and other variances over the past 52 weeks,
+                        ending with the most recent week, compared to 2019
+                        baseline numbers.
+                      </small>
+                    </p>
                   </div>
                 </div>
               </div>

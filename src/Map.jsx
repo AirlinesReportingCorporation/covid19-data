@@ -110,6 +110,9 @@ class Map extends Component {
       },
       series: [
         {
+          borderColor: "#888888",
+          //borderWidth: 0,
+          //gridLineWidth: 0,
           data: this.state.stateData,
           mapData: usAll,
           showInLegend: false,
@@ -117,25 +120,30 @@ class Map extends Component {
           joinBy: "postal-code",
           name: "USA",
           dataLabels: {
+            allowOverlap: true,
             enabled: true,
-            format: "{point.name}",
+            align: "center",
+            color: "#2a2b2c",
+            format: "{point.postal-code}",
           },
 
           tooltip: {
-            pointFormat: "{point.postal-code}: {point.value}%",
+            pointFormat: "{point.name}: {point.value}%",
           },
         },
       ],
       colorAxis: {
-        // stops: [
-        //   [-100, "#EF233C"],
-        //   [100, "#189bb0"],
-        // ],
-        //min: -100,
-        //max: 100,
-        minColor: "#ffffff",
-        maxColor: "#8AC926",
+        //minColor: "#EF233C",
+        //maxColor: "#8AC926",
+        gridLineWidth: 0,
+        softMin: -10,
+        softMax: 10,
         type: "linear",
+        stops: [
+          [0, "#EF233C"],
+          [0.5, "#ffffff"],
+          [1, "#8AC926"],
+        ],
       },
       credits: {
         enabled: false,
@@ -157,6 +165,7 @@ class Map extends Component {
         style: {
           fontSize: "14px",
         },
+        headerFormat: '',
       },
     };
     this.setState({ mapOptions: options1, loaded: true });

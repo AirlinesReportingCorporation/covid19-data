@@ -19,7 +19,10 @@ class App extends Component {
         <div className="product-sticky-container" style={{ zIndex: "12" }}>
           <div className="product-sticky-inner">
             <div className="product-sticky-nav">
-              <a href="#top" className="product-sticky-brand d-flex align-items-center">
+              <a
+                href="#top"
+                className="product-sticky-brand d-flex align-items-center"
+              >
                 <img
                   src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-s-white.png"
                   alt="ARC Logo"
@@ -76,18 +79,15 @@ class App extends Component {
             </p>
 
             <p>
-              The figures below show airline ticketing recovery by comparing
-              current weekly ticket purchases to 2019 levels for tickets sold by
-              U.S. travel agencies and processed through the ARC settlement
-              system. The data includes average air ticket price for weekly U.S.
-              domestic round trips, state-by-state travel recovery, and a
-              comparison of new transactions for U.S. and international
-              destinations.
+              The figures below show airline ticketing volume recovery by
+              comparing weekly air travel tickets sold by U.S. travel agencies
+              and processed through the ARC settlement system to 2019 levels.
+              The data includes overall air ticket volumes, ticket variance
+              broken out by segment, and state-by-state travel recovery.
             </p>
 
             <p className="mb-0">
-              <b>Please note:</b> Some data may slightly change over time due to
-              variability in transaction and data reporting timing.{" "}
+              <b>Please note:</b> Some data may change slightly over time due to variability in transaction and data reporting timing. {" "}
               <b>This page will be updated on a weekly basis.</b>
             </p>
           </div>
