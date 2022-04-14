@@ -69,10 +69,12 @@ class Map extends Component {
 
         for (let i = 0; i < json.length; i++) {
           const element = json[i];
-          stateArray.push({
-            "postal-code": stateNameToAbbreviation(element["State"]),
-            value: parseFloat(element["YoY Change"].replace("%", "")),
-          });
+          if (element["State"]) {
+            stateArray.push({
+              "postal-code": stateNameToAbbreviation(element["State"]),
+              value: parseFloat(element["YoY Change"].replace("%", "")),
+            });
+          }
         }
 
         e.setState({ stateData: stateArray });

@@ -15,11 +15,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="covidPage">
+      <div id="top" className="covidPage">
         <div className="product-sticky-container" style={{ zIndex: "12" }}>
           <div className="product-sticky-inner">
             <div className="product-sticky-nav">
-              <div className="product-sticky-brand d-flex align-items-center">
+              <a href="#top" className="product-sticky-brand d-flex align-items-center">
                 <img
                   src="https://www2.arccorp.com/globalassets/arc-logos/corporate-logos/arc-logo-s-white.png"
                   alt="ARC Logo"
@@ -30,7 +30,7 @@ class App extends Component {
                 >
                   Weekly Data
                 </div>
-              </div>
+              </a>
               <div className="product-sticky-links d-flex align-items-center">
                 <a href="#ticketsales" className="product-sticky-link">
                   Ticket & Sales Volume
@@ -46,7 +46,7 @@ class App extends Component {
               </div>
               <div className="product-sticky-menu d-flex align-items-center">
                 <a
-                  href="https://www2.arccorp.com/about-us/contact-us/"
+                  href="https://www2.arccorp.com/articles-trends/sales-statistics/"
                   className="product-sticky-link-right"
                 >
                   More Data <i className="fas fa-chevron-right"></i>
