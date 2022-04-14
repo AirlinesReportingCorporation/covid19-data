@@ -364,6 +364,12 @@ class HCGraph extends Component {
             enabled: true,
             radius: 5.0,
             symbol: "circle",
+            states: {
+              hover: {
+                lineWidthPlus: 0,
+                radiusPlus: 1,
+              },
+            },
           },
         },
         {
@@ -377,6 +383,12 @@ class HCGraph extends Component {
             enabled: true,
             radius: 5.0,
             symbol: "circle",
+            states: {
+              hover: {
+                lineWidthPlus: 0,
+                radiusPlus: 1,
+              },
+            },
           },
         },
       ],
@@ -419,6 +431,12 @@ class HCGraph extends Component {
           enabled: true,
           radius: 5.0,
           symbol: "circle",
+          states: {
+            hover: {
+              lineWidthPlus: 0,
+              radiusPlus: 1,
+            },
+          },
         },
       },
       {
@@ -432,6 +450,12 @@ class HCGraph extends Component {
           enabled: true,
           radius: 5.0,
           symbol: "circle",
+          states: {
+            hover: {
+              lineWidthPlus: 0,
+              radiusPlus: 1,
+            },
+          },
         },
       },
       {
@@ -445,6 +469,12 @@ class HCGraph extends Component {
           enabled: true,
           radius: 5.0,
           symbol: "circle",
+          states: {
+            hover: {
+              lineWidthPlus: 0,
+              radiusPlus: 1,
+            },
+          },
         },
       },
     ];
