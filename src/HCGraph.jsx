@@ -536,7 +536,7 @@ class HCGraph extends Component {
                 )}
               <div className="covidSheets">
                 <a
-                  href="https://www2.arccorp.com/globalassets/covid19/52-covid-data.xlsx"
+                  href="https://www2.arccorp.com/globalassets/covid19/covid-data.xlsx"
                   className="covidDownload"
                 >
                   Download Full Recovery Data
