@@ -201,7 +201,7 @@ a.covidDownload {
 
 .covidSheets {
   top: 20px;
-  right: 5px;
+  right: 0px;
   text-align: right;
   position: absolute;
   z-index: 1;
@@ -334,15 +334,26 @@ a.covidDownload {
 }
 
 .graphToggleCheckbox {
-  background: #f1f2f2;
+  color: #ffffff;
+  background: #2a2b2c;
   display: flex;
-  padding: 4px;
-  border: 1px solid #dddddd;
+  padding: 5px;
+  border: 1px solid #189bb0;
   border-radius: 4px;
   font-size: 12px;
-  width: 22px;
-  height: 22px;
-  margin-top: 5px;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.highcharts-legend-item-hidden {
+  .graphToggleCheckbox {
+    background: transparent;
+    border-color: #2a2b2c;
+    svg, i {
+      display: none;
+    }
+  }
 }
 
 .ytd-container {
@@ -492,6 +503,13 @@ a.covidDownload {
 
   .highcharts-title, .highcharts-subtitle {
     transform: translateX(-10px);
+  }
+
+  .highcharts-xaxis .highcharts-tick {
+    display: none;
+  }
+  .highcharts-axis-labels span {
+    margin-top: 27px !important;
   }
 }
 
@@ -661,6 +679,11 @@ a.covidDownload {
     font-size: 7px;
     //width: 8px;
   }
+}
+
+.tooltip-dot-custom {
+  font-size: 22px;
+  margin-right: 10px;
 }
 
 .brushsvg {

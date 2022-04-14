@@ -197,7 +197,7 @@ class HCGraph extends Component {
         styledMode: true,
         plotBorderColor: "#2a2b2c",
         plotBorderWidth: 1,
-        margin: [150, 40, 40, 100],
+        margin: [150, 1, 40, 100],
         zoomType: "x",
         backgroundColor: "#fff",
         style: {
@@ -227,12 +227,20 @@ class HCGraph extends Component {
         align: "left",
         verticalAlign: "top",
         borderWidth: 0,
-        fontWeight: "semi-bold",
-        useHTML: true,
-        labelFormatter: function() {
-          console.log(this);
-          return this.name;
+        itemStyle: {
+          "font-size": "14px",
         },
+        useHTML: true,
+        labelFormatter: function(s, point) {
+          return (
+            "<div class='d-flex align-items-center'><div class='graphToggleCheckbox'><i class='fas fa-check'></i></div><div class='tooltip-dot-custom' style='color:" +
+            this.color +
+            "'>\u25CF</div>" +
+            this.name +
+            "</div>"
+          );
+        },
+        symbolWidth: 0,
       },
       yAxis: {
         opposite: false,
@@ -272,6 +280,7 @@ class HCGraph extends Component {
         max: dates.length - 0.5,
         minPadding: 5000,
         labels: {
+          useHTML: true,
           formatter: function() {
             return dates[this.value];
           },
@@ -289,6 +298,7 @@ class HCGraph extends Component {
         enabled: false,
       },
       navigator: {
+        margin: 70,
         xAxis: {
           labels: {
             formatter: function(f) {
