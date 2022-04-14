@@ -33,6 +33,8 @@ function createAlternatingBands(length) {
       from: i + 0.5, // Start of the plot band
       to: i + 1.5, // End of the plot band .5 1.5  2.5 3.5
       zIndex: -1,
+      borderWidth: 1,
+      borderColor: "#aaaaaa",
     });
   }
 
@@ -244,6 +246,7 @@ class HCGraph extends Component {
       },
       yAxis: {
         opposite: false,
+        gridLineColor: "#aaaaaa",
         title: {
           margin: 43,
           text: "Variance %",
@@ -278,6 +281,7 @@ class HCGraph extends Component {
         min: -0.5,
         range: 12,
         max: dates.length - 0.5,
+        gridLineColor: "#aaaaaa",
         minPadding: 5000,
         labels: {
           useHTML: true,
@@ -299,6 +303,7 @@ class HCGraph extends Component {
       },
       navigator: {
         margin: 70,
+        maskFill: "rgba(42, 43, 44,0.2)",
         xAxis: {
           labels: {
             formatter: function(f) {
