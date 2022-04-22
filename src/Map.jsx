@@ -121,8 +121,9 @@ class Map extends Component {
           name: "USA",
           dataLabels: {
             allowOverlap: true,
+            position: "right",
             enabled: true,
-            align: "center",
+            align: "right",
             color: "#2a2b2c",
             format: "{point.postal-code}",
           },
@@ -136,8 +137,8 @@ class Map extends Component {
         //minColor: "#EF233C",
         //maxColor: "#8AC926",
         gridLineWidth: 0,
-        softMin: -10,
-        softMax: 10,
+        softMin: -40,
+        softMax: 40,
         type: "linear",
         stops: [
           [0, "#EF233C"],
@@ -165,7 +166,7 @@ class Map extends Component {
         style: {
           fontSize: "14px",
         },
-        headerFormat: '',
+        headerFormat: "",
       },
     };
     this.setState({ mapOptions: options1, loaded: true });
@@ -180,6 +181,12 @@ class Map extends Component {
         <div className="graphSubTitle">
           Based on Round-Trip Air Travel Destination
         </div>
+        <div className="graphSubTitle">
+          Data through week of{" "}
+          {moment()
+            .startOf("week")
+            .format("MMMM D, YYYY")}
+        </div>
         <div className="covidSheets">
           <a
             href="https://www2.arccorp.com/globalassets/covid19/covid-map.xlsx"
@@ -187,8 +194,8 @@ class Map extends Component {
           >
             Download Full Recovery Data
           </a>{" "}
-          <div class="covidNoteDiv" style={{ paddingTop: "15px" }}>
-            <p class="covidNote">*Compared to similiar week in 2019</p>
+          <div className="covidNoteDiv" style={{ paddingTop: "15px" }}>
+            <p className="covidNote">*Compared to similiar week in 2019</p>
           </div>
         </div>
 
