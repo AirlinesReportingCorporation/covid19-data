@@ -184,7 +184,7 @@ class Map extends Component {
         <div className="graphSubTitle">
           Data through week of{" "}
           {moment()
-            .startOf("week")
+            .startOf("week").subtract(7, 'days')
             .format("MMMM D, YYYY")}
         </div>
         <div className="covidSheets">
