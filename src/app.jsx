@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+
 import stickybits from "stickybits";
 
 import HCGraph from "./HCGraph.jsx";
 import Map from "./Map.jsx";
-
 class App extends Component {
   constructor(props) {
     super(props);
   }
+
 
   componentDidMount() {
     stickybits(".product-sticky-container");
@@ -102,6 +103,7 @@ class App extends Component {
               src="https://www2.arccorp.com/globalassets/covid19/Snowflake-info.png"
               alt="ARC Travel Demand"
             />
+
             <p className="snowflakeBold">
               Snowflake data users can access a complimentary subset of ARC
               Travel Demand through the Snowflake Data Marketplace,
@@ -115,6 +117,7 @@ class App extends Component {
             </p>
           </div>
         </a>
+
 
         <hr id="ticketsales" className="covid-hr" />
 
