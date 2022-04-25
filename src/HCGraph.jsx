@@ -75,7 +75,7 @@ class HCGraph extends Component {
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
         console.log(workbook);
-        var workbookData = workbook["Sheets"]["covid-data"];
+        var workbookData = workbook["Sheets"]["Sheet 1"];
 
         var json = XLSX.utils.sheet_to_json(workbookData, {
           raw: false,
@@ -101,7 +101,7 @@ class HCGraph extends Component {
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
         console.log(workbook);
-        var workbookData = workbook["Sheets"]["52-covid-data"];
+        var workbookData = workbook["Sheets"]["Sheet 1"];
 
         var json = XLSX.utils.sheet_to_json(workbookData, {
           raw: false,
