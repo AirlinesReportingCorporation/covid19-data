@@ -57,7 +57,7 @@ class Map extends Component {
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
         console.log(workbook);
-        var workbookData = workbook["Sheets"]["Map_View_data"];
+        var workbookData = workbook["Sheets"]["Sheet 1"];
 
         var json = XLSX.utils.sheet_to_json(workbookData, {
           raw: false,
