@@ -107,7 +107,7 @@ class App extends Component {
             <p>
               <span className="snowflakeBold">
                 Snowflake data users can access a complimentary subset of ARC
-                Travel Demand through the Snowflake Data Marketplace, &nbsp;
+                Travel Demand through the Snowflake Data Marketplace,{" "} 
               </span> 
               <span className="snowflakeSmall">
                 providing insights into daily air travel purchases,
