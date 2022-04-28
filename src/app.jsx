@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 
 import stickybits from "stickybits";
- 
+
 import HCGraph from "./HCGraph.jsx";
 import Map from "./Map.jsx";
 class App extends Component {
   constructor(props) {
     super(props);
   }
-
 
   componentDidMount() {
     stickybits(".product-sticky-container");
@@ -88,7 +87,8 @@ class App extends Component {
             </p>
 
             <p className="mb-0">
-              <b>Please note:</b> Some data may change slightly over time due to variability in transaction and data reporting timing. {" "}
+              <b>Please note:</b> Some data may change slightly over time due to
+              variability in transaction and data reporting timing.{" "}
               <b>This page will be updated on a weekly basis.</b>
             </p>
           </div>
@@ -104,20 +104,21 @@ class App extends Component {
               alt="ARC Travel Demand"
             />
 
-            <p className="snowflakeBold">
-              Snowflake data users can access a complimentary subset of ARC
-              Travel Demand through the Snowflake Data Marketplace,
-            </p>
-            <p className="snowflakeSmall">
-              providing insights into daily air travel purchases, cancellations
-              and departures.{" "}
-              <span className="snowflakeCTA">
-                <a href="">Learn More</a>
+            <p>
+              <span className="snowflakeBold">
+                Snowflake data users can access a complimentary subset of ARC
+                Travel Demand through the Snowflake Data Marketplace, &nbsp;
+              </span> 
+              <span className="snowflakeSmall">
+                providing insights into daily air travel purchases,
+                cancellations and departures.{" "}
+                <span className="snowflakeCTA">
+                  <a href="">Learn More</a>
+                </span>
               </span>
             </p>
           </div>
         </a>
-
 
         <hr id="ticketsales" className="covid-hr" />
 

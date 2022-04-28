@@ -31,7 +31,8 @@
   max-width: 1170px;
   margin: 30px auto 60px;
 
-  .graphTitle, .graphSubTitle {
+  .graphTitle,
+  .graphSubTitle {
     margin-left: 0;
   }
 }
@@ -66,8 +67,8 @@
 
 .covidJumbo {
   background: #2a2b2c
-    url("https://www2.arccorp.com/globalassets/covid19/COVID_data_retina.jpg") center
-    center no-repeat;
+    url("https://www2.arccorp.com/globalassets/covid19/COVID_data_retina.jpg")
+    center center no-repeat;
   background-size: cover;
   border-radius: 20px;
   margin: 0 auto 60px;
@@ -122,13 +123,18 @@
   display: block;
   margin-top: 60px;
   margin-bottom: 60px;
+  .snowflakeimg {
+    p {
+      line-height: 1.2 !important;
+    }
+  }
 }
 
 .snowflakeImg {
   font-family: SourceSansPro-Regular, Arial, Helvetica, sans-serif;
   background: #2a2b2c
-    url("https://www2.arccorp.com/globalassets/covid19/snowflake_retina.jpg") center
-    center no-repeat;
+    url("https://www2.arccorp.com/globalassets/covid19/snowflake_retina.jpg")
+    center center no-repeat;
   background-size: cover;
   background-repeat: no-repeat;
   max-width: 1170px;
@@ -141,13 +147,15 @@
   font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
   margin-top: 25px;
   color: #ffa619;
-  font-size: 18px;
+  font-size: 18px !important;
   margin-bottom: 0;
+  line-height: 1.2 !important;
 }
 
 .snowflakeSmall {
   color: #aaaaaa;
-  font-size: 18px;
+  font-size: 18px !important;
+  line-height: 1.2 !important;
 }
 
 .snowflakeCTA {
@@ -345,7 +353,8 @@ a.covidDownload {
   .graphToggleCheckbox {
     background: transparent;
     border-color: #2a2b2c;
-    svg, i {
+    svg,
+    i {
       display: none;
     }
   }
@@ -486,17 +495,17 @@ a.covidDownload {
   }
 
   .highcharts-legend-item {
-
     .highcharts-graph {
       display: none;
     }
   }
 
   g.highcharts-legend-item:before {
-    content: "3"
+    content: "3";
   }
 
-  .highcharts-title, .highcharts-subtitle {
+  .highcharts-title,
+  .highcharts-subtitle {
     transform: translateX(-10px);
   }
 
@@ -549,7 +558,6 @@ a.covidDownload {
     top: auto;
     text-align: left;
     position: relative;
-    
   }
 
   .covidNoteDiv {
