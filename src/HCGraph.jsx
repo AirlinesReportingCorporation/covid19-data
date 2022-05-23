@@ -44,8 +44,10 @@ class HCGraph extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      covidData: [],
-      covid52Week: [],
+      covidAgencyData: [],
+      covidTicketSalesData: [],
+      covid52Agency: [],
+      covid52TicketSales: [],
       dates: [],
       ticket: [],
       sales: [],
@@ -63,11 +65,11 @@ class HCGraph extends Component {
   componentDidMount() {
     var e = this;
 
-    const covidDataCall = new Promise((resolve, reject) => {
+    const covidAgencyDataCall = new Promise((resolve, reject) => {
       axios({
         method: "get",
         url:
-          "https://www2.arccorp.com/globalassets/covid19/covid-data.xlsx?" +
+          "https://www2.arccorp.com/globalassets/covid19/agency-type.xlsx?" +
           new Date().toLocaleString(),
         responseType: "arraybuffer",
       }).then(function(response) {
@@ -83,17 +85,43 @@ class HCGraph extends Component {
 
         console.log(json);
 
-        e.setState({ covidData: json });
+        e.setState({ covidAgencyData: json });
+
+        resolve(true);
+      });
+    });
+    
+    const covidTicketSalesDataCall = new Promise((resolve, reject) => {
+      axios({
+        method: "get",
+        url:
+          "https://www2.arccorp.com/globalassets/covid19/ticket-sales.xlsx?" +
+          new Date().toLocaleString(),
+        responseType: "arraybuffer",
+      }).then(function(response) {
+        console.log("===== Covid Sales Data Loaded ===== ");
+        var data = new Uint8Array(response.data);
+        var workbook = XLSX.read(data, { type: "array" });
+        console.log(workbook);
+        var workbookData = workbook["Sheets"]["Sheet 1"];
+
+        var json = XLSX.utils.sheet_to_json(workbookData, {
+          raw: false,
+        });
+
+        console.log(json);
+
+        e.setState({ covidTicketSalesData: json });
 
         resolve(true);
       });
     });
 
-    const covid52Week = new Promise((resolve, reject) => {
+    const covid52Agency = new Promise((resolve, reject) => {
       axios({
         method: "get",
         url:
-          "https://www2.arccorp.com/globalassets/covid19/52-covid-data.xlsx?" +
+          "https://www2.arccorp.com/globalassets/covid19/52-agency-type.xlsx?" +
           new Date().toLocaleString(),
         responseType: "arraybuffer",
       }).then(function(response) {
@@ -108,13 +136,38 @@ class HCGraph extends Component {
         });
         console.log(json);
 
-        e.setState({ covid52Week: json });
+        e.setState({ covid52Agency: json });
 
         resolve(true);
       });
     });
 
-    Promise.all([covidDataCall, covid52Week])
+    const covid52TicketSales = new Promise((resolve, reject) => {
+      axios({
+        method: "get",
+        url:
+          "https://www2.arccorp.com/globalassets/covid19/52-ticket-sales.xlsx?" +
+          new Date().toLocaleString(),
+        responseType: "arraybuffer",
+      }).then(function(response) {
+        console.log("===== Covid 52 Week Data Loaded ===== ");
+        var data = new Uint8Array(response.data);
+        var workbook = XLSX.read(data, { type: "array" });
+        console.log(workbook);
+        var workbookData = workbook["Sheets"]["Sheet 1"];
+
+        var json = XLSX.utils.sheet_to_json(workbookData, {
+          raw: false,
+        });
+        console.log(json);
+
+        e.setState({ covid52TicketSales: json });
+
+        resolve(true);
+      });
+    });
+
+    Promise.all([covidAgencyDataCall, covidTicketSalesDataCall, covid52Agency, covid52TicketSales])
       .then((values) => {
         e.dataLoaded();
       })
@@ -129,55 +182,65 @@ class HCGraph extends Component {
     this.setState({ loaded: true });
 
     console.log(
-      flattenArray(this.state.covidData, "Day of Week Ending", "date")
+      flattenArray(this.state.covidAgencyData, "Day of Week Ending", "date")
+    );
+    console.log(
+      flattenArray(this.state.covidTicketSalesData, "Day of Week Ending", "date")
     );
 
     this.setState({
-      dates: flattenArray(this.state.covidData, "Day of Week Ending", "date"),
+      dates: flattenArray(this.state.covidAgencyData, "Day of Week Ending", "date"),
+    });
+    this.setState({
+      dates: flattenArray(this.state.covidTicketSalesData, "Day of Week Ending", "date"),
     });
 
     this.setState({
       corporate: flattenArray(
-        this.state.covidData,
-        "Corporate Variance v.2019",
+        this.state.covidAgencyData,
+        "Corporate",
         "number"
       ),
     });
     this.setState({
       ticket: flattenArray(
-        this.state.covidData,
-        "Ticket Variance v.2019",
+        this.state.covidTicketSalesData,
+        "Ticket Variance v. 2019",
         "number"
       ),
     });
     this.setState({
       sales: flattenArray(
-        this.state.covidData,
-        "Sales Variance v.2019",
+        this.state.covidTicketSalesData,
+        "Sales Variance v. 2019",
         "number"
       ),
     });
     this.setState({
       leisure: flattenArray(
-        this.state.covidData,
-        "Leisure/Other Variance v.2019",
+        this.state.covidAgencyData,
+        "Leisure/Other",
         "number"
       ),
     });
     this.setState({
       online: flattenArray(
-        this.state.covidData,
-        "Online Variance v.2019",
+        this.state.covidAgencyData,
+        "Online",
         "number"
       ),
     });
 
     this.setState({
-      covid52Week: this.state.covid52Week[this.state.covid52Week.length - 1],
+      covid52Agency: this.state.covid52Agency[this.state.covid52Agency.length - 1],
+    });
+    this.setState({
+      covid52TicketSales: this.state.covid52TicketSales[this.state.covid52TicketSales.length - 1],
     });
 
     console.log("52week");
-    console.log(this.state.covid52Week);
+    console.log(this.state.covid52Agency);
+    console.log(this.state.covid52TicketSales);
 
     this.setState({
       thisWeek: Object.values(this.state.covid52Week),
