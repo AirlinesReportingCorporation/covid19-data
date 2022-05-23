@@ -44,6 +44,7 @@ class HCGraph extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      covidDate: [],
       covidAgencyData: [],
       covidTicketSalesData: [],
       covid52Agency: [],
@@ -73,7 +74,7 @@ class HCGraph extends Component {
           new Date().toLocaleString(),
         responseType: "arraybuffer",
       }).then(function(response) {
-        console.log("===== Covid Sales Data Loaded ===== ");
+        console.log("===== Covid Agency Data Loaded ===== ");
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
         console.log(workbook);
@@ -99,7 +100,7 @@ class HCGraph extends Component {
           new Date().toLocaleString(),
         responseType: "arraybuffer",
       }).then(function(response) {
-        console.log("===== Covid Sales Data Loaded ===== ");
+        console.log("===== Covid Ticket/Sales Data Loaded ===== ");
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
         console.log(workbook);
@@ -125,7 +126,7 @@ class HCGraph extends Component {
           new Date().toLocaleString(),
         responseType: "arraybuffer",
       }).then(function(response) {
-        console.log("===== Covid 52 Week Data Loaded ===== ");
+        console.log("===== Covid 52 Week Agency Data Loaded ===== ");
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
         console.log(workbook);
@@ -150,7 +151,7 @@ class HCGraph extends Component {
           new Date().toLocaleString(),
         responseType: "arraybuffer",
       }).then(function(response) {
-        console.log("===== Covid 52 Week Data Loaded ===== ");
+        console.log("===== Covid 52 Week Ticket/Sales Data Loaded ===== ");
         var data = new Uint8Array(response.data);
         var workbook = XLSX.read(data, { type: "array" });
         console.log(workbook);
@@ -187,13 +188,22 @@ class HCGraph extends Component {
     console.log(
       flattenArray(this.state.covidTicketSalesData, "Day of Week Ending", "date")
     );
-
+    console.log("loaded Agency Dates");
+    if (this.state.covidAgencyData.length == this.state.covidTicketSalesData){
     this.setState({
       dates: flattenArray(this.state.covidAgencyData, "Day of Week Ending", "date"),
-    });
-    this.setState({
-      dates: flattenArray(this.state.covidTicketSalesData, "Day of Week Ending", "date"),
-    });
+    })
+  }
+    else if (this.state.covidAgencyData < this.state.covidTicketSalesData) {
+      this.setState({
+        dates: flattenArray(this.state.covidAgencyData, "Day of Week Ending", "date"),
+      })
+    }
+    else if (this.state.covidAgencyData > this.state.covidTicketSalesData){
+      this.setState({
+        dates: flattenArray(this.state.covid52TicketSales, "Day of Week Ending", "date"),
+      })
+    }
 
     this.setState({
       corporate: flattenArray(
@@ -205,14 +215,14 @@ class HCGraph extends Component {
     this.setState({
       ticket: flattenArray(
         this.state.covidTicketSalesData,
-        "Ticket Variance v. 2019",
+        "Ticket Variance vs. 2019",
         "number"
       ),
     });
     this.setState({
       sales: flattenArray(
         this.state.covidTicketSalesData,
-        "Sales Variance v. 2019",
+        "Sales Variance v. 2019  ",
         "number"
       ),
     });
@@ -238,16 +248,12 @@ class HCGraph extends Component {
       covid52TicketSales: this.state.covid52TicketSales[this.state.covid52TicketSales.length - 1],
     });
 
-    console.log("52week");
+    console.log("52week Data");
     console.log(this.state.covid52Agency);
     console.log(this.state.covid52TicketSales);
 
     this.setState({
-      thisWeek: Object.values(this.state.covid52Week),
-    });
-
-    this.setState({
-      alternatingBands: createAlternatingBands(e.state.covidData.length),
+      alternatingBands: createAlternatingBands(e.state.covidAgencyData.length),
     });
 
     console.log(this.state.thisWeek);
