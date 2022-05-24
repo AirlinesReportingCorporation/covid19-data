@@ -91,7 +91,7 @@ class HCGraph extends Component {
         resolve(true);
       });
     });
-    
+
     const covidTicketSalesDataCall = new Promise((resolve, reject) => {
       axios({
         method: "get",
@@ -168,7 +168,12 @@ class HCGraph extends Component {
       });
     });
 
-    Promise.all([covidAgencyDataCall, covidTicketSalesDataCall, covid52Agency, covid52TicketSales])
+    Promise.all([
+      covidAgencyDataCall,
+      covidTicketSalesDataCall,
+      covid52Agency,
+      covid52TicketSales,
+    ])
       .then((values) => {
         e.dataLoaded();
       })
@@ -186,23 +191,44 @@ class HCGraph extends Component {
       flattenArray(this.state.covidAgencyData, "Day of Week Ending", "date")
     );
     console.log(
-      flattenArray(this.state.covidTicketSalesData, "Day of Week Ending", "date")
+      flattenArray(
+        this.state.covidTicketSalesData,
+        "Day of Week Ending",
+        "date"
+      )
     );
     console.log("loaded Agency Dates");
-    if (this.state.covidAgencyData.length == this.state.covidTicketSalesData.length){
-    this.setState({
-      dates: flattenArray(this.state.covidAgencyData, "Day of Week Ending", "date"),
-    })
-  }
-    else if (this.state.covidAgencyData.length < this.state.covidTicketSalesData.length) {
+    if (
+      this.state.covidAgencyData.length ==
+      this.state.covidTicketSalesData.length
+    ) {
       this.setState({
-        dates: flattenArray(this.state.covidAgencyData, "Day of Week Ending", "date"),
-      })
-    }
-    else if (this.state.covidAgencyData.length > this.state.covidTicketSalesData.length){
+        dates: flattenArray(
+          this.state.covidAgencyData,
+          "Day of Week Ending",
+          "date"
+        ),
+      });
+    } else if (
+      this.state.covidAgencyData.length < this.state.covidTicketSalesData.length
+    ) {
       this.setState({
-        dates: flattenArray(this.state.covid52TicketSales, "Day of Week Ending", "date"),
-      })
+        dates: flattenArray(
+          this.state.covidAgencyData,
+          "Day of Week Ending",
+          "date"
+        ),
+      });
+    } else if (
+      this.state.covidAgencyData.length > this.state.covidTicketSalesData.length
+    ) {
+      this.setState({
+        dates: flattenArray(
+          this.state.covid52TicketSales,
+          "Day of Week Ending",
+          "date"
+        ),
+      });
     }
 
     this.setState({
@@ -234,18 +260,18 @@ class HCGraph extends Component {
       ),
     });
     this.setState({
-      online: flattenArray(
-        this.state.covidAgencyData,
-        "Online",
-        "number"
-      ),
+      online: flattenArray(this.state.covidAgencyData, "Online", "number"),
     });
 
     this.setState({
-      covid52Agency: this.state.covid52Agency[this.state.covid52Agency.length - 1],
+      covid52Agency: this.state.covid52Agency[
+        this.state.covid52Agency.length - 1
+      ],
     });
     this.setState({
-      covid52TicketSales: this.state.covid52TicketSales[this.state.covid52TicketSales.length - 1],
+      covid52TicketSales: this.state.covid52TicketSales[
+        this.state.covid52TicketSales.length - 1
+      ],
     });
 
     console.log("52week Data");
@@ -613,7 +639,7 @@ class HCGraph extends Component {
               )}
               <div className="covidSheets">
                 <a
-                  href="https://www2.arccorp.com/globalassets/covid19/covid-data.xlsx"
+                  href="https://www2.arccorp.com/globalassets/covid19/ticket-sales.xlsx"
                   className="covidDownload"
                 >
                   Download Full Recovery Data
@@ -634,7 +660,9 @@ class HCGraph extends Component {
                   <div className="col-lg-6">
                     <div className="avg-card">
                       <div className="avg-card-inner">
-                        <div className="average">{this.state.covid52TicketSales["Tickets v. 2019 "]}</div>
+                        <div className="average">
+                          {this.state.covid52TicketSales["Tickets v. 2019 "]}
+                        </div>
                         <div className="avg-card-main">
                           Ticket Variance vs. Same Week 2019
                         </div>
@@ -653,7 +681,9 @@ class HCGraph extends Component {
                   <div className="col-lg-6">
                     <div className="avg-card">
                       <div className="avg-card-inner">
-                        <h1 className="average">{this.state.covid52TicketSales["Sales v. 2019 "]}</h1>
+                        <h1 className="average">
+                          {this.state.covid52TicketSales["Sales v. 2019 "]}
+                        </h1>
                         <div className="avg-card-main">
                           Sales Variance vs. Same Week 2019
                         </div>
@@ -702,7 +732,7 @@ class HCGraph extends Component {
                 )}
               <div className="covidSheets">
                 <a
-                  href="https://www2.arccorp.com/globalassets/covid19/covid-data.xlsx"
+                  href="https://www2.arccorp.com/globalassets/covid19/agency-type.xlsx"
                   className="covidDownload"
                 >
                   Download Full Recovery Data
@@ -713,7 +743,9 @@ class HCGraph extends Component {
                   <div className="col-lg-4">
                     <div className="avg-card">
                       <div className="avg-card-inner">
-                        <h1 className="average">{this.state.covid52Agency["Corporate"]}</h1>
+                        <h1 className="average">
+                          {this.state.covid52Agency["Corporate"]}
+                        </h1>
                         <div className="avg-card-main">Corporate</div>
                         <div className="avg-card-small">
                           52-Week Rolling Average
@@ -730,7 +762,9 @@ class HCGraph extends Component {
                   <div className="col-lg-4">
                     <div className="avg-card">
                       <div className="avg-card-inner">
-                        <h1 className="average">{this.state.covid52Agency["Online"]}</h1>
+                        <h1 className="average">
+                          {this.state.covid52Agency["Online"]}
+                        </h1>
                         <div className="avg-card-main">Online</div>
                         <div className="avg-card-small">
                           52-Week Rolling Average
@@ -747,7 +781,9 @@ class HCGraph extends Component {
                   <div className="col-lg-4">
                     <div className="avg-card">
                       <div className="avg-card-inner">
-                        <div className="average">{this.state.covid52Agency["Leisure/Other"]}</div>
+                        <div className="average">
+                          {this.state.covid52Agency["Leisure/Other"]}
+                        </div>
                         <div className="avg-card-main">Leisure/Other</div>
                         <div className="avg-card-small">
                           52-Week Rolling Average
