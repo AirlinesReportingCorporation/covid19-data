@@ -613,7 +613,7 @@ class HCGraph extends Component {
               )}
               <div className="covidSheets">
                 <a
-                  href="https://www2.arccorp.com/globalassets/covid19/covid-data.xlsx"
+                  href="https://www2.arccorp.com/globalassets/covid19/ticket-sales.xlsx"
                   className="covidDownload"
                 >
                   Download Full Recovery Data
@@ -702,7 +702,7 @@ class HCGraph extends Component {
                 )}
               <div className="covidSheets">
                 <a
-                  href="https://www2.arccorp.com/globalassets/covid19/covid-data.xlsx"
+                  href="https://www2.arccorp.com/globalassets/covid19/agency-type.xlsx"
                   className="covidDownload"
                 >
                   Download Full Recovery Data
