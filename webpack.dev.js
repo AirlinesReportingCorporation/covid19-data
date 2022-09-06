@@ -16,7 +16,7 @@ module.exports = merge(common, {
       directory: path.join(__dirname, "src")
     },
 
-    compress: true,
+    //compress: true,
     hot: true,
     open: true
   }
