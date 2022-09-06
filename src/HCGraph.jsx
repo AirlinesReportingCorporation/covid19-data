@@ -84,7 +84,20 @@ class HCGraph extends Component {
           raw: false,
         });
 
-        e.setState({ covidAgencyData: json })
+        console.log(json);
+        var sunday = moment().day(0).format('L');
+        var twoWeeks = moment().day(0).add(14, 'days').format('L');
+        var last = json[json.length-1];
+
+        if (moment(last["Day of Week Ending"]).format('L') === sunday) {
+          console.log("They are the same!")
+          e.setState({ covidAgencyData: json });
+        }
+        else if (moment(last["Day of Week Ending"]).format('L') > sunday && moment(last["Day of Week Ending"]).format('L') < twoWeeks) {
+          console.log("They are not the same")
+          json.pop();
+          e.setState({ covidAgencyData: json });
+        }
 
         resolve(true);
       });
@@ -108,7 +121,20 @@ class HCGraph extends Component {
           raw: false,
         });
 
-        e.setState({ covidTicketSalesData: json });
+        console.log(json);
+        var sunday = moment().day(0).format('L');
+        var twoWeeks = moment().day(0).add(14, 'days').format('L');
+        var last = json[json.length-1];
+
+        if (moment(last["Day of Week Ending"]).format('L') === sunday) {
+          console.log("They are the same!")
+          e.setState({ covidTicketSalesData: json });
+        }
+        else if (moment(last["Day of Week Ending"]).format('L') > sunday && moment(last["Day of Week Ending"]).format('L') < twoWeeks) {
+          console.log("They are not the same")
+          json.pop();
+          e.setState({ covidTicketSalesData: json });
+        }
 
         resolve(true);
       });
@@ -131,9 +157,26 @@ class HCGraph extends Component {
         var json = XLSX.utils.sheet_to_json(workbookData, {
           raw: false,
         });
-        
-        e.setState({ covid52Agency: json });
-        
+        console.log(json);
+        var sunday = moment().day(0).format('L');
+        var twoWeeks = moment().day(0).add(14, 'days').format('L');
+        console.log(twoWeeks);
+        console.log(sunday);
+        var last = json[json.length-1];
+        console.log("Last date recorded in json")
+        console.log(moment(last["Day of Week Ending"]).format('L'));
+        console.log(moment(last["Day of Week Ending"]).format('L') > sunday);
+
+        if (moment(last["Day of Week Ending"]).format('L') === sunday) {
+          console.log("They are the same!")
+          e.setState({ covid52Agency: json });
+        }
+        else if (moment(last["Day of Week Ending"]).format('L') > sunday && moment(last["Day of Week Ending"]).format('L') < twoWeeks) {
+          console.log("They are not the same")
+          json.pop();
+          e.setState({ covid52Agency: json });
+        }
+
         // e.setState({ covid52Agency: json });
 
         resolve(true);
@@ -157,8 +200,20 @@ class HCGraph extends Component {
         var json = XLSX.utils.sheet_to_json(workbookData, {
           raw: false,
         });
-        
-        e.setState({ covid52TicketSales: json });
+        console.log(json);
+        var sunday = moment().day(0).format('L');
+        var twoWeeks = moment().day(0).add(14, 'days').format('L');
+        var last = json[json.length-1];
+
+        if (moment(last["Day of Week Ending"]).format('L') === sunday) {
+          console.log("They are the same!")
+          e.setState({ covid52TicketSales: json });
+        }
+        else if (moment(last["Day of Week Ending"]).format('L') > sunday && moment(last["Day of Week Ending"]).format('L') < twoWeeks) {
+          console.log("They are not the same")
+          json.pop();
+          e.setState({ covid52TicketSales: json });
+        }
 
         resolve(true);
       });
