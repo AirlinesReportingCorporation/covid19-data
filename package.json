@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack serve -d --config webpack.dev.js",
+    "start": "npx webpack serve --config webpack.dev.js",
     "dev": "npm start",
     "build": "webpack --config webpack.prod.js",
     "test": "npm start"
