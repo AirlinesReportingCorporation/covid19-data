@@ -105,7 +105,6 @@ class HCGraph extends Component {
           json.pop();
           e.setState({ covidAgencyData: json });
         } else {
-          json.pop();
           e.setState({ covidAgencyData: json });
         }
 
@@ -152,7 +151,6 @@ class HCGraph extends Component {
           json.pop();
           e.setState({ covidTicketSalesData: json });
         } else {
-          json.pop();
           e.setState({ covidTicketSalesData: json });
         }
 
@@ -203,7 +201,6 @@ class HCGraph extends Component {
           json.pop();
           e.setState({ covid52Agency: json });
         } else {
-          json.pop();
           e.setState({ covid52Agency: json });
         }
 
@@ -252,7 +249,6 @@ class HCGraph extends Component {
           e.setState({ covid52TicketSales: json });
         }
         else {
-          json.pop();
           e.setState({ covid52TicketSales: json });
         }
 
