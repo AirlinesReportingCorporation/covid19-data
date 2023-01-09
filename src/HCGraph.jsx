@@ -740,64 +740,6 @@ class HCGraph extends Component {
                   </p>
                 </div>
               </div>
-              <div className="container avg-container">
-                <div className="row covid19-row">
-                  <div className="col-lg-6">
-                    <div className="avg-card">
-                      <div className="avg-card-inner">
-                        <div className="average">
-                          {this.state.covid52TicketSales["Tickets v. 2019 "]}
-                        </div>
-                        <div className="avg-card-main">
-                          Ticket Variance vs. Same Week 2019
-                        </div>
-                        <div className="avg-card-small">
-                          52-Week Rolling Average
-                        </div>
-                        <div className="avg-circle">
-                          <img
-                            src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="avg-card">
-                      <div className="avg-card-inner">
-                        <h1 className="average">
-                          {this.state.covid52TicketSales["Sales v. 2019 "]}
-                        </h1>
-                        <div className="avg-card-main">
-                          Sales Variance vs. Same Week 2019
-                        </div>
-                        <div className="avg-card-small">
-                          52-Week Rolling Average
-                        </div>
-                        <div className="avg-circle">
-                          <img
-                            src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-lg-12">
-                    <p className="mb-0">
-                      <small>
-                        *The 52-week rolling average is the average ticketing
-                        volume and other variances over the past 52 weeks,
-                        ending with the most recent week, compared to 2019
-                        baseline numbers.
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div id="segment"></div>
@@ -823,79 +765,7 @@ class HCGraph extends Component {
                   Download Full Recovery Data
                 </a>
               </div>
-              <div className="container avg-container">
-                <div className="row covid19-row">
-                  <div className="col-lg-4">
-                    <div className="avg-card">
-                      <div className="avg-card-inner">
-                        <h1 className="average">
-                          {this.state.covid52Agency["Corporate"]}
-                        </h1>
-                        <div className="avg-card-main">Corporate</div>
-                        <div className="avg-card-small">
-                          52-Week Rolling Average
-                        </div>
-                        <div className="avg-circle">
-                          <img
-                            src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4">
-                    <div className="avg-card">
-                      <div className="avg-card-inner">
-                        <h1 className="average">
-                          {this.state.covid52Agency["Online"]}
-                        </h1>
-                        <div className="avg-card-main">Online</div>
-                        <div className="avg-card-small">
-                          52-Week Rolling Average
-                        </div>
-                        <div className="avg-circle">
-                          <img
-                            src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-4">
-                    <div className="avg-card">
-                      <div className="avg-card-inner">
-                        <div className="average">
-                          {this.state.covid52Agency["Leisure/Other"]}
-                        </div>
-                        <div className="avg-card-main">Leisure/Other</div>
-                        <div className="avg-card-small">
-                          52-Week Rolling Average
-                        </div>
-                        <div className="avg-circle">
-                          <img
-                            src="https://www2.arccorp.com/globalassets/covid19/avg-circle.png"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-lg-12">
-                    <p className="mb-0">
-                      <small>
-                        *The 52-week rolling average is the average ticketing
-                        volume and other variances over the past 52 weeks,
-                        ending with the most recent week, compared to 2019
-                        baseline numbers.
-                      </small>
-                    </p>
-                  </div>
-                </div>
-              </div>
+
             </div>
             <hr id="map" className="covid-hr" />
           </div>
