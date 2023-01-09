@@ -71,6 +71,7 @@ class HCGraph extends Component {
           "https://www2.arccorp.com/globalassets/covid19/agency-type.xlsx?" +
           new Date().toLocaleString(),
         responseType: "arraybuffer",
+        readOnly: false
       }).then(function(response) {
         console.log("===== Covid Agency Data Loaded ===== ");
         var data = new Uint8Array(response.data);
@@ -117,6 +118,7 @@ class HCGraph extends Component {
           "https://www2.arccorp.com/globalassets/covid19/ticket-sales.xlsx?" +
           new Date().toLocaleString(),
         responseType: "arraybuffer",
+        readOnly: false
       }).then(function(response) {
         console.log("===== Covid Ticket/Sales Data Loaded ===== ");
         var data = new Uint8Array(response.data);
