@@ -10,7 +10,7 @@ import XLSX from "xlsx";
 function flattenArray(arrayData, columnName, type = "string") {
   var newArray = [];
   for (let i = 0; i < arrayData.length; i++) {
-    const element = arrayData[i][columnName];
+    var element = arrayData[i][columnName];
     if (type === "number") {
       element = parseFloat(element.replace("%", ""));
     }
