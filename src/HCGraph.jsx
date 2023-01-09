@@ -21,7 +21,7 @@ function flattenArray(arrayData, columnName, type = "string") {
   }
   return newArray;
 }
-
+ 
 function createAlternatingBands(length) {
   var temp = [];
 
