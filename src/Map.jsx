@@ -137,8 +137,8 @@ class Map extends Component {
         //minColor: "#EF233C",
         //maxColor: "#8AC926",
         gridLineWidth: 0,
-        softMin: -40,
-        softMax: 40,
+        softMin: -100,
+        softMax: 100,
         type: "linear",
         stops: [
           [0, "#EF233C"],
