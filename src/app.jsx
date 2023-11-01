@@ -127,9 +127,9 @@ class App extends Component {
             <HCGraph />
           </div>
 
-          <div className="mapgraph">
+          {/* <div className="mapgraph">
             <Map />
-          </div>
+          </div> */}
         </div>
       </div>
     );
