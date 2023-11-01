@@ -42,10 +42,6 @@ class App extends Component {
                 <a href="#segment" className="product-sticky-link">
                   Ticket Variance Sold By Segment
                 </a>
-
-                <a href="#map" className="product-sticky-link">
-                  State-by-State Recovery
-                </a>
               </div>
               <div className="product-sticky-menu d-flex align-items-center">
                 <a
