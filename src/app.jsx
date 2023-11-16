@@ -55,7 +55,7 @@ class App extends Component {
           </div>
         </div>
         <div className="covidHeader">
-          {/* <div id="update-alert">
+          <div id="update-alert">
             <div className="row justify-content-center">
               <div className="col-lg-12">
                 <div className="banner-text bg-color-tarmac type-color-white">
@@ -81,7 +81,7 @@ class App extends Component {
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
           <div className="covidJumbo">
             <div className="jumboInfo">
               <h1>
