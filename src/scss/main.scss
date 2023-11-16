@@ -60,6 +60,38 @@
   color: #414042;
   width: 100%;
 }
+
+.banner-text {
+  max-width: 1170px;
+  width: 100%;
+  border-radius: 20px;
+  border: #ffa619 solid 5px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 16px;
+  img {
+    max-width: 100%;
+    width: auto;
+    max-height: 100%;
+    height:max-content;
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+  div {
+    font-family: SourceSansPro-Semibold, Arial, Helvetica, sans-serif;
+    padding-right: 100px;
+  }
+  a {
+    color: #ffa619;
+    font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
+    text-decoration: none;
+  }
+  }
+
 .covidHeader {
   background-color: #f7f5f5;
   padding-top: 30px;
@@ -71,7 +103,7 @@
     center center no-repeat;
   background-size: cover;
   border-radius: 20px;
-  margin: 0 auto 60px;
+  margin: 30px auto 60px;
   max-width: 1210px;
   width: 100%;
   height: auto;
