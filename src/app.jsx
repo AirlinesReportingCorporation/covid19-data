@@ -55,31 +55,33 @@ class App extends Component {
           </div>
         </div>
         <div className="covidHeader">
-          <div className="row justify-content-center">
-            <div className="col-lg-12">
-              <div className="banner-text bg-color-tarmac type-color-white">
-                <img
-                  src="https://www2.arccorp.com/globalassets/covid19/alert.png"
-                  alt=""
-                />
-                <div>
-                  Due to the industry’s recovery from COVID, this weekly data
-                  will no longer be updated starting January 1, 2024. For the
-                  latest travel agency air ticket sales data, visit our
-                  <a href="https://www2.arccorp.com/articles-trends/sales-statistics">
-                    {" "}
-                    Monthly and Annual Agency Sales Statistics page
-                  </a>{" "}
-                  or{" "}
-                  <a href="https://www2.arccorp.com/support-training/product-sales-request/">
-                    {" "}
-                    submit a request{" "}
-                  </a>
-                  to our sales team.
+          {/* <div id="update-alert">
+            <div className="row justify-content-center">
+              <div className="col-lg-12">
+                <div className="banner-text bg-color-tarmac type-color-white">
+                  <img
+                    src="https://www2.arccorp.com/globalassets/covid19/alert.png"
+                    alt=""
+                  />
+                  <p className="alert-text">
+                    Due to the industry’s recovery from COVID, this weekly data
+                    will no longer be updated starting January 1, 2024. For the
+                    latest travel agency air ticket sales data, visit our
+                    <a href="https://www2.arccorp.com/articles-trends/sales-statistics">
+                      {" "}
+                      Monthly and Annual Agency Sales Statistics page
+                    </a>{" "}
+                    or{" "}
+                    <a href="https://www2.arccorp.com/support-training/product-sales-request/">
+                      {" "}
+                      submit a request{" "}
+                    </a>
+                    to our sales team.
+                  </p>
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="covidJumbo">
             <div className="jumboInfo">
               <h1>
