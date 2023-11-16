@@ -56,7 +56,7 @@ class App extends Component {
         </div>
         <div className="covidHeader">
           <div id="update-alert">
-            <div className="row justify-content-center">
+            <div className="row">
               <div className="col-lg-12">
                 <div className="banner-text bg-color-tarmac type-color-white">
                   <img

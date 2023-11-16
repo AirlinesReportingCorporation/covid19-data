@@ -62,6 +62,8 @@
 }
 
 #update-alert {
+  justify-content: center;
+  display: flex;
   .banner-text {
     max-width: 1170px;
     width: 100%;
@@ -73,8 +75,9 @@
     margin-right: auto;
     padding-top: 25px;
     padding-bottom: 25px;
-    font-size: 16px;
+    
     img {
+      margin: auto;
       max-width: 100%;
       width: auto;
       max-height: 100%;
@@ -86,7 +89,8 @@
       display: inline-block;
       font-family: SourceSansPro-Semibold, Arial, Helvetica, sans-serif;
       padding-right: 100px;
-      margin-bottom: none;
+      margin-bottom: 0;
+      font-size: 16px;
       a {
         color: #ffa619;
         font-family: SourceSansPro-Bold, Arial, Helvetica, sans-serif;
