@@ -92,12 +92,12 @@ class App extends Component {
           </div>
           <div className="covidInfo">
             <p>
-              As air travel continues to recover from the COVID-19 pandemic,{" "}
-              <b>
-                ARC is committed to providing timely data to help our partners
+              As air travel worked through the COVID-19 pandemic,{" "}
+              <strong>
+                ARC was committed to providing timely data to help our partners
                 and stakeholders make responsible, informed decisions based on
                 recovery trends.
-              </b>
+              </strong>
             </p>
 
             <p>
@@ -109,9 +109,20 @@ class App extends Component {
             </p>
 
             <p className="mb-0">
-              <b>Please note:</b> Some data may change slightly over time due to
-              variability in transaction and data reporting timing.{" "}
-              <b>This page will be updated on a weekly basis.</b>
+              <strong>
+                Please note: As on January 1, 2024, this page will no longer be
+                updated on a weekly basis.
+              </strong>{" "}
+              For the latest travel agency air ticket sales data, visit our{" "}
+              <a href="https://www2.arccorp.com/articles-trends/sales-statistics">
+                Monthly and Annual Agency Sales Statistics page
+              </a>{" "}
+              or{" "}
+              <a href="https://www2.arccorp.com/support-training/product-sales-request/">
+                {" "}
+                submit a request{" "}
+              </a>{" "}
+              to our sales team.
             </p>
           </div>
         </div>
